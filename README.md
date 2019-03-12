@@ -11,5 +11,5 @@ Video and other material of ADP course given by BERTSEKAS at THU, 2014
 	  | - translate_files: files which tranlate subtitles to chinese
     
     
-video link: 
+video link: https://space.bilibili.com/272393172/channel/detail?cid=68163
 
