@@ -1,0 +1,2564 @@
+1
+00:00:03,230 --> 00:00:06,420
+<font color="#E5E5E5">you must have</font><font color="#CCCCCC"> gotten examinations</font><font color="#E5E5E5"> this</font>
+
+2
+00:00:06,420 --> 00:00:07,790
+week
+
+3
+00:00:07,790 --> 00:00:13,440
+studying for<font color="#E5E5E5"> examinations</font><font color="#CCCCCC"> undergraduate</font>
+
+4
+00:00:13,440 --> 00:00:20,640
+<font color="#CCCCCC">oh I think I worry</font><font color="#E5E5E5"> even worse okay okay</font>
+
+5
+00:00:20,640 --> 00:00:25,230
+<font color="#E5E5E5">so everything so far has been in the</font>
+
+6
+00:00:25,230 --> 00:00:26,970
+context of projected equations now we're
+
+7
+00:00:26,970 --> 00:00:28,830
+going<font color="#E5E5E5"> to discuss a</font><font color="#CCCCCC"> different approach</font>
+
+8
+00:00:28,830 --> 00:00:32,420
+<font color="#CCCCCC">that seems to be fundamentally unrelated</font>
+
+9
+00:00:32,420 --> 00:00:35,070
+<font color="#E5E5E5">aggregation however we will see that</font>
+
+10
+00:00:35,070 --> 00:00:36,899
+<font color="#E5E5E5">it's also connected with a projection</font>
+
+11
+00:00:36,899 --> 00:00:39,739
+equation approach in aggregation<font color="#E5E5E5"> the</font>
+
+12
+00:00:39,739 --> 00:00:44,040
+<font color="#CCCCCC">major idea is to approximate</font><font color="#E5E5E5"> either the</font>
+
+13
+00:00:44,040 --> 00:00:47,670
+optimal cost function or the the<font color="#E5E5E5"> cost</font>
+
+14
+00:00:47,670 --> 00:00:50,160
+function associated with<font color="#E5E5E5"> policies with a</font>
+
+15
+00:00:50,160 --> 00:00:53,879
+<font color="#CCCCCC">cost go function of a simpler</font><font color="#E5E5E5"> problem so</font>
+
+16
+00:00:53,879 --> 00:00:57,300
+we have<font color="#CCCCCC"> a</font><font color="#E5E5E5"> complicated problem we will</font>
+
+17
+00:00:57,300 --> 00:00:59,100
+try to look at<font color="#CCCCCC"> a simpler version of this</font>
+
+18
+00:00:59,100 --> 00:01:02,730
+<font color="#E5E5E5">problem and solve that in place</font><font color="#CCCCCC"> of the</font>
+
+19
+00:01:02,730 --> 00:01:07,229
+original and the<font color="#CCCCCC"> approach is aggregation</font>
+
+20
+00:01:07,229 --> 00:01:11,760
+and<font color="#E5E5E5"> the main elements are we introduce a</font>
+
+21
+00:01:11,760 --> 00:01:16,350
+few aggregate<font color="#CCCCCC"> states which are viewed as</font>
+
+22
+00:01:16,350 --> 00:01:19,619
+the states of an aggregate system<font color="#E5E5E5"> our</font>
+
+23
+00:01:19,619 --> 00:01:22,110
+objective is to formulate<font color="#E5E5E5"> an aggregate</font>
+
+24
+00:01:22,110 --> 00:01:28,320
+problem involving just<font color="#E5E5E5"> a few states to</font>
+
+25
+00:01:28,320 --> 00:01:30,509
+do this we<font color="#CCCCCC"> need to define transition</font>
+
+26
+00:01:30,509 --> 00:01:32,310
+probabilities and<font color="#E5E5E5"> cost functions for</font>
+
+27
+00:01:32,310 --> 00:01:35,790
+this aggregate<font color="#CCCCCC"> system and in order to</font>
+
+28
+00:01:35,790 --> 00:01:37,829
+make the aggregate problem related to
+
+29
+00:01:37,829 --> 00:01:39,450
+<font color="#E5E5E5">the original the transition</font>
+
+30
+00:01:39,450 --> 00:01:41,759
+probabilities and<font color="#E5E5E5"> cost have to be</font>
+
+31
+00:01:41,759 --> 00:01:44,700
+<font color="#CCCCCC">related to the transition</font><font color="#E5E5E5"> probabilities</font>
+
+32
+00:01:44,700 --> 00:01:48,540
+and<font color="#E5E5E5"> costs of the of the original problem</font>
+
+33
+00:01:48,540 --> 00:01:51,600
+and<font color="#CCCCCC"> we have to</font><font color="#E5E5E5"> relate original system</font>
+
+34
+00:01:51,600 --> 00:01:55,110
+<font color="#CCCCCC">states with aggregate States</font><font color="#E5E5E5"> after we do</font>
+
+35
+00:01:55,110 --> 00:01:57,420
+that<font color="#E5E5E5"> we solve exactly or approximately</font>
+
+36
+00:01:57,420 --> 00:02:00,860
+the aggregate problem by<font color="#E5E5E5"> any kind of</font>
+
+37
+00:02:00,860 --> 00:02:02,750
+new generation<font color="#E5E5E5"> of policy direction</font>
+
+38
+00:02:02,750 --> 00:02:05,600
+perhaps<font color="#E5E5E5"> even with simulation based</font>
+
+39
+00:02:05,600 --> 00:02:09,258
+methods to obtain<font color="#E5E5E5"> approximations of J</font>
+
+40
+00:02:09,258 --> 00:02:15,650
+star and J<font color="#CCCCCC"> neo and let's say that</font>
+
+41
+00:02:15,650 --> 00:02:20,060
+<font color="#CCCCCC">aggregate</font><font color="#E5E5E5"> state</font><font color="#CCCCCC"> Y has an optimal cost or</font>
+
+42
+00:02:20,060 --> 00:02:23,060
+cost of policy<font color="#E5E5E5"> R hat Y so this is a</font>
+
+43
+00:02:23,060 --> 00:02:26,570
+number<font color="#E5E5E5"> associated with aggregate state Y</font>
+
+44
+00:02:26,570 --> 00:02:29,920
+and<font color="#CCCCCC"> there</font><font color="#E5E5E5"> several of those wise we use</font>
+
+45
+00:02:29,920 --> 00:02:33,560
+the cost function approximation which<font color="#CCCCCC"> is</font>
+
+46
+00:02:33,560 --> 00:02:40,070
+a weighted<font color="#CCCCCC"> sum of this</font><font color="#E5E5E5"> our hats so we</font>
+
+47
+00:02:40,070 --> 00:02:43,280
+have a big state space<font color="#CCCCCC"> States J in them</font>
+
+48
+00:02:43,280 --> 00:02:46,790
+<font color="#E5E5E5">in it and we solve the aggregate problem</font>
+
+49
+00:02:46,790 --> 00:02:48,500
+<font color="#E5E5E5">a different problem that involves this</font>
+
+50
+00:02:48,500 --> 00:02:52,010
+few but sort of<font color="#E5E5E5"> bigger states we get the</font>
+
+51
+00:02:52,010 --> 00:02:57,100
+cost<font color="#E5E5E5"> of those states and then we use a</font>
+
+52
+00:02:57,100 --> 00:03:01,970
+<font color="#E5E5E5">weighted sum of these costs of the</font>
+
+53
+00:03:01,970 --> 00:03:04,400
+approximate<font color="#E5E5E5"> of the aggregate problem to</font>
+
+54
+00:03:04,400 --> 00:03:06,500
+<font color="#E5E5E5">approximate the optimal cost of the</font>
+
+55
+00:03:06,500 --> 00:03:08,180
+<font color="#E5E5E5">original problem now what are these</font>
+
+56
+00:03:08,180 --> 00:03:10,220
+weights here<font color="#E5E5E5"> first of all their</font>
+
+57
+00:03:10,220 --> 00:03:12,739
+probabilities<font color="#E5E5E5"> they add up</font><font color="#CCCCCC"> to one okay</font>
+
+58
+00:03:12,739 --> 00:03:14,540
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> we call them the aggregation</font>
+
+59
+00:03:14,540 --> 00:03:17,840
+probabilities<font color="#E5E5E5"> and basically they encode</font>
+
+60
+00:03:17,840 --> 00:03:21,320
+the degree of<font color="#E5E5E5"> membership of</font><font color="#CCCCCC"> J into the</font>
+
+61
+00:03:21,320 --> 00:03:24,650
+aggregate<font color="#CCCCCC"> statewide it's how J relates</font>
+
+62
+00:03:24,650 --> 00:03:28,130
+to why in some sense<font color="#E5E5E5"> that this far here</font>
+
+63
+00:03:28,130 --> 00:03:32,480
+encodes now notice<font color="#E5E5E5"> that you can also</font>
+
+64
+00:03:32,480 --> 00:03:36,640
+view<font color="#CCCCCC"> this Phi terms as features okay</font>
+
+65
+00:03:36,640 --> 00:03:39,500
+basically<font color="#CCCCCC"> this is of the form</font><font color="#E5E5E5"> Phi</font>
+
+66
+00:03:39,500 --> 00:03:44,510
+capital Phi R capital R so these are
+
+67
+00:03:44,510 --> 00:03:46,670
+matrix Phi here<font color="#E5E5E5"> of the aggregation</font>
+
+68
+00:03:46,670 --> 00:03:50,120
+probabilities weighted by a<font color="#E5E5E5"> vector of</font>
+
+69
+00:03:50,120 --> 00:03:52,940
+our hats<font color="#E5E5E5"> a smaller dimensional version</font>
+
+70
+00:03:52,940 --> 00:03:54,140
+<font color="#CCCCCC">vote for five hats</font>
+
+71
+00:03:54,140 --> 00:03:57,019
+so this is a linear architecture with a
+
+72
+00:03:57,019 --> 00:03:59,980
+few J why are the features of state J
+
+73
+00:03:59,980 --> 00:04:03,110
+one feature for aggregate state one one
+
+74
+00:04:03,110 --> 00:04:08,050
+figure for<font color="#CCCCCC"> market state</font><font color="#E5E5E5"> two and so on so</font>
+
+75
+00:04:08,050 --> 00:04:10,550
+at a higher level we're<font color="#E5E5E5"> not doing</font>
+
+76
+00:04:10,550 --> 00:04:13,670
+anything<font color="#CCCCCC"> different if it</font><font color="#E5E5E5"> is again</font>
+
+77
+00:04:13,670 --> 00:04:17,029
+<font color="#CCCCCC">a</font><font color="#E5E5E5"> linear feature based architecture but</font>
+
+78
+00:04:17,029 --> 00:04:19,608
+the<font color="#E5E5E5"> training method</font><font color="#CCCCCC"> is different because</font>
+
+79
+00:04:19,608 --> 00:04:21,079
+<font color="#E5E5E5">now we're</font><font color="#CCCCCC"> looking</font><font color="#E5E5E5"> at</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> simplified</font>
+
+80
+00:04:21,079 --> 00:04:28,370
+problem<font color="#E5E5E5"> to get these coefficients so now</font>
+
+81
+00:04:28,370 --> 00:04:30,710
+let's look<font color="#E5E5E5"> at an example and see</font><font color="#CCCCCC"> how we</font>
+
+82
+00:04:30,710 --> 00:04:32,780
+<font color="#E5E5E5">can get this aggregate problem how we</font>
+
+83
+00:04:32,780 --> 00:04:37,760
+can define it the<font color="#E5E5E5"> simplest example is</font>
+
+84
+00:04:37,760 --> 00:04:42,620
+hard<font color="#E5E5E5"> aggregation in hard aggregation we</font>
+
+85
+00:04:42,620 --> 00:04:46,130
+have this big original<font color="#E5E5E5"> system and we</font>
+
+86
+00:04:46,130 --> 00:04:48,229
+group<font color="#CCCCCC"> various states of</font><font color="#E5E5E5"> the system</font>
+
+87
+00:04:48,229 --> 00:04:52,430
+<font color="#E5E5E5">together as an example let's say we have</font>
+
+88
+00:04:52,430 --> 00:04:55,070
+<font color="#CCCCCC">nine states of the original system</font><font color="#E5E5E5"> we</font>
+
+89
+00:04:55,070 --> 00:04:57,139
+group this<font color="#E5E5E5"> four</font><font color="#CCCCCC"> together into a single</font>
+
+90
+00:04:57,139 --> 00:05:00,410
+<font color="#E5E5E5">aggregate state here we group</font><font color="#CCCCCC"> to here 1</font>
+
+91
+00:05:00,410 --> 00:05:05,600
+2 and so on<font color="#E5E5E5"> so we have nine original</font>
+
+92
+00:05:05,600 --> 00:05:09,340
+system<font color="#CCCCCC"> States and for aggregate States</font>
+
+93
+00:05:09,340 --> 00:05:12,620
+and the aggregation probabilities in
+
+94
+00:05:12,620 --> 00:05:14,770
+<font color="#CCCCCC">cart aggregation is what you see here</font>
+
+95
+00:05:14,770 --> 00:05:17,419
+<font color="#E5E5E5">for state</font><font color="#CCCCCC"> 1 these are the</font><font color="#E5E5E5"> aggregation</font>
+
+96
+00:05:17,419 --> 00:05:21,919
+probabilities state 1 is going<font color="#E5E5E5"> to be</font>
+
+97
+00:05:21,919 --> 00:05:23,870
+related<font color="#E5E5E5"> to the aggregate cost of</font>
+
+98
+00:05:23,870 --> 00:05:31,700
+aggregate state 1<font color="#E5E5E5"> exactly and so on so</font>
+
+99
+00:05:31,700 --> 00:05:33,620
+if I solve<font color="#E5E5E5"> the aggregate problem somehow</font>
+
+100
+00:05:33,620 --> 00:05:35,660
+<font color="#CCCCCC">I define this aggregate problem</font><font color="#E5E5E5"> I get</font>
+
+101
+00:05:35,660 --> 00:05:38,900
+four numbers<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> the cost of aggregate</font>
+
+102
+00:05:38,900 --> 00:05:41,240
+state<font color="#E5E5E5"> one cost at</font><font color="#CCCCCC"> least eight two three</font>
+
+103
+00:05:41,240 --> 00:05:47,000
+<font color="#E5E5E5">and</font><font color="#CCCCCC"> four</font><font color="#E5E5E5"> and my original system cost</font>
+
+104
+00:05:47,000 --> 00:05:50,200
+function is a piecewise constant
+
+105
+00:05:50,200 --> 00:05:53,539
+function where all the states in here
+
+106
+00:05:53,539 --> 00:05:56,390
+have the<font color="#E5E5E5"> same cost the aggregate cost of</font>
+
+107
+00:05:56,390 --> 00:05:58,580
+a state all the states in here the two
+
+108
+00:05:58,580 --> 00:06:00,650
+states have the idea of<font color="#E5E5E5"> the state here</font>
+
+109
+00:06:00,650 --> 00:06:04,190
+<font color="#E5E5E5">and so on and this</font><font color="#CCCCCC"> is what this field</font>
+
+110
+00:06:04,190 --> 00:06:08,570
+matrix<font color="#E5E5E5"> implies the the the features are</font>
+
+111
+00:06:08,570 --> 00:06:12,110
+lined up like<font color="#CCCCCC"> this the columns are the</font>
+
+112
+00:06:12,110 --> 00:06:14,919
+basis functions
+
+113
+00:06:16,220 --> 00:06:18,780
+so after I solve<font color="#E5E5E5"> the aggregate problem</font>
+
+114
+00:06:18,780 --> 00:06:20,720
+<font color="#E5E5E5">that's the</font><font color="#CCCCCC"> way I'm going to recover</font>
+
+115
+00:06:20,720 --> 00:06:22,620
+approximations to<font color="#E5E5E5"> the cost of</font><font color="#CCCCCC"> the</font>
+
+116
+00:06:22,620 --> 00:06:26,460
+<font color="#CCCCCC">original problem</font><font color="#E5E5E5"> however how do i define</font>
+
+117
+00:06:26,460 --> 00:06:28,410
+<font color="#CCCCCC">subproblems in</font><font color="#E5E5E5"> particular</font><font color="#CCCCCC"> i have</font><font color="#E5E5E5"> to</font>
+
+118
+00:06:28,410 --> 00:06:31,200
+define<font color="#E5E5E5"> transition probabilities from X 1</font>
+
+119
+00:06:31,200 --> 00:06:35,580
+to<font color="#E5E5E5"> X 2 to X 4 2 X 3 what makes sense</font>
+
+120
+00:06:35,580 --> 00:06:38,820
+here well to define such transition
+
+121
+00:06:38,820 --> 00:06:40,590
+probabilities basically we have to
+
+122
+00:06:40,590 --> 00:06:42,570
+relate them to the<font color="#E5E5E5"> transition</font>
+
+123
+00:06:42,570 --> 00:06:44,220
+probabilities<font color="#CCCCCC"> between these states and</font>
+
+124
+00:06:44,220 --> 00:06:46,110
+these states<font color="#E5E5E5"> sort of some kind of an</font>
+
+125
+00:06:46,110 --> 00:06:48,750
+aggregate probability and the way to do
+
+126
+00:06:48,750 --> 00:06:50,610
+that so<font color="#CCCCCC"> that's the</font><font color="#E5E5E5"> question what should</font>
+
+127
+00:06:50,610 --> 00:06:51,840
+<font color="#E5E5E5">be the aggregate transition</font>
+
+128
+00:06:51,840 --> 00:06:56,550
+probabilities of X we may<font color="#E5E5E5"> select at</font>
+
+129
+00:06:56,550 --> 00:07:00,510
+random some state here look at how
+
+130
+00:07:00,510 --> 00:07:02,430
+transitions whether it transitions
+
+131
+00:07:02,430 --> 00:07:05,040
+within<font color="#E5E5E5"> the same aggregate state what</font>
+
+132
+00:07:05,040 --> 00:07:06,690
+whether it transitions out of that
+
+133
+00:07:06,690 --> 00:07:12,030
+aggregate<font color="#E5E5E5"> state and define define view</font>
+
+134
+00:07:12,030 --> 00:07:13,830
+this state single state as
+
+135
+00:07:13,830 --> 00:07:17,100
+representative of<font color="#CCCCCC"> of the aggregate</font><font color="#E5E5E5"> state</font>
+
+136
+00:07:17,100 --> 00:07:20,070
+and in the<font color="#E5E5E5"> defined range problems that</font>
+
+137
+00:07:20,070 --> 00:07:24,230
+way<font color="#E5E5E5"> but which</font><font color="#CCCCCC"> states should I use okay</font>
+
+138
+00:07:24,230 --> 00:07:27,450
+<font color="#E5E5E5">the simplest probability is to randomize</font>
+
+139
+00:07:27,450 --> 00:07:30,090
+and to say I'm going<font color="#E5E5E5"> to select us when I</font>
+
+140
+00:07:30,090 --> 00:07:32,010
+am in aggregate state that's one I'm
+
+141
+00:07:32,010 --> 00:07:34,890
+going<font color="#E5E5E5"> to take by at random any one state</font>
+
+142
+00:07:34,890 --> 00:07:36,750
+of the<font color="#CCCCCC"> state's here</font><font color="#E5E5E5"> look at the</font>
+
+143
+00:07:36,750 --> 00:07:38,820
+transition probabilities and consider
+
+144
+00:07:38,820 --> 00:07:42,930
+the corresponding<font color="#E5E5E5"> to could be</font><font color="#CCCCCC"> provided</font>
+
+145
+00:07:42,930 --> 00:07:46,620
+probabilistic way<font color="#E5E5E5"> describing how from</font>
+
+146
+00:07:46,620 --> 00:07:48,900
+this state<font color="#CCCCCC"> I'll go back into the state</font>
+
+147
+00:07:48,900 --> 00:07:52,590
+or that state so the<font color="#CCCCCC"> simplest</font>
+
+148
+00:07:52,590 --> 00:07:54,600
+<font color="#CCCCCC">probability</font><font color="#E5E5E5"> is to assume that all the</font>
+
+149
+00:07:54,600 --> 00:07:57,510
+states in<font color="#E5E5E5"> within the ugliest</font><font color="#CCCCCC"> a X</font><font color="#E5E5E5"> are</font>
+
+150
+00:07:57,510 --> 00:08:00,050
+equally likely
+
+151
+00:08:00,110 --> 00:08:02,600
+however I can<font color="#E5E5E5"> consider more general</font>
+
+152
+00:08:02,600 --> 00:08:07,610
+randomization whereby I use
+
+153
+00:08:07,610 --> 00:08:11,100
+<font color="#E5E5E5">disaggregation probabilities for</font>
+
+154
+00:08:11,100 --> 00:08:16,620
+aggregate<font color="#E5E5E5"> state X D X I is a probability</font>
+
+155
+00:08:16,620 --> 00:08:19,830
+by which<font color="#E5E5E5"> I select I within here to</font>
+
+156
+00:08:19,830 --> 00:08:21,870
+define the transition probability
+
+157
+00:08:21,870 --> 00:08:23,850
+mechanism to agree rather<font color="#CCCCCC"> and gate</font>
+
+158
+00:08:23,850 --> 00:08:24,880
+<font color="#CCCCCC">States</font>
+
+159
+00:08:24,880 --> 00:08:29,690
+roughly<font color="#E5E5E5"> speaking DXi is the degree to</font>
+
+160
+00:08:29,690 --> 00:08:34,789
+which<font color="#E5E5E5"> I is representative of X</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> if</font>
+
+161
+00:08:34,789 --> 00:08:37,760
+there was a dominant state in here<font color="#CCCCCC"> I'd</font>
+
+162
+00:08:37,760 --> 00:08:40,309
+like to use that<font color="#CCCCCC"> state more more</font>
+
+163
+00:08:40,309 --> 00:08:42,049
+generally if there are more states that
+
+164
+00:08:42,049 --> 00:08:44,210
+are equal that<font color="#E5E5E5"> are important</font><font color="#CCCCCC"> I want to</font>
+
+165
+00:08:44,210 --> 00:08:46,100
+give positive<font color="#E5E5E5"> probabilities to</font><font color="#CCCCCC"> goals as</font>
+
+166
+00:08:46,100 --> 00:08:48,400
+<font color="#E5E5E5">well</font>
+
+167
+00:08:54,060 --> 00:08:57,090
+so if I have this DX<font color="#E5E5E5"> eyes I solve the</font>
+
+168
+00:08:57,090 --> 00:08:59,430
+problem of transition<font color="#CCCCCC"> probabilities</font>
+
+169
+00:08:59,430 --> 00:09:02,520
+between<font color="#CCCCCC"> x1 and x2 a randomized within</font>
+
+170
+00:09:02,520 --> 00:09:05,400
+here<font color="#E5E5E5"> consider the transition probability</font>
+
+171
+00:09:05,400 --> 00:09:08,460
+<font color="#CCCCCC">from any one of</font><font color="#E5E5E5"> those and see</font><font color="#CCCCCC"> what part</font>
+
+172
+00:09:08,460 --> 00:09:10,020
+<font color="#E5E5E5">of the transition probability takes me</font>
+
+173
+00:09:10,020 --> 00:09:14,960
+<font color="#CCCCCC">to</font><font color="#E5E5E5"> states in the aggregate state</font><font color="#CCCCCC"> to</font>
+
+174
+00:09:15,890 --> 00:09:18,330
+intuitively<font color="#CCCCCC"> that makes sense for</font><font color="#E5E5E5"> had a</font>
+
+175
+00:09:18,330 --> 00:09:21,270
+creation<font color="#E5E5E5"> and it is this mekinese that</font>
+
+176
+00:09:21,270 --> 00:09:24,690
+were going<font color="#E5E5E5"> to generalize so here's the</font>
+
+177
+00:09:24,690 --> 00:09:28,160
+<font color="#CCCCCC">general framework for</font><font color="#E5E5E5"> aggregation</font><font color="#CCCCCC"> the</font>
+
+178
+00:09:28,160 --> 00:09:30,840
+<font color="#CCCCCC">original system is described by states</font><font color="#E5E5E5"> I</font>
+
+179
+00:09:30,840 --> 00:09:33,420
+and J with transition probabilities P<font color="#E5E5E5"> IJ</font>
+
+180
+00:09:33,420 --> 00:09:37,050
+that<font color="#E5E5E5"> depends on control we</font><font color="#CCCCCC"> introduced</font>
+
+181
+00:09:37,050 --> 00:09:39,930
+this aggregate<font color="#E5E5E5"> stage we want to define</font>
+
+182
+00:09:39,930 --> 00:09:44,010
+<font color="#E5E5E5">the transition</font><font color="#CCCCCC"> mechanism from</font><font color="#E5E5E5"> X to Y we</font>
+
+183
+00:09:44,010 --> 00:09:47,310
+<font color="#E5E5E5">introduce now these</font><font color="#CCCCCC"> two transition these</font>
+
+184
+00:09:47,310 --> 00:09:49,130
+<font color="#E5E5E5">two probability types the disaggregation</font>
+
+185
+00:09:49,130 --> 00:09:52,650
+probabilities<font color="#CCCCCC"> defined by a matrix D with</font>
+
+186
+00:09:52,650 --> 00:09:55,490
+elements<font color="#E5E5E5"> the X I and the disaggregation</font>
+
+187
+00:09:55,490 --> 00:09:58,440
+probabilities which are<font color="#CCCCCC"> defined by this</font>
+
+188
+00:09:58,440 --> 00:10:04,800
+matrix Phi and the matrices<font color="#CCCCCC"> D and Phi</font>
+
+189
+00:10:04,800 --> 00:10:08,610
+<font color="#E5E5E5">are arbitrary except for the fact that</font>
+
+190
+00:10:08,610 --> 00:10:11,010
+<font color="#E5E5E5">their</font><font color="#CCCCCC"> rows have to be transition</font>
+
+191
+00:10:11,010 --> 00:10:17,310
+probabilities these are the aggregation
+
+192
+00:10:17,310 --> 00:10:21,660
+probabilities and<font color="#E5E5E5"> the meaning of Phi J Y</font>
+
+193
+00:10:21,660 --> 00:10:25,860
+is the degree<font color="#CCCCCC"> of membership</font><font color="#E5E5E5"> of J within</font>
+
+194
+00:10:25,860 --> 00:10:29,250
+the aggregate<font color="#E5E5E5"> state Y so if J</font><font color="#CCCCCC"> is sort</font><font color="#E5E5E5"> of</font>
+
+195
+00:10:29,250 --> 00:10:31,950
+relates<font color="#E5E5E5"> to more than one aggregate</font>
+
+196
+00:10:31,950 --> 00:10:34,400
+<font color="#CCCCCC">States</font><font color="#E5E5E5"> then I will have more than</font><font color="#CCCCCC"> one</font>
+
+197
+00:10:34,400 --> 00:10:38,310
+<font color="#E5E5E5">nonzero probability spy in card</font>
+
+198
+00:10:38,310 --> 00:10:42,630
+aggregation only one<font color="#CCCCCC"> v is a one and all</font>
+
+199
+00:10:42,630 --> 00:10:45,540
+<font color="#E5E5E5">the others are 0 more generally however</font>
+
+200
+00:10:45,540 --> 00:10:48,450
+you could have a fine matrix involving a
+
+201
+00:10:48,450 --> 00:10:53,880
+different kind of choice now the
+
+202
+00:10:53,880 --> 00:10:57,410
+disaggregation probability
+
+203
+00:10:58,510 --> 00:11:02,780
+given that<font color="#CCCCCC"> we are at state</font><font color="#E5E5E5"> X it</font>
+
+204
+00:11:02,780 --> 00:11:06,790
+randomizes within this piece state of
+
+205
+00:11:06,790 --> 00:11:09,260
+states<font color="#CCCCCC"> I according to these</font>
+
+206
+00:11:09,260 --> 00:11:12,800
+probabilities selects the state<font color="#E5E5E5"> this way</font>
+
+207
+00:11:12,800 --> 00:11:16,160
+in here<font color="#CCCCCC"> and then</font><font color="#E5E5E5"> jumps off to J and then</font>
+
+208
+00:11:16,160 --> 00:11:20,330
+down<font color="#E5E5E5"> to Y and the meaning intuitive</font>
+
+209
+00:11:20,330 --> 00:11:22,610
+meaning of<font color="#CCCCCC"> this reaction probability</font><font color="#E5E5E5"> is</font>
+
+210
+00:11:22,610 --> 00:11:28,850
+a<font color="#E5E5E5"> degree which is representative of X so</font>
+
+211
+00:11:28,850 --> 00:11:31,070
+once I give you these<font color="#CCCCCC"> two matrixes</font><font color="#E5E5E5"> D and</font>
+
+212
+00:11:31,070 --> 00:11:33,940
+<font color="#CCCCCC">5 you have</font><font color="#E5E5E5"> an aggregation scheme</font>
+
+213
+00:11:33,940 --> 00:11:36,830
+different choices<font color="#CCCCCC"> of D and Phi</font><font color="#E5E5E5"> gives you</font>
+
+214
+00:11:36,830 --> 00:11:38,840
+different types of aggregation schemes
+
+215
+00:11:38,840 --> 00:11:41,900
+<font color="#E5E5E5">but the theory of all those is quite</font>
+
+216
+00:11:41,900 --> 00:11:44,170
+calm
+
+217
+00:11:47,990 --> 00:11:51,149
+<font color="#E5E5E5">okay now suppose</font><font color="#CCCCCC"> I have given you</font><font color="#E5E5E5"> the</font>
+
+218
+00:11:51,149 --> 00:11:52,560
+disaggregation probabilities in the
+
+219
+00:11:52,560 --> 00:11:54,899
+aggregation probabilities<font color="#E5E5E5"> you can define</font>
+
+220
+00:11:54,899 --> 00:11:56,700
+the transition probabilities<font color="#CCCCCC"> between x</font>
+
+221
+00:11:56,700 --> 00:12:00,060
+and y the transition probability from<font color="#E5E5E5"> X</font>
+
+222
+00:12:00,060 --> 00:12:03,029
+to<font color="#E5E5E5"> Y is obtained as the product of the</font>
+
+223
+00:12:03,029 --> 00:12:06,660
+probabilities of going to I then<font color="#E5E5E5"> P IJ to</font>
+
+224
+00:12:06,660 --> 00:12:10,170
+go to<font color="#E5E5E5"> J and then down to Y according to</font>
+
+225
+00:12:10,170 --> 00:12:12,600
+this probability<font color="#E5E5E5"> so that's the</font>
+
+226
+00:12:12,600 --> 00:12:14,430
+<font color="#E5E5E5">transition probability and it's well</font>
+
+227
+00:12:14,430 --> 00:12:16,050
+defined<font color="#CCCCCC"> it's a</font><font color="#E5E5E5"> transition probability</font>
+
+228
+00:12:16,050 --> 00:12:20,940
+<font color="#CCCCCC">matrix in fact it is given by</font><font color="#E5E5E5"> it's given</font>
+
+229
+00:12:20,940 --> 00:12:23,579
+by<font color="#CCCCCC"> this expression and in matrix form</font>
+
+230
+00:12:23,579 --> 00:12:28,490
+<font color="#E5E5E5">it's given like so the matrix</font><font color="#CCCCCC"> D</font>
+
+231
+00:12:28,490 --> 00:12:31,620
+multiplies the matrix P of the original
+
+232
+00:12:31,620 --> 00:12:34,410
+system and multiplies the matrix<font color="#CCCCCC"> fee of</font>
+
+233
+00:12:34,410 --> 00:12:38,190
+the disaggregation matrix<font color="#CCCCCC"> 3</font><font color="#E5E5E5"> and that's</font>
+
+234
+00:12:38,190 --> 00:12:40,529
+<font color="#E5E5E5">the compact form of</font><font color="#CCCCCC"> the transition</font>
+
+235
+00:12:40,529 --> 00:12:42,510
+probability matrix of the aggregate
+
+236
+00:12:42,510 --> 00:12:45,209
+problems then it depends<font color="#E5E5E5"> on you because</font>
+
+237
+00:12:45,209 --> 00:12:51,750
+this<font color="#CCCCCC"> p</font><font color="#E5E5E5"> IJ</font><font color="#CCCCCC"> h depends on you this process</font>
+
+238
+00:12:51,750 --> 00:12:55,709
+<font color="#CCCCCC">of going</font><font color="#E5E5E5"> like this defines also costs</font>
+
+239
+00:12:55,709 --> 00:12:59,730
+the cost of using control<font color="#E5E5E5"> u at aggregate</font>
+
+240
+00:12:59,730 --> 00:13:03,510
+<font color="#CCCCCC">State</font><font color="#E5E5E5"> X is obtained by randomization to</font>
+
+241
+00:13:03,510 --> 00:13:08,100
+<font color="#CCCCCC">go into here then</font><font color="#E5E5E5"> cost GI</font><font color="#CCCCCC"> u of j to go</font>
+
+242
+00:13:08,100 --> 00:13:12,120
+from here<font color="#E5E5E5"> to</font><font color="#CCCCCC"> here and then and then in</font>
+
+243
+00:13:12,120 --> 00:13:13,890
+that and then that's<font color="#CCCCCC"> that that's the</font>
+
+244
+00:13:13,890 --> 00:13:15,810
+cost that<font color="#E5E5E5"> you incur for</font><font color="#CCCCCC"> a transition out</font>
+
+245
+00:13:15,810 --> 00:13:20,279
+<font color="#E5E5E5">of X so the expected transition cost is</font>
+
+246
+00:13:20,279 --> 00:13:27,510
+this and in matrix form<font color="#E5E5E5"> it is d times P</font>
+
+247
+00:13:27,510 --> 00:13:31,470
+<font color="#E5E5E5">actually piece of you here times G G</font>
+
+248
+00:13:31,470 --> 00:13:36,510
+being the cost of the one stage<font color="#CCCCCC"> costs</font><font color="#E5E5E5"> so</font>
+
+249
+00:13:36,510 --> 00:13:39,649
+the vector of<font color="#E5E5E5"> one stage cause</font>
+
+250
+00:13:40,120 --> 00:13:42,580
+so if you have a fixed policy for the
+
+251
+00:13:42,580 --> 00:13:44,860
+<font color="#CCCCCC">advocate problem</font><font color="#E5E5E5"> you can set up balance</font>
+
+252
+00:13:44,860 --> 00:13:48,240
+equation<font color="#CCCCCC"> for it involving this</font><font color="#E5E5E5"> in that</font>
+
+253
+00:13:48,240 --> 00:13:51,520
+and you can also consider the optimal
+
+254
+00:13:51,520 --> 00:13:53,260
+cost of the<font color="#CCCCCC"> advocate problem which</font>
+
+255
+00:13:53,260 --> 00:13:57,600
+involves<font color="#E5E5E5"> the corresponding operator team</font>
+
+256
+00:13:59,640 --> 00:14:03,400
+<font color="#E5E5E5">here is balance equation for</font><font color="#CCCCCC"> the</font>
+
+257
+00:14:03,400 --> 00:14:06,130
+<font color="#E5E5E5">aggregate problem it is the unique</font>
+
+258
+00:14:06,130 --> 00:14:14,230
+solution<font color="#CCCCCC"> R hat of this equation which</font>
+
+259
+00:14:14,230 --> 00:14:18,280
+involves<font color="#E5E5E5"> G hat the one stage cost of the</font>
+
+260
+00:14:18,280 --> 00:14:20,560
+aggregate problem and the transition
+
+261
+00:14:20,560 --> 00:14:23,610
+probabilities of the aggregate problem
+
+262
+00:14:23,610 --> 00:14:27,610
+this<font color="#CCCCCC"> R hat</font><font color="#E5E5E5"> is a vector with one entry</font>
+
+263
+00:14:27,610 --> 00:14:31,660
+<font color="#CCCCCC">per aggregate</font><font color="#E5E5E5"> state ordinarily a small</font>
+
+264
+00:14:31,660 --> 00:14:33,760
+dimensional vector if a number of
+
+265
+00:14:33,760 --> 00:14:41,530
+aggregate<font color="#CCCCCC"> states is small</font><font color="#E5E5E5"> suppose</font><font color="#CCCCCC"> that I</font>
+
+266
+00:14:41,530 --> 00:14:44,380
+solve this equation<font color="#CCCCCC"> and I solve the</font>
+
+267
+00:14:44,380 --> 00:14:46,170
+aggregate problem for the optimal cost
+
+268
+00:14:46,170 --> 00:14:49,390
+<font color="#E5E5E5">then I can get an approximation of the</font>
+
+269
+00:14:49,390 --> 00:14:52,750
+optimal cost of the<font color="#E5E5E5"> original by using</font>
+
+270
+00:14:52,750 --> 00:14:55,630
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> spice features in these parts are as</font>
+
+271
+00:14:55,630 --> 00:15:00,310
+<font color="#E5E5E5">weights there is also a bellman equation</font>
+
+272
+00:15:00,310 --> 00:15:04,870
+associated<font color="#CCCCCC"> with a policy</font><font color="#E5E5E5"> it's linear if</font>
+
+273
+00:15:04,870 --> 00:15:06,850
+you can solve it then you obtain an
+
+274
+00:15:06,850 --> 00:15:09,790
+approximation<font color="#E5E5E5"> to the cost of a policy by</font>
+
+275
+00:15:09,790 --> 00:15:13,240
+again a linear<font color="#CCCCCC"> combination of the course</font>
+
+276
+00:15:13,240 --> 00:15:18,490
+of<font color="#E5E5E5"> the corresponding policy we aggregate</font>
+
+277
+00:15:18,490 --> 00:15:20,910
+problem
+
+278
+00:15:21,700 --> 00:15:26,440
+<font color="#E5E5E5">okay so this is in principle the idea</font>
+
+279
+00:15:26,440 --> 00:15:30,560
+<font color="#E5E5E5">simplify the problem define the data of</font>
+
+280
+00:15:30,560 --> 00:15:33,410
+the problem<font color="#E5E5E5"> based on the data of the</font>
+
+281
+00:15:33,410 --> 00:15:36,170
+original problem solve it solve the
+
+282
+00:15:36,170 --> 00:15:38,510
+simpler problem<font color="#E5E5E5"> and then obtain an</font>
+
+283
+00:15:38,510 --> 00:15:40,600
+approximation<font color="#E5E5E5"> to the cost of the</font>
+
+284
+00:15:40,600 --> 00:15:43,670
+<font color="#CCCCCC">original problem</font><font color="#E5E5E5"> by means of a linear</font>
+
+285
+00:15:43,670 --> 00:15:50,870
+combination now let's go back and<font color="#CCCCCC"> look</font>
+
+286
+00:15:50,870 --> 00:15:54,890
+at<font color="#E5E5E5"> various special cases we know that</font>
+
+287
+00:15:54,890 --> 00:15:57,200
+the case of card aggregation earlier<font color="#E5E5E5"> and</font>
+
+288
+00:15:57,200 --> 00:15:59,780
+here we group the original system<font color="#CCCCCC"> states</font>
+
+289
+00:15:59,780 --> 00:16:03,410
+<font color="#CCCCCC">two subsets view each subset has</font><font color="#E5E5E5"> an</font>
+
+290
+00:16:03,410 --> 00:16:07,010
+aggregate<font color="#CCCCCC"> state this partition</font><font color="#E5E5E5"> is</font>
+
+291
+00:16:07,010 --> 00:16:09,440
+exhaustive<font color="#E5E5E5"> it covers all</font><font color="#CCCCCC"> the states</font><font color="#E5E5E5"> each</font>
+
+292
+00:16:09,440 --> 00:16:12,580
+<font color="#E5E5E5">state has to belong to one and only</font><font color="#CCCCCC"> one</font>
+
+293
+00:16:12,580 --> 00:16:15,620
+<font color="#CCCCCC">aggregate</font><font color="#E5E5E5"> state the aggregation</font>
+
+294
+00:16:15,620 --> 00:16:18,230
+probabilities are either ones or<font color="#E5E5E5"> zeros</font>
+
+295
+00:16:18,230 --> 00:16:20,600
+depending on the membership<font color="#CCCCCC"> of original</font>
+
+296
+00:16:20,600 --> 00:16:23,270
+system<font color="#CCCCCC"> States into adequate States</font><font color="#E5E5E5"> again</font>
+
+297
+00:16:23,270 --> 00:16:26,660
+the same<font color="#E5E5E5"> figure I had</font><font color="#CCCCCC"> before now for</font>
+
+298
+00:16:26,660 --> 00:16:28,580
+<font color="#CCCCCC">this aggregation probabilities there are</font>
+
+299
+00:16:28,580 --> 00:16:32,300
+many<font color="#CCCCCC"> possibilities for example all the</font>
+
+300
+00:16:32,300 --> 00:16:34,340
+states within<font color="#CCCCCC"> a hydrojet state having</font>
+
+301
+00:16:34,340 --> 00:16:37,280
+equal<font color="#E5E5E5"> probability so if there are let's</font>
+
+302
+00:16:37,280 --> 00:16:41,300
+<font color="#E5E5E5">say</font><font color="#CCCCCC"> M states within navigate state this</font>
+
+303
+00:16:41,300 --> 00:16:43,640
+<font color="#E5E5E5">probability would be 1 over m in this</font>
+
+304
+00:16:43,640 --> 00:16:47,600
+particular case<font color="#CCCCCC"> with 1 over 4 1 cast</font><font color="#E5E5E5"> 1</font><font color="#CCCCCC"> 1</font>
+
+305
+00:16:47,600 --> 00:16:55,270
+<font color="#CCCCCC">half however I may use more general</font>
+
+306
+00:16:55,270 --> 00:17:00,530
+probabilities as long as as<font color="#E5E5E5"> long as they</font>
+
+307
+00:17:00,530 --> 00:17:02,600
+are positive only<font color="#E5E5E5"> within the</font>
+
+308
+00:17:02,600 --> 00:17:08,599
+corresponding<font color="#CCCCCC"> advocate States ok now</font><font color="#E5E5E5"> I</font>
+
+309
+00:17:08,599 --> 00:17:10,369
+know<font color="#E5E5E5"> that earlier that because of the</font>
+
+310
+00:17:10,369 --> 00:17:12,079
+nature of these of these<font color="#E5E5E5"> female</font><font color="#CCCCCC"> tricks</font>
+
+311
+00:17:12,079 --> 00:17:14,630
+what you get in the end is<font color="#E5E5E5"> a piecewise</font>
+
+312
+00:17:14,630 --> 00:17:17,420
+constant<font color="#E5E5E5"> approximation over the</font>
+
+313
+00:17:17,420 --> 00:17:19,459
+aggregate<font color="#E5E5E5"> States so there's</font><font color="#CCCCCC"> a single</font>
+
+314
+00:17:19,459 --> 00:17:21,589
+<font color="#E5E5E5">value of course</font><font color="#CCCCCC"> associated with each</font>
+
+315
+00:17:21,589 --> 00:17:24,680
+with all the states within here all the
+
+316
+00:17:24,680 --> 00:17:26,150
+states within here all the states within
+
+317
+00:17:26,150 --> 00:17:26,599
+here
+
+318
+00:17:26,599 --> 00:17:28,920
+it's a piecewise constant<font color="#CCCCCC"> approximation</font>
+
+319
+00:17:28,920 --> 00:17:31,530
+in particular if the optimal cost<font color="#CCCCCC"> factor</font>
+
+320
+00:17:31,530 --> 00:17:34,410
+of the<font color="#E5E5E5"> original problem</font><font color="#CCCCCC"> is piecewise</font>
+
+321
+00:17:34,410 --> 00:17:37,290
+constant over the aggregate<font color="#E5E5E5"> states then</font>
+
+322
+00:17:37,290 --> 00:17:40,560
+hard aggregation is exact<font color="#E5E5E5"> okay there is</font>
+
+323
+00:17:40,560 --> 00:17:43,440
+no approximation<font color="#E5E5E5"> error and this</font><font color="#CCCCCC"> suggests</font>
+
+324
+00:17:43,440 --> 00:17:45,570
+how I should<font color="#E5E5E5"> be grouping</font><font color="#CCCCCC"> States into</font>
+
+325
+00:17:45,570 --> 00:17:48,720
+aggregate<font color="#CCCCCC"> states similar states with</font>
+
+326
+00:17:48,720 --> 00:17:51,480
+similar costs should go together<font color="#CCCCCC"> okay it</font>
+
+327
+00:17:51,480 --> 00:17:53,940
+should<font color="#E5E5E5"> be grouped together if I have</font>
+
+328
+00:17:53,940 --> 00:17:56,790
+some insight<font color="#CCCCCC"> about what are similar</font>
+
+329
+00:17:56,790 --> 00:17:59,130
+<font color="#E5E5E5">States I would be</font><font color="#CCCCCC"> able</font><font color="#E5E5E5"> to group them</font>
+
+330
+00:17:59,130 --> 00:18:06,000
+together into aggregate<font color="#CCCCCC"> States there is</font>
+
+331
+00:18:06,000 --> 00:18:08,040
+<font color="#E5E5E5">also a variant</font><font color="#CCCCCC"> of the scheme called</font><font color="#E5E5E5"> soft</font>
+
+332
+00:18:08,040 --> 00:18:11,550
+aggregation where the fee<font color="#E5E5E5"> entries within</font>
+
+333
+00:18:11,550 --> 00:18:14,160
+<font color="#E5E5E5">this matrix are not all of</font><font color="#CCCCCC"> them</font><font color="#E5E5E5"> 1 or 0</font>
+
+334
+00:18:14,160 --> 00:18:16,680
+but for<font color="#CCCCCC"> states</font><font color="#E5E5E5"> that are sort of at</font><font color="#CCCCCC"> the</font>
+
+335
+00:18:16,680 --> 00:18:19,590
+boundary between<font color="#CCCCCC"> to to aggregate</font><font color="#E5E5E5"> states</font>
+
+336
+00:18:19,590 --> 00:18:22,950
+it may<font color="#CCCCCC"> be it</font><font color="#E5E5E5"> may involve a randomization</font>
+
+337
+00:18:22,950 --> 00:18:26,010
+between the the<font color="#E5E5E5"> affiliate</font><font color="#CCCCCC"> States and the</font>
+
+338
+00:18:26,010 --> 00:18:29,640
+boundary<font color="#E5E5E5"> so for example</font><font color="#CCCCCC"> for state</font><font color="#E5E5E5"> 5 this</font>
+
+339
+00:18:29,640 --> 00:18:35,070
+may involve a 1/2 1/2 here<font color="#CCCCCC"> ok or there</font>
+
+340
+00:18:35,070 --> 00:18:37,590
+may be there may be no<font color="#E5E5E5"> other entries</font>
+
+341
+00:18:37,590 --> 00:18:39,450
+here nonzero entries in place of the
+
+342
+00:18:39,450 --> 00:18:41,850
+<font color="#E5E5E5">zeros this is called soft aggregation</font>
+
+343
+00:18:41,850 --> 00:18:44,700
+provides soft boundaries between the
+
+344
+00:18:44,700 --> 00:18:47,010
+<font color="#CCCCCC">aggregate States and it's a</font><font color="#E5E5E5"> it's</font>
+
+345
+00:18:47,010 --> 00:18:49,830
+<font color="#E5E5E5">something that that's that that that has</font>
+
+346
+00:18:49,830 --> 00:18:52,620
+been<font color="#E5E5E5"> used and I'm just</font><font color="#CCCCCC"> mentioning it</font>
+
+347
+00:18:52,620 --> 00:18:54,990
+<font color="#CCCCCC">just to give</font><font color="#E5E5E5"> you an</font><font color="#CCCCCC"> idea of a variety</font><font color="#E5E5E5"> of</font>
+
+348
+00:18:54,990 --> 00:19:00,950
+possibilities so<font color="#E5E5E5"> that hard aggregation</font>
+
+349
+00:19:00,950 --> 00:19:05,690
+each state belonging to an aggregate
+
+350
+00:19:05,690 --> 00:19:10,860
+state but there's the question<font color="#E5E5E5"> of</font><font color="#CCCCCC"> how do</font>
+
+351
+00:19:10,860 --> 00:19:13,500
+I pick the<font color="#E5E5E5"> boundaries</font><font color="#CCCCCC"> of these</font><font color="#E5E5E5"> states</font>
+
+352
+00:19:13,500 --> 00:19:17,720
+I should be grouping states with similar
+
+353
+00:19:17,720 --> 00:19:21,810
+cost<font color="#E5E5E5"> into aggregates but how do I decide</font>
+
+354
+00:19:21,810 --> 00:19:25,260
+that<font color="#E5E5E5"> states have similar cost well I may</font>
+
+355
+00:19:25,260 --> 00:19:28,200
+have<font color="#E5E5E5"> good features of the states and</font>
+
+356
+00:19:28,200 --> 00:19:30,600
+therefore<font color="#E5E5E5"> I may make the supposition</font>
+
+357
+00:19:30,600 --> 00:19:33,330
+<font color="#E5E5E5">that</font><font color="#CCCCCC"> states with similar features</font>
+
+358
+00:19:33,330 --> 00:19:34,690
+features<font color="#E5E5E5"> have</font>
+
+359
+00:19:34,690 --> 00:19:37,030
+similar costs and should be grouped
+
+360
+00:19:37,030 --> 00:19:40,960
+together<font color="#E5E5E5"> this is called feature based</font>
+
+361
+00:19:40,960 --> 00:19:45,070
+our aggregation<font color="#E5E5E5"> so questions how do we</font>
+
+362
+00:19:45,070 --> 00:19:46,780
+group<font color="#CCCCCC"> States together into aggregate</font>
+
+363
+00:19:46,780 --> 00:19:49,360
+<font color="#CCCCCC">states</font><font color="#E5E5E5"> so if we know good features then</font>
+
+364
+00:19:49,360 --> 00:19:51,790
+it makes sense<font color="#E5E5E5"> to group together states</font>
+
+365
+00:19:51,790 --> 00:19:55,780
+that have<font color="#E5E5E5"> similar features now this</font>
+
+366
+00:19:55,780 --> 00:19:58,510
+involves<font color="#E5E5E5"> a partition that's based on the</font>
+
+367
+00:19:58,510 --> 00:20:00,880
+space<font color="#E5E5E5"> that's</font><font color="#CCCCCC"> based</font><font color="#E5E5E5"> on a partition space</font>
+
+368
+00:20:00,880 --> 00:20:06,700
+of features from<font color="#E5E5E5"> States</font><font color="#CCCCCC"> I get features</font>
+
+369
+00:20:06,700 --> 00:20:09,600
+by a<font color="#CCCCCC"> by</font><font color="#E5E5E5"> a feature extraction mapping</font>
+
+370
+00:20:09,600 --> 00:20:12,820
+suppose that<font color="#E5E5E5"> I discretize the space of</font>
+
+371
+00:20:12,820 --> 00:20:16,060
+feature more<font color="#E5E5E5"> or less evenly and then I</font>
+
+372
+00:20:16,060 --> 00:20:18,750
+<font color="#E5E5E5">consider a partition of the state space</font>
+
+373
+00:20:18,750 --> 00:20:22,090
+<font color="#E5E5E5">according</font><font color="#CCCCCC"> to which States map into which</font>
+
+374
+00:20:22,090 --> 00:20:24,850
+feature<font color="#E5E5E5"> so instead</font><font color="#CCCCCC"> of bothering</font><font color="#E5E5E5"> to</font>
+
+375
+00:20:24,850 --> 00:20:27,010
+discretize<font color="#E5E5E5"> this space here I despise</font>
+
+376
+00:20:27,010 --> 00:20:28,390
+this space here<font color="#CCCCCC"> that may be more</font>
+
+377
+00:20:28,390 --> 00:20:32,500
+convenient each one<font color="#E5E5E5"> of these boxes</font>
+
+378
+00:20:32,500 --> 00:20:34,720
+<font color="#E5E5E5">within the feature space may be mapped</font>
+
+379
+00:20:34,720 --> 00:20:37,600
+into a unique<font color="#E5E5E5"> aggregate state and that</font>
+
+380
+00:20:37,600 --> 00:20:39,760
+induces a partition of the<font color="#E5E5E5"> set of</font>
+
+381
+00:20:39,760 --> 00:20:42,790
+original<font color="#CCCCCC"> States solve an idea that has</font>
+
+382
+00:20:42,790 --> 00:20:44,560
+<font color="#E5E5E5">been used many</font><font color="#CCCCCC"> times it's an idea that</font>
+
+383
+00:20:44,560 --> 00:20:49,300
+<font color="#E5E5E5">makes sense</font><font color="#CCCCCC"> if you have good features so</font>
+
+384
+00:20:49,300 --> 00:20:50,980
+it's a<font color="#E5E5E5"> general approach for passing from</font>
+
+385
+00:20:50,980 --> 00:20:53,380
+a feature based<font color="#CCCCCC"> State</font><font color="#E5E5E5"> representation to</font>
+
+386
+00:20:53,380 --> 00:20:56,670
+a<font color="#CCCCCC"> hard aggregation based representation</font>
+
+387
+00:20:56,670 --> 00:20:59,590
+and essentially we discretize the space
+
+388
+00:20:59,590 --> 00:21:03,280
+of features and<font color="#E5E5E5"> we generate and the</font>
+
+389
+00:21:03,280 --> 00:21:07,030
+aggregate problem involves constant
+
+390
+00:21:07,030 --> 00:21:09,280
+<font color="#E5E5E5">aprox bitwise constant</font><font color="#CCCCCC"> approximation</font>
+
+391
+00:21:09,280 --> 00:21:13,180
+<font color="#CCCCCC">within</font><font color="#E5E5E5"> each</font><font color="#CCCCCC"> one of</font><font color="#E5E5E5"> these boxes states</font>
+
+392
+00:21:13,180 --> 00:21:15,550
+<font color="#E5E5E5">that have similar</font><font color="#CCCCCC"> features in that group</font>
+
+393
+00:21:15,550 --> 00:21:21,790
+together<font color="#CCCCCC"> obtain as the same cost and in</font>
+
+394
+00:21:21,790 --> 00:21:24,850
+the end I have a piecewise constant
+
+395
+00:21:24,850 --> 00:21:27,780
+<font color="#E5E5E5">approximation</font>
+
+396
+00:21:31,470 --> 00:21:34,960
+we discussed earlier<font color="#E5E5E5"> linear feature</font>
+
+397
+00:21:34,960 --> 00:21:37,750
+based approximations<font color="#CCCCCC"> given a set of</font>
+
+398
+00:21:37,750 --> 00:21:40,150
+features<font color="#E5E5E5"> for</font><font color="#CCCCCC"> a steak weigh them linearly</font>
+
+399
+00:21:40,150 --> 00:21:44,680
+with<font color="#E5E5E5"> a weight vector this is not linear</font>
+
+400
+00:21:44,680 --> 00:21:48,040
+this is piecewise constant approximation
+
+401
+00:21:48,040 --> 00:21:52,390
+<font color="#CCCCCC">so it's nonlinear it's a much</font><font color="#E5E5E5"> more</font>
+
+402
+00:21:52,390 --> 00:21:54,550
+<font color="#E5E5E5">powerful architecture potentially than a</font>
+
+403
+00:21:54,550 --> 00:21:56,800
+linear architecture because it is
+
+404
+00:21:56,800 --> 00:21:59,650
+nonlinear in<font color="#E5E5E5"> the features but also it</font>
+
+405
+00:21:59,650 --> 00:22:03,640
+may require a lot of<font color="#E5E5E5"> discretization here</font>
+
+406
+00:22:03,640 --> 00:22:07,870
+<font color="#E5E5E5">and a lot of aggregate</font><font color="#CCCCCC"> states</font><font color="#E5E5E5"> to to</font>
+
+407
+00:22:07,870 --> 00:22:09,760
+reach the same<font color="#CCCCCC"> level of performance as</font>
+
+408
+00:22:09,760 --> 00:22:13,870
+the level<font color="#E5E5E5"> of performance of linear</font>
+
+409
+00:22:13,870 --> 00:22:17,890
+feature based architectures it's a
+
+410
+00:22:17,890 --> 00:22:19,540
+different way to<font color="#CCCCCC"> use features in</font>
+
+411
+00:22:19,540 --> 00:22:22,140
+approximation
+
+412
+00:22:26,410 --> 00:22:29,070
+this is still a hard aggregation method
+
+413
+00:22:29,070 --> 00:22:33,940
+because every state participate<font color="#CCCCCC"> into</font>
+
+414
+00:22:33,940 --> 00:22:37,570
+some aggregate<font color="#E5E5E5"> state now let's look at</font>
+
+415
+00:22:37,570 --> 00:22:39,370
+something<font color="#CCCCCC"> different</font><font color="#E5E5E5"> which also has a</font>
+
+416
+00:22:39,370 --> 00:22:46,360
+long tradition<font color="#E5E5E5"> okay here's the</font><font color="#CCCCCC"> original</font>
+
+417
+00:22:46,360 --> 00:22:48,310
+state space<font color="#E5E5E5"> in fact it could</font><font color="#CCCCCC"> be</font>
+
+418
+00:22:48,310 --> 00:22:52,420
+continuous<font color="#CCCCCC"> has many many states I look</font>
+
+419
+00:22:52,420 --> 00:22:55,480
+at a small subset of states which I call
+
+420
+00:22:55,480 --> 00:23:01,230
+representative this black circles are
+
+421
+00:23:01,230 --> 00:23:05,380
+representative<font color="#E5E5E5"> states and I associate</font>
+
+422
+00:23:05,380 --> 00:23:08,710
+with<font color="#CCCCCC"> each one</font><font color="#E5E5E5"> of</font><font color="#CCCCCC"> these states</font><font color="#E5E5E5"> an</font>
+
+423
+00:23:08,710 --> 00:23:14,520
+aggregate<font color="#E5E5E5"> state the disaggregation</font>
+
+424
+00:23:14,520 --> 00:23:19,060
+probabilities are<font color="#E5E5E5"> 1</font><font color="#CCCCCC"> for 0</font><font color="#E5E5E5"> for the state</font>
+
+425
+00:23:19,060 --> 00:23:20,800
+the original system state that happens
+
+426
+00:23:20,800 --> 00:23:23,740
+to<font color="#E5E5E5"> be also</font><font color="#CCCCCC"> a representative</font><font color="#E5E5E5"> it is</font><font color="#CCCCCC"> 1</font><font color="#E5E5E5"> and</font>
+
+427
+00:23:23,740 --> 00:23:28,510
+all<font color="#CCCCCC"> the</font><font color="#E5E5E5"> others are 0 so so here that's</font>
+
+428
+00:23:28,510 --> 00:23:30,460
+the disaggregation problems are<font color="#CCCCCC"> very</font>
+
+429
+00:23:30,460 --> 00:23:33,790
+simply defined the aggregation
+
+430
+00:23:33,790 --> 00:23:36,070
+probabilities which correspond<font color="#E5E5E5"> to states</font>
+
+431
+00:23:36,070 --> 00:23:39,400
+<font color="#E5E5E5">that are not representative involve some</font>
+
+432
+00:23:39,400 --> 00:23:42,360
+<font color="#CCCCCC">kind of randomization to</font><font color="#E5E5E5"> the</font>
+
+433
+00:23:42,360 --> 00:23:49,810
+representative<font color="#CCCCCC"> States so for every state</font>
+
+434
+00:23:49,810 --> 00:23:53,310
+<font color="#CCCCCC">of</font><font color="#E5E5E5"> the original system there</font><font color="#CCCCCC"> are these</font>
+
+435
+00:23:53,310 --> 00:23:56,950
+probabilities<font color="#E5E5E5"> that relate them the</font>
+
+436
+00:23:56,950 --> 00:24:00,640
+representative<font color="#CCCCCC"> States so for</font><font color="#E5E5E5"> example you</font>
+
+437
+00:24:00,640 --> 00:24:03,340
+might have<font color="#E5E5E5"> a grid discretization of the</font>
+
+438
+00:24:03,340 --> 00:24:05,980
+<font color="#E5E5E5">original space</font><font color="#CCCCCC"> and four points that fall</font>
+
+439
+00:24:05,980 --> 00:24:09,010
+outside<font color="#E5E5E5"> the grid you have a</font>
+
+440
+00:24:09,010 --> 00:24:11,530
+probabilistic mechanism to assign<font color="#E5E5E5"> the</font>
+
+441
+00:24:11,530 --> 00:24:15,570
+<font color="#E5E5E5">two states in the grid</font>
+
+442
+00:24:17,910 --> 00:24:22,380
+the aggregate system works as follows
+
+443
+00:24:22,380 --> 00:24:27,870
+<font color="#E5E5E5">you start at some representative</font><font color="#CCCCCC"> state</font>
+
+444
+00:24:27,870 --> 00:24:32,830
+you generate another state J according
+
+445
+00:24:32,830 --> 00:24:35,830
+<font color="#E5E5E5">to this</font><font color="#CCCCCC"> green</font><font color="#E5E5E5"> arrows according to the</font>
+
+446
+00:24:35,830 --> 00:24:37,780
+<font color="#E5E5E5">probable transition probabilities of the</font>
+
+447
+00:24:37,780 --> 00:24:42,460
+original system<font color="#E5E5E5"> and then you go back</font><font color="#CCCCCC"> to</font>
+
+448
+00:24:42,460 --> 00:24:45,010
+the represented States<font color="#E5E5E5"> by means of this</font>
+
+449
+00:24:45,010 --> 00:24:48,430
+red probabilistic<font color="#E5E5E5"> mechanism so in the</font>
+
+450
+00:24:48,430 --> 00:24:50,770
+end you go from representative state<font color="#E5E5E5"> to</font>
+
+451
+00:24:50,770 --> 00:24:52,420
+representative<font color="#E5E5E5"> state according</font><font color="#CCCCCC"> to this</font>
+
+452
+00:24:52,420 --> 00:24:54,490
+probabilistic<font color="#CCCCCC"> mechanism and that</font><font color="#E5E5E5"> defines</font>
+
+453
+00:24:54,490 --> 00:24:58,420
+the aggregate problem this<font color="#E5E5E5"> is what's</font>
+
+454
+00:24:58,420 --> 00:25:00,940
+used when you discretize<font color="#E5E5E5"> a continuous</font>
+
+455
+00:25:00,940 --> 00:25:02,920
+state space<font color="#CCCCCC"> that's a general way</font><font color="#E5E5E5"> to</font>
+
+456
+00:25:02,920 --> 00:25:05,500
+discretize a continuous state space<font color="#E5E5E5"> you</font>
+
+457
+00:25:05,500 --> 00:25:08,350
+generate a grid and then a mechanism of
+
+458
+00:25:08,350 --> 00:25:11,500
+passing<font color="#E5E5E5"> from the grid to the non grid</font>
+
+459
+00:25:11,500 --> 00:25:16,570
+bigger space<font color="#E5E5E5"> it's very</font><font color="#CCCCCC"> well-suited for</font>
+
+460
+00:25:16,570 --> 00:25:18,310
+discrete<font color="#CCCCCC"> Euclidian space</font><font color="#E5E5E5"> discretization</font>
+
+461
+00:25:18,310 --> 00:25:23,580
+<font color="#CCCCCC">as in</font><font color="#E5E5E5"> control problems for example also</font>
+
+462
+00:25:23,580 --> 00:25:27,190
+substantial area of application<font color="#E5E5E5"> is for</font>
+
+463
+00:25:27,190 --> 00:25:30,190
+<font color="#E5E5E5">palm DP</font><font color="#CCCCCC"> I don't know if you've heard the</font>
+
+464
+00:25:30,190 --> 00:25:37,150
+term from DP from DP but<font color="#E5E5E5"> when DP starts</font>
+
+465
+00:25:37,150 --> 00:25:40,870
+for partially observable Markov<font color="#E5E5E5"> decision</font>
+
+466
+00:25:40,870 --> 00:25:43,930
+problems in partially observable<font color="#E5E5E5"> macro</font>
+
+467
+00:25:43,930 --> 00:25:47,380
+<font color="#CCCCCC">Markov decision problems</font><font color="#E5E5E5"> you do not have</font>
+
+468
+00:25:47,380 --> 00:25:49,660
+exact<font color="#E5E5E5"> knowledge of the state the</font>
+
+469
+00:25:49,660 --> 00:25:52,000
+controller<font color="#E5E5E5"> does not observe the state</font>
+
+470
+00:25:52,000 --> 00:25:55,320
+itself but rather receives measurements
+
+471
+00:25:55,320 --> 00:25:58,900
+<font color="#E5E5E5">about the possible</font><font color="#CCCCCC"> whereabouts of the</font>
+
+472
+00:25:58,900 --> 00:26:03,060
+state and formulates<font color="#E5E5E5"> a belief state</font>
+
+473
+00:26:03,060 --> 00:26:07,680
+which is a probability distribution of
+
+474
+00:26:07,680 --> 00:26:13,210
+<font color="#E5E5E5">the different states of the problem so</font>
+
+475
+00:26:13,210 --> 00:26:16,570
+from one belief state<font color="#CCCCCC"> I receive a</font>
+
+476
+00:26:16,570 --> 00:26:19,269
+measurement<font color="#E5E5E5"> and I moved to another</font>
+
+477
+00:26:19,269 --> 00:26:21,669
+<font color="#CCCCCC">belief state that depends</font><font color="#E5E5E5"> on that</font>
+
+478
+00:26:21,669 --> 00:26:25,269
+measurement<font color="#CCCCCC"> and this defines a</font><font color="#E5E5E5"> mark of</font>
+
+479
+00:26:25,269 --> 00:26:27,909
+<font color="#E5E5E5">decision problem on the space of beliefs</font>
+
+480
+00:26:27,909 --> 00:26:31,690
+<font color="#CCCCCC">a higher dimensional space a</font><font color="#E5E5E5"> continuous</font>
+
+481
+00:26:31,690 --> 00:26:36,489
+state space because beliefs<font color="#E5E5E5"> live into</font>
+
+482
+00:26:36,489 --> 00:26:43,869
+the unit simplex<font color="#CCCCCC"> okay so to solve this</font>
+
+483
+00:26:43,869 --> 00:26:46,570
+<font color="#CCCCCC">prompt DP type problem you have this</font>
+
+484
+00:26:46,570 --> 00:26:48,789
+unit simplex<font color="#E5E5E5"> you</font><font color="#CCCCCC"> introduce a</font>
+
+485
+00:26:48,789 --> 00:26:51,039
+discretization of<font color="#E5E5E5"> the simplex and you</font>
+
+486
+00:26:51,039 --> 00:26:53,169
+define an aggregate transition
+
+487
+00:26:53,169 --> 00:26:55,659
+probability mechanism that<font color="#E5E5E5"> involves just</font>
+
+488
+00:26:55,659 --> 00:27:00,119
+<font color="#E5E5E5">the discrete sub set</font><font color="#CCCCCC"> of beliefs</font>
+
+489
+00:27:00,119 --> 00:27:02,289
+<font color="#E5E5E5">formulate the corresponding Markov</font>
+
+490
+00:27:02,289 --> 00:27:05,349
+<font color="#CCCCCC">decision problem that</font><font color="#E5E5E5"> involves just</font><font color="#CCCCCC"> a</font>
+
+491
+00:27:05,349 --> 00:27:09,849
+finite state Markov chain solve<font color="#E5E5E5"> that in</font>
+
+492
+00:27:09,849 --> 00:27:12,339
+any way you want<font color="#E5E5E5"> even approximately and</font>
+
+493
+00:27:12,339 --> 00:27:14,889
+that gives you by<font color="#E5E5E5"> means of this formula</font>
+
+494
+00:27:14,889 --> 00:27:17,679
+<font color="#CCCCCC">gives you an approximation the solution</font>
+
+495
+00:27:17,679 --> 00:27:23,499
+<font color="#E5E5E5">of the</font><font color="#CCCCCC"> pump DP which is piecewise linear</font>
+
+496
+00:27:23,499 --> 00:27:26,469
+<font color="#E5E5E5">according to this proper list</font><font color="#CCCCCC"> this</font>
+
+497
+00:27:26,469 --> 00:27:29,739
+probabilistic mechanism<font color="#CCCCCC"> I don't want to</font>
+
+498
+00:27:29,739 --> 00:27:31,779
+get into<font color="#CCCCCC"> this but this is typically the</font>
+
+499
+00:27:31,779 --> 00:27:33,759
+kind of discretization<font color="#CCCCCC"> you use</font><font color="#E5E5E5"> for</font>
+
+500
+00:27:33,759 --> 00:27:37,440
+continuous type of state space
+
+501
+00:27:43,560 --> 00:27:46,320
+<font color="#E5E5E5">okay now here's another</font><font color="#CCCCCC"> scheme that sort</font>
+
+502
+00:27:46,320 --> 00:27:48,210
+of contains all the previous one<font color="#E5E5E5"> are</font>
+
+503
+00:27:48,210 --> 00:27:52,440
+special cases<font color="#E5E5E5"> instead of having the</font>
+
+504
+00:27:52,440 --> 00:27:55,740
+representative<font color="#CCCCCC"> states I have a</font>
+
+505
+00:27:55,740 --> 00:27:59,910
+representative subsets<font color="#CCCCCC"> so an aggregate</font>
+
+506
+00:27:59,910 --> 00:28:02,910
+state<font color="#CCCCCC"> having a state one</font><font color="#E5E5E5"> is associated</font>
+
+507
+00:28:02,910 --> 00:28:05,610
+with a subset of states<font color="#CCCCCC"> idea state two</font>
+
+508
+00:28:05,610 --> 00:28:07,710
+is associate<font color="#E5E5E5"> another subset of states</font><font color="#CCCCCC"> I</font>
+
+509
+00:28:07,710 --> 00:28:09,500
+have all<font color="#E5E5E5"> the subsets</font>
+
+510
+00:28:09,500 --> 00:28:12,720
+however the subset may involve<font color="#CCCCCC"> more than</font>
+
+511
+00:28:12,720 --> 00:28:16,680
+<font color="#E5E5E5">one state and they need not cover the</font>
+
+512
+00:28:16,680 --> 00:28:24,480
+entire space<font color="#CCCCCC"> to give you an example with</font>
+
+513
+00:28:24,480 --> 00:28:27,660
+aggregate<font color="#E5E5E5"> state X I may associate a</font>
+
+514
+00:28:27,660 --> 00:28:29,640
+group of states that<font color="#CCCCCC"> has similar</font>
+
+515
+00:28:29,640 --> 00:28:33,540
+<font color="#E5E5E5">features but some states that do not</font><font color="#CCCCCC"> are</font>
+
+516
+00:28:33,540 --> 00:28:37,050
+<font color="#CCCCCC">not</font><font color="#E5E5E5"> clearly identified with any one</font><font color="#CCCCCC"> of</font>
+
+517
+00:28:37,050 --> 00:28:39,630
+the set of features that<font color="#E5E5E5"> define this</font>
+
+518
+00:28:39,630 --> 00:28:44,580
+this set are sort<font color="#E5E5E5"> of left</font><font color="#CCCCCC"> outside of the</font>
+
+519
+00:28:44,580 --> 00:28:50,670
+active<font color="#E5E5E5"> States so in this scheme I start</font>
+
+520
+00:28:50,670 --> 00:28:53,400
+out<font color="#E5E5E5"> with some</font><font color="#CCCCCC"> aggregate state I</font>
+
+521
+00:28:53,400 --> 00:28:56,220
+<font color="#CCCCCC">randomize within here obtain</font><font color="#E5E5E5"> the</font>
+
+522
+00:28:56,220 --> 00:28:58,500
+transition probabilities to go to<font color="#E5E5E5"> other</font>
+
+523
+00:28:58,500 --> 00:29:01,830
+states<font color="#E5E5E5"> and then from there I go to</font>
+
+524
+00:29:01,830 --> 00:29:04,230
+aggregate<font color="#E5E5E5"> States according to the</font><font color="#CCCCCC"> three</font>
+
+525
+00:29:04,230 --> 00:29:10,080
+probabilities there are some<font color="#E5E5E5"> researchers</font>
+
+526
+00:29:10,080 --> 00:29:13,730
+with<font color="#E5E5E5"> the scheme the aggregate states</font>
+
+527
+00:29:13,730 --> 00:29:19,230
+this subset should be disjoint the
+
+528
+00:29:19,230 --> 00:29:21,120
+disaggregation probabilities are
+
+529
+00:29:21,120 --> 00:29:25,830
+positive only<font color="#CCCCCC"> within here but zero</font>
+
+530
+00:29:25,830 --> 00:29:29,880
+<font color="#CCCCCC">outside</font><font color="#E5E5E5"> and the aggregation</font>
+
+531
+00:29:29,880 --> 00:29:33,060
+probabilities we will hear are equal to
+
+532
+00:29:33,060 --> 00:29:37,230
+one so if you<font color="#CCCCCC"> end</font><font color="#E5E5E5"> up with a state J in</font>
+
+533
+00:29:37,230 --> 00:29:44,160
+here you stay in here hard aggregation
+
+534
+00:29:44,160 --> 00:29:47,310
+is the special<font color="#E5E5E5"> case where these sets</font>
+
+535
+00:29:47,310 --> 00:29:50,700
+<font color="#E5E5E5">cover the entire space aggregation we</font>
+
+536
+00:29:50,700 --> 00:29:51,750
+represent
+
+537
+00:29:51,750 --> 00:29:56,850
+<font color="#E5E5E5">is a special case where these aggregate</font>
+
+538
+00:29:56,850 --> 00:30:00,090
+states<font color="#CCCCCC"> consist</font><font color="#E5E5E5"> of a single element</font><font color="#CCCCCC"> so</font>
+
+539
+00:30:00,090 --> 00:30:02,460
+<font color="#E5E5E5">more general scheme in quite generally</font>
+
+540
+00:30:02,460 --> 00:30:11,750
+applicable any questions so far
+
+541
+00:30:11,750 --> 00:30:16,140
+<font color="#CCCCCC">about how we formulate these aggregate</font>
+
+542
+00:30:16,140 --> 00:30:18,030
+problems<font color="#E5E5E5"> and the different types of</font>
+
+543
+00:30:18,030 --> 00:30:21,680
+aggregations that we can use
+
+544
+00:30:31,250 --> 00:30:34,730
+okay so now assume that<font color="#CCCCCC"> we have</font>
+
+545
+00:30:34,730 --> 00:30:37,039
+formulate an aggregate problem<font color="#E5E5E5"> we can</font>
+
+546
+00:30:37,039 --> 00:30:39,919
+try to<font color="#E5E5E5"> do value</font><font color="#CCCCCC"> iteration</font><font color="#E5E5E5"> policy</font>
+
+547
+00:30:39,919 --> 00:30:42,440
+duration or approximate<font color="#E5E5E5"> versions of</font>
+
+548
+00:30:42,440 --> 00:30:45,740
+those<font color="#E5E5E5"> let's focus on approximate policy</font>
+
+549
+00:30:45,740 --> 00:30:49,549
+duration we define which we are the
+
+550
+00:30:49,549 --> 00:30:51,559
+typical iteration we have a policy<font color="#CCCCCC"> that</font>
+
+551
+00:30:51,559 --> 00:30:59,179
+map states<font color="#E5E5E5"> X into controls and we solve</font>
+
+552
+00:30:59,179 --> 00:31:01,960
+the corresponding<font color="#E5E5E5"> aggregation equation</font>
+
+553
+00:31:01,960 --> 00:31:05,480
+<font color="#CCCCCC">associated with that policy</font><font color="#E5E5E5"> this is this</font>
+
+554
+00:31:05,480 --> 00:31:09,169
+equation<font color="#E5E5E5"> here</font><font color="#CCCCCC"> R is a fixed point</font><font color="#E5E5E5"> of this</font>
+
+555
+00:31:09,169 --> 00:31:12,370
+equation here these the matrix like<font color="#CCCCCC"> this</font>
+
+556
+00:31:12,370 --> 00:31:15,169
+<font color="#E5E5E5">team U is the mapping</font><font color="#CCCCCC"> that is</font>
+
+557
+00:31:15,169 --> 00:31:20,539
+<font color="#E5E5E5">high-dimensional</font><font color="#CCCCCC"> y is the matrix its</font>
+
+558
+00:31:20,539 --> 00:31:22,880
+allegation matrix<font color="#E5E5E5"> and R is the vector of</font>
+
+559
+00:31:22,880 --> 00:31:25,159
+<font color="#E5E5E5">course of the aggregate</font><font color="#CCCCCC"> States for</font><font color="#E5E5E5"> MU</font>
+
+560
+00:31:25,159 --> 00:31:27,890
+and<font color="#CCCCCC"> then we</font><font color="#E5E5E5"> evaluate the policy</font>
+
+561
+00:31:27,890 --> 00:31:31,880
+according<font color="#E5E5E5"> to this equation and this can</font>
+
+562
+00:31:31,880 --> 00:31:34,520
+be<font color="#E5E5E5"> done by simulation if you can do</font>
+
+563
+00:31:34,520 --> 00:31:37,220
+simulation of<font color="#E5E5E5"> the original system you</font>
+
+564
+00:31:37,220 --> 00:31:39,020
+can also do simulation of the aggregate
+
+565
+00:31:39,020 --> 00:31:41,090
+system<font color="#E5E5E5"> you just use the aggregation</font>
+
+566
+00:31:41,090 --> 00:31:43,340
+probabilities to map to<font color="#E5E5E5"> happen to go up</font>
+
+567
+00:31:43,340 --> 00:31:45,530
+this way use the simulator<font color="#E5E5E5"> of the</font>
+
+568
+00:31:45,530 --> 00:31:47,750
+original system<font color="#E5E5E5"> to go to J and then use</font>
+
+569
+00:31:47,750 --> 00:31:49,039
+the disagree the aggregation
+
+570
+00:31:49,039 --> 00:31:52,000
+probabilities to go to Y back into<font color="#CCCCCC"> AI</font>
+
+571
+00:31:52,000 --> 00:31:55,730
+<font color="#E5E5E5">across down and so on the simulator is</font>
+
+572
+00:31:55,730 --> 00:31:59,659
+very easy<font color="#E5E5E5"> to implement</font><font color="#CCCCCC"> what you once you</font>
+
+573
+00:31:59,659 --> 00:32:01,250
+have<font color="#CCCCCC"> a</font><font color="#E5E5E5"> simulator of the original system</font>
+
+574
+00:32:01,250 --> 00:32:05,000
+and there is<font color="#E5E5E5"> there are simulation based</font>
+
+575
+00:32:05,000 --> 00:32:08,690
+versions for now<font color="#E5E5E5"> for for solving this</font>
+
+576
+00:32:08,690 --> 00:32:12,590
+equation in these equations<font color="#CCCCCC"> actually are</font>
+
+577
+00:32:12,590 --> 00:32:15,890
+exact we solve<font color="#E5E5E5"> exactly this problem by</font>
+
+578
+00:32:15,890 --> 00:32:17,059
+simulation<font color="#E5E5E5"> there is no approximation</font>
+
+579
+00:32:17,059 --> 00:32:20,020
+<font color="#E5E5E5">involved</font>
+
+580
+00:32:21,840 --> 00:32:26,580
+now look at this<font color="#E5E5E5"> equation here it looks</font>
+
+581
+00:32:26,580 --> 00:32:29,430
+also like<font color="#CCCCCC"> a projected equation the</font>
+
+582
+00:32:29,430 --> 00:32:34,070
+projected equation has this form so if
+
+583
+00:32:34,070 --> 00:32:40,430
+<font color="#E5E5E5">PR is equal</font><font color="#CCCCCC"> to feed the tip</font><font color="#E5E5E5"> new PR</font><font color="#CCCCCC"> and</font>
+
+584
+00:32:40,430 --> 00:32:46,230
+<font color="#E5E5E5">5d</font><font color="#CCCCCC"> is a projection</font><font color="#E5E5E5"> then I also have a</font>
+
+585
+00:32:46,230 --> 00:32:50,180
+projected equation<font color="#E5E5E5"> type of approximation</font>
+
+586
+00:32:51,110 --> 00:32:53,640
+<font color="#E5E5E5">so it looks like the project an equation</font>
+
+587
+00:32:53,640 --> 00:32:56,190
+approach but it has the advantage there
+
+588
+00:32:56,190 --> 00:32:57,950
+<font color="#E5E5E5">is no problem with oscillations</font>
+
+589
+00:32:57,950 --> 00:33:00,000
+why is there no problem with
+
+590
+00:33:00,000 --> 00:33:03,630
+oscillations because<font color="#E5E5E5"> I'm applying policy</font>
+
+591
+00:33:03,630 --> 00:33:06,030
+<font color="#CCCCCC">Direction</font><font color="#E5E5E5"> exactly with no approximations</font>
+
+592
+00:33:06,030 --> 00:33:08,730
+<font color="#E5E5E5">to this smaller problem and I know that</font>
+
+593
+00:33:08,730 --> 00:33:10,590
+<font color="#E5E5E5">this converges in a finite number of</font>
+
+594
+00:33:10,590 --> 00:33:16,950
+<font color="#E5E5E5">steps a relative to the projected</font>
+
+595
+00:33:16,950 --> 00:33:18,840
+equation<font color="#E5E5E5"> approach there's a disadvantage</font>
+
+596
+00:33:18,840 --> 00:33:22,290
+in that<font color="#E5E5E5"> there is</font><font color="#CCCCCC"> a restriction for Phi</font>
+
+597
+00:33:22,290 --> 00:33:24,450
+and<font color="#E5E5E5"> for D to be probability distribution</font>
+
+598
+00:33:24,450 --> 00:33:30,030
+<font color="#CCCCCC">I cannot</font><font color="#E5E5E5"> use arbitrary features they</font>
+
+599
+00:33:30,030 --> 00:33:32,010
+have<font color="#CCCCCC"> to have they have to be defined</font><font color="#E5E5E5"> by</font>
+
+600
+00:33:32,010 --> 00:33:35,180
+probability<font color="#E5E5E5"> distributions and</font><font color="#CCCCCC"> that is</font>
+
+601
+00:33:35,180 --> 00:33:39,470
+this significant resection
+
+602
+00:33:44,200 --> 00:33:47,650
+so this approximate policy<font color="#CCCCCC"> direction</font>
+
+603
+00:33:47,650 --> 00:33:50,860
+there is also an approximate value
+
+604
+00:33:50,860 --> 00:33:54,460
+iteration<font color="#CCCCCC"> method associated with</font><font color="#E5E5E5"> this</font>
+
+605
+00:33:54,460 --> 00:33:58,730
+with this<font color="#CCCCCC"> aggregation</font><font color="#E5E5E5"> and it is exact</font>
+
+606
+00:33:58,730 --> 00:34:01,460
+value iteration<font color="#E5E5E5"> for the approximate</font>
+
+607
+00:34:01,460 --> 00:34:06,080
+problem followed<font color="#E5E5E5"> by this feature based</font>
+
+608
+00:34:06,080 --> 00:34:08,270
+weighting that gives you an
+
+609
+00:34:08,270 --> 00:34:11,890
+<font color="#E5E5E5">approximation to the</font><font color="#CCCCCC"> original problem</font>
+
+610
+00:34:15,100 --> 00:34:17,409
+now there are some issues associated
+
+611
+00:34:17,409 --> 00:34:24,580
+with with this procedure and there are
+
+612
+00:34:24,580 --> 00:34:26,710
+too<font color="#E5E5E5"> many for</font><font color="#CCCCCC"> me to</font><font color="#E5E5E5"> cover what I'd like</font>
+
+613
+00:34:26,710 --> 00:34:30,520
+<font color="#E5E5E5">to do is cover them selectively in the</font>
+
+614
+00:34:30,520 --> 00:34:33,639
+last part<font color="#E5E5E5"> of this lecture</font><font color="#CCCCCC"> so let's take</font>
+
+615
+00:34:33,639 --> 00:34:37,120
+a break<font color="#E5E5E5"> now</font><font color="#CCCCCC"> and come</font><font color="#E5E5E5"> back and discuss</font>
+
+616
+00:34:37,120 --> 00:34:49,239
+these have<font color="#E5E5E5"> any questions yes</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so the</font>
+
+617
+00:34:49,239 --> 00:34:55,389
+<font color="#E5E5E5">question is does aggregation help with</font>
+
+618
+00:34:55,389 --> 00:34:59,650
+the issue of exploration<font color="#E5E5E5"> and the answer</font>
+
+619
+00:34:59,650 --> 00:35:03,690
+is yes<font color="#E5E5E5"> it is</font><font color="#CCCCCC"> much easier to implement</font>
+
+620
+00:35:03,690 --> 00:35:06,700
+<font color="#CCCCCC">exploration in a</font><font color="#E5E5E5"> simulation based</font>
+
+621
+00:35:06,700 --> 00:35:09,510
+contact context within this setting
+
+622
+00:35:09,510 --> 00:35:12,910
+<font color="#E5E5E5">because you simply choose you choose a</font>
+
+623
+00:35:12,910 --> 00:35:15,010
+sampling scheme that involves
+
+624
+00:35:15,010 --> 00:35:16,780
+exploration adequate exploration of
+
+625
+00:35:16,780 --> 00:35:18,970
+these states here<font color="#E5E5E5"> that's much</font><font color="#CCCCCC"> easier to</font>
+
+626
+00:35:18,970 --> 00:35:19,360
+do
+
+627
+00:35:19,360 --> 00:35:21,490
+for<font color="#E5E5E5"> example they don't have to be</font>
+
+628
+00:35:21,490 --> 00:35:24,190
+<font color="#E5E5E5">generated by a</font><font color="#CCCCCC"> single trajectory</font><font color="#E5E5E5"> they</font>
+
+629
+00:35:24,190 --> 00:35:27,430
+can be generated by just collecting a
+
+630
+00:35:27,430 --> 00:35:30,490
+set of sample<font color="#CCCCCC"> States</font><font color="#E5E5E5"> aggregate States</font>
+
+631
+00:35:30,490 --> 00:35:33,220
+<font color="#E5E5E5">and using that in one step transitions</font>
+
+632
+00:35:33,220 --> 00:35:39,360
+<font color="#E5E5E5">this will work and it</font><font color="#CCCCCC"> will</font><font color="#E5E5E5"> any</font><font color="#CCCCCC"> pool and</font>
+
+633
+00:35:39,360 --> 00:35:42,100
+and it will<font color="#E5E5E5"> have absolutely no problem</font>
+
+634
+00:35:42,100 --> 00:35:45,580
+with<font color="#CCCCCC"> exploration</font><font color="#E5E5E5"> so yes it's not only</font>
+
+635
+00:35:45,580 --> 00:35:47,560
+easier to<font color="#E5E5E5"> deal with oscillations</font><font color="#CCCCCC"> within</font>
+
+636
+00:35:47,560 --> 00:35:49,600
+this context<font color="#E5E5E5"> but also exploration is an</font>
+
+637
+00:35:49,600 --> 00:35:53,340
+additional<font color="#CCCCCC"> area</font><font color="#E5E5E5"> where you get a benefit</font>
+
+638
+00:35:53,340 --> 00:35:56,020
+but<font color="#E5E5E5"> the disadvantage</font><font color="#CCCCCC"> of course is</font><font color="#E5E5E5"> that</font>
+
+639
+00:35:56,020 --> 00:36:00,360
+is this<font color="#E5E5E5"> restriction that's</font>
+
+640
+00:36:02,730 --> 00:36:05,040
+<font color="#E5E5E5">okay so let's take a break and get back</font>
+
+641
+00:36:05,040 --> 00:00:00,000
+in about<font color="#E5E5E5"> ten minutes</font>
+

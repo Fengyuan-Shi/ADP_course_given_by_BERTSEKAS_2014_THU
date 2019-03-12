@@ -1,0 +1,2152 @@
+1
+00:00:00,829 --> 00:00:10,590
+<font color="#E5E5E5">for for exact dynamic programming</font><font color="#CCCCCC"> this</font>
+
+2
+00:00:10,590 --> 00:00:12,870
+<font color="#CCCCCC">is a subject relating to</font><font color="#E5E5E5"> the</font>
+
+3
+00:00:12,870 --> 00:00:14,990
+implementation<font color="#E5E5E5"> of</font><font color="#CCCCCC"> the various algorithms</font>
+
+4
+00:00:14,990 --> 00:00:17,580
+such as value duration<font color="#E5E5E5"> in policy</font>
+
+5
+00:00:17,580 --> 00:00:20,550
+<font color="#CCCCCC">duration there's a lot</font><font color="#E5E5E5"> of interest these</font>
+
+6
+00:00:20,550 --> 00:00:22,949
+<font color="#E5E5E5">days on a synchronous algorithms not</font>
+
+7
+00:00:22,949 --> 00:00:24,720
+only within the context of dynamic
+
+8
+00:00:24,720 --> 00:00:27,000
+programming but in the context of of
+
+9
+00:00:27,000 --> 00:00:30,570
+other optimization algorithms convex
+
+10
+00:00:30,570 --> 00:00:34,079
+optimization so<font color="#CCCCCC"> on now what we mean by</font>
+
+11
+00:00:34,079 --> 00:00:35,610
+<font color="#E5E5E5">in a synchronous algorithm to give you</font>
+
+12
+00:00:35,610 --> 00:00:38,640
+an example<font color="#E5E5E5"> in value iteration what we</font>
+
+13
+00:00:38,640 --> 00:00:43,050
+have is<font color="#E5E5E5"> safe iterate function cost</font>
+
+14
+00:00:43,050 --> 00:00:45,989
+function and then we go at state<font color="#CCCCCC"> one</font><font color="#E5E5E5"> and</font>
+
+15
+00:00:45,989 --> 00:00:50,489
+calculate a new function then at state
+
+16
+00:00:50,489 --> 00:00:52,379
+two and<font color="#CCCCCC"> so on and we do it</font>
+
+17
+00:00:52,379 --> 00:00:56,579
+<font color="#E5E5E5">simultaneously for all states so we</font>
+
+18
+00:00:56,579 --> 00:01:00,809
+produce a vector<font color="#E5E5E5"> JK plus 1 by updating</font>
+
+19
+00:01:00,809 --> 00:01:04,709
+<font color="#E5E5E5">its components simultaneously given all</font>
+
+20
+00:01:04,709 --> 00:01:08,189
+the components of JK<font color="#CCCCCC"> an asynchronous</font>
+
+21
+00:01:08,189 --> 00:01:10,710
+<font color="#E5E5E5">algorithm is one that picks some</font>
+
+22
+00:01:10,710 --> 00:01:12,900
+component let's say component<font color="#E5E5E5"> 5 and</font>
+
+23
+00:01:12,900 --> 00:01:15,420
+that's a value<font color="#E5E5E5"> iteration on that and</font>
+
+24
+00:01:15,420 --> 00:01:18,439
+then<font color="#CCCCCC"> at another</font><font color="#E5E5E5"> iteration picks</font>
+
+25
+00:01:18,439 --> 00:01:21,299
+<font color="#E5E5E5">component 10 at another iteration</font><font color="#CCCCCC"> it</font>
+
+26
+00:01:21,299 --> 00:01:25,320
+picks component 3 7 and<font color="#CCCCCC"> 15 and does a</font>
+
+27
+00:01:25,320 --> 00:01:27,810
+value iteration on that not only<font color="#E5E5E5"> that</font>
+
+28
+00:01:27,810 --> 00:01:30,479
+the values<font color="#CCCCCC"> that we use to make the Z</font>
+
+29
+00:01:30,479 --> 00:01:33,210
+directions may not be<font color="#CCCCCC"> up-to-date</font><font color="#E5E5E5"> because</font>
+
+30
+00:01:33,210 --> 00:01:35,670
+<font color="#E5E5E5">they may be</font><font color="#CCCCCC"> outdated because these</font>
+
+31
+00:01:35,670 --> 00:01:37,610
+iterations may be done at different
+
+32
+00:01:37,610 --> 00:01:39,900
+<font color="#E5E5E5">processors and different computers and</font>
+
+33
+00:01:39,900 --> 00:01:42,240
+these computers may be having
+
+34
+00:01:42,240 --> 00:01:44,700
+out-of-date information about the
+
+35
+00:01:44,700 --> 00:01:47,310
+computations<font color="#E5E5E5"> of other computers the</font>
+
+36
+00:01:47,310 --> 00:01:49,850
+computers may be out<font color="#CCCCCC"> of</font><font color="#E5E5E5"> sync</font>
+
+37
+00:01:49,850 --> 00:01:52,799
+also in the context of so we have
+
+38
+00:01:52,799 --> 00:01:55,380
+distributed distributed computations
+
+39
+00:01:55,380 --> 00:01:58,380
+<font color="#CCCCCC">setting involving many computers</font><font color="#E5E5E5"> that</font>
+
+40
+00:01:58,380 --> 00:02:01,020
+exchange information but information is
+
+41
+00:02:01,020 --> 00:02:03,329
+<font color="#E5E5E5">out of date</font><font color="#CCCCCC"> and they not be may not be</font>
+
+42
+00:02:03,329 --> 00:02:06,180
+synchronized in their iterations<font color="#E5E5E5"> we also</font>
+
+43
+00:02:06,180 --> 00:02:10,348
+have a simulation context<font color="#E5E5E5"> whereby the</font>
+
+44
+00:02:10,348 --> 00:02:13,050
+components on which we do value<font color="#CCCCCC"> duration</font>
+
+45
+00:02:13,050 --> 00:02:16,470
+may depend on<font color="#CCCCCC"> a simulation trajectory</font><font color="#E5E5E5"> we</font>
+
+46
+00:02:16,470 --> 00:02:19,290
+let the system run<font color="#E5E5E5"> we encounter state</font><font color="#CCCCCC"> v</font>
+
+47
+00:02:19,290 --> 00:02:22,230
+we do a value direction on that<font color="#E5E5E5"> then</font><font color="#CCCCCC"> we</font>
+
+48
+00:02:22,230 --> 00:02:25,080
+move and encounter<font color="#E5E5E5"> state</font><font color="#CCCCCC"> seven we do a</font>
+
+49
+00:02:25,080 --> 00:02:29,100
+value direction on that<font color="#E5E5E5"> so the the</font>
+
+50
+00:02:29,100 --> 00:02:32,730
+sequence of components that<font color="#CCCCCC"> we update</font><font color="#E5E5E5"> is</font>
+
+51
+00:02:32,730 --> 00:02:35,040
+determined randomly by a simulation
+
+52
+00:02:35,040 --> 00:02:38,220
+trajectory and that<font color="#CCCCCC"> from that context is</font>
+
+53
+00:02:38,220 --> 00:02:42,030
+<font color="#CCCCCC">very common in in approximate dynamic</font>
+
+54
+00:02:42,030 --> 00:02:44,580
+programming<font color="#E5E5E5"> well we often use simulation</font>
+
+55
+00:02:44,580 --> 00:02:47,400
+<font color="#E5E5E5">very often the algorithms in approximate</font>
+
+56
+00:02:47,400 --> 00:02:49,740
+dynamic programming<font color="#E5E5E5"> are are synchronous</font>
+
+57
+00:02:49,740 --> 00:02:52,560
+because<font color="#E5E5E5"> okay we can't do them for all at</font>
+
+58
+00:02:52,560 --> 00:02:54,780
+the same<font color="#E5E5E5"> time</font><font color="#CCCCCC"> we have do some coop some</font>
+
+59
+00:02:54,780 --> 00:02:56,910
+<font color="#E5E5E5">states but not for others and</font><font color="#CCCCCC"> that's the</font>
+
+60
+00:02:56,910 --> 00:03:01,800
+way the setting is okay so the bottom
+
+61
+00:03:01,800 --> 00:03:05,220
+<font color="#CCCCCC">line is that value direction and policy</font>
+
+62
+00:03:05,220 --> 00:03:09,930
+duration<font color="#E5E5E5"> surprisingly work no matter how</font>
+
+63
+00:03:09,930 --> 00:03:13,080
+chaotically<font color="#CCCCCC"> you implement them turns out</font>
+
+64
+00:03:13,080 --> 00:03:15,000
+that<font color="#E5E5E5"> they are valid under</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> most</font>
+
+65
+00:03:15,000 --> 00:03:18,630
+difficult of circumstances<font color="#CCCCCC"> and this is</font>
+
+66
+00:03:18,630 --> 00:03:21,720
+due primarily to the contraction
+
+67
+00:03:21,720 --> 00:03:23,640
+property that's involved in<font color="#CCCCCC"> there and</font>
+
+68
+00:03:23,640 --> 00:03:25,860
+<font color="#E5E5E5">also more fundamentally the monotonicity</font>
+
+69
+00:03:25,860 --> 00:03:28,280
+property involved in dynamic programming
+
+70
+00:03:28,280 --> 00:03:32,220
+<font color="#CCCCCC">now so that's the</font><font color="#E5E5E5"> bottom</font><font color="#CCCCCC"> line</font><font color="#E5E5E5"> so let's</font>
+
+71
+00:03:32,220 --> 00:03:34,040
+go one<font color="#CCCCCC"> step at a time</font>
+
+72
+00:03:34,040 --> 00:03:36,930
+here's a general<font color="#CCCCCC"> framework</font><font color="#E5E5E5"> we</font><font color="#CCCCCC"> have a</font>
+
+73
+00:03:36,930 --> 00:03:40,680
+state space X<font color="#E5E5E5"> and we partition it in</font>
+
+74
+00:03:40,680 --> 00:03:45,030
+subsets<font color="#CCCCCC"> x1 up to X</font><font color="#E5E5E5"> M and we use a</font>
+
+75
+00:03:45,030 --> 00:03:49,130
+separate processor<font color="#CCCCCC"> L to update the</font>
+
+76
+00:03:49,130 --> 00:03:53,850
+components that<font color="#E5E5E5"> are</font><font color="#CCCCCC"> in the elf</font><font color="#E5E5E5"> set</font><font color="#CCCCCC"> as</font><font color="#E5E5E5"> a</font>
+
+77
+00:03:53,850 --> 00:03:57,150
+special case<font color="#E5E5E5"> these sets in the partition</font>
+
+78
+00:03:57,150 --> 00:03:59,970
+<font color="#E5E5E5">may consist of a single state so you may</font>
+
+79
+00:03:59,970 --> 00:04:01,980
+have<font color="#E5E5E5"> one processor for each different</font>
+
+80
+00:04:01,980 --> 00:04:06,239
+<font color="#E5E5E5">state unless partition functions of</font>
+
+81
+00:04:06,239 --> 00:04:11,850
+course<font color="#E5E5E5"> J cost functions J conformally so</font>
+
+82
+00:04:11,850 --> 00:04:15,720
+J<font color="#E5E5E5"> is the component J</font><font color="#CCCCCC"> 1 is a component of</font>
+
+83
+00:04:15,720 --> 00:04:20,130
+J that corresponds to X 1 and so<font color="#CCCCCC"> on so</font>
+
+84
+00:04:20,130 --> 00:04:23,550
+if<font color="#E5E5E5"> X 1 consists of</font><font color="#CCCCCC"> states 1 2 and 3</font><font color="#E5E5E5"> J 1</font>
+
+85
+00:04:23,550 --> 00:04:26,310
+is<font color="#CCCCCC"> J's of 1 J of 2 and J's of 3</font>
+
+86
+00:04:26,310 --> 00:04:30,510
+and so on<font color="#E5E5E5"> and Jael is the restriction of</font>
+
+87
+00:04:30,510 --> 00:04:34,470
+<font color="#CCCCCC">Jay on the</font><font color="#E5E5E5"> set on V on the subset of the</font>
+
+88
+00:04:34,470 --> 00:04:39,210
+state space now the synchronous version
+
+89
+00:04:39,210 --> 00:04:43,770
+of value iteration<font color="#E5E5E5"> has this form now T</font>
+
+90
+00:04:43,770 --> 00:04:46,620
+here is time okay
+
+91
+00:04:46,620 --> 00:04:48,600
+<font color="#E5E5E5">and there's a reason why</font><font color="#CCCCCC"> we use a</font>
+
+92
+00:04:48,600 --> 00:04:51,740
+different<font color="#E5E5E5"> notation here</font>
+
+93
+00:04:51,740 --> 00:04:56,450
+the elf<font color="#E5E5E5"> component at time T plus 1</font><font color="#CCCCCC"> is</font>
+
+94
+00:04:56,450 --> 00:04:59,640
+updated<font color="#CCCCCC"> by using all the components at</font>
+
+95
+00:04:59,640 --> 00:05:08,640
+time L at time at time T and and and we
+
+96
+00:05:08,640 --> 00:05:11,400
+apply and we take the component of T at
+
+97
+00:05:11,400 --> 00:05:14,669
+attacks<font color="#E5E5E5"> X belongs to X L so this is a</font>
+
+98
+00:05:14,669 --> 00:05:17,370
+parallel<font color="#CCCCCC"> version of the value iteration</font>
+
+99
+00:05:17,370 --> 00:05:21,090
+algorithm except that<font color="#E5E5E5"> all the components</font>
+
+100
+00:05:21,090 --> 00:05:24,330
+are updated simultaneously<font color="#CCCCCC"> so it's a</font>
+
+101
+00:05:24,330 --> 00:05:27,270
+synchronous implementation<font color="#CCCCCC"> and a</font>
+
+102
+00:05:27,270 --> 00:05:31,680
+<font color="#CCCCCC">synchronous algorithm updates only some</font>
+
+103
+00:05:31,680 --> 00:05:35,729
+of<font color="#E5E5E5"> the components and also uses values</font>
+
+104
+00:05:35,729 --> 00:05:40,440
+of components that<font color="#CCCCCC"> were way back</font><font color="#E5E5E5"> so here</font>
+
+105
+00:05:40,440 --> 00:05:43,919
+in this a synchronous iteration<font color="#E5E5E5"> I update</font>
+
+106
+00:05:43,919 --> 00:05:48,660
+the component<font color="#CCCCCC"> l only</font><font color="#E5E5E5"> 40 only</font><font color="#CCCCCC"> four</font><font color="#E5E5E5"> times</font>
+
+107
+00:05:48,660 --> 00:05:52,289
+in a special subset for other<font color="#CCCCCC"> four other</font>
+
+108
+00:05:52,289 --> 00:05:55,710
+components<font color="#CCCCCC"> four components for if</font><font color="#E5E5E5"> L does</font>
+
+109
+00:05:55,710 --> 00:05:57,810
+not belong<font color="#E5E5E5"> to this</font><font color="#CCCCCC"> T does not</font><font color="#E5E5E5"> belong to</font>
+
+110
+00:05:57,810 --> 00:06:00,780
+<font color="#CCCCCC">the subsets I lived and changed so this</font>
+
+111
+00:06:00,780 --> 00:06:04,919
+allows basically<font color="#CCCCCC"> two so let's say</font>
+
+112
+00:06:04,919 --> 00:06:07,530
+component<font color="#CCCCCC"> one for l equals one component</font>
+
+113
+00:06:07,530 --> 00:06:11,280
+one may be<font color="#E5E5E5"> updated at time</font><font color="#CCCCCC"> 1 5 15 and</font>
+
+114
+00:06:11,280 --> 00:06:16,050
+<font color="#CCCCCC">500 okay and then 5000</font><font color="#E5E5E5"> whatever our</font><font color="#CCCCCC"> l</font>
+
+115
+00:06:16,050 --> 00:06:22,590
+would consist of 1 5 15<font color="#CCCCCC"> 1000 but can't</font>
+
+116
+00:06:22,590 --> 00:06:24,060
+remember<font color="#CCCCCC"> the</font><font color="#E5E5E5"> numbers</font><font color="#CCCCCC"> ok you understand</font>
+
+117
+00:06:24,060 --> 00:06:27,570
+the meaning<font color="#CCCCCC"> so this is the set of times</font>
+
+118
+00:06:27,570 --> 00:06:29,880
+where we have components updated<font color="#E5E5E5"> and</font>
+
+119
+00:06:29,880 --> 00:06:33,060
+there are different times for every
+
+120
+00:06:33,060 --> 00:06:33,900
+component
+
+121
+00:06:33,900 --> 00:06:39,020
+<font color="#E5E5E5">moreover the values that are being you</font>
+
+122
+00:06:39,020 --> 00:06:42,560
+in this<font color="#E5E5E5"> update</font><font color="#CCCCCC"> they are not</font><font color="#E5E5E5"> tea but</font>
+
+123
+00:06:42,560 --> 00:06:47,630
+rather<font color="#E5E5E5"> Assam Tao Tao being perhaps less</font>
+
+124
+00:06:47,630 --> 00:06:52,430
+than<font color="#CCCCCC"> T the difference between current</font>
+
+125
+00:06:52,430 --> 00:06:55,190
+time<font color="#E5E5E5"> and the time when this component</font>
+
+126
+00:06:55,190 --> 00:06:58,340
+was evaluated<font color="#E5E5E5"> is this and can be viewed</font>
+
+127
+00:06:58,340 --> 00:07:01,130
+as a delay<font color="#CCCCCC"> a communication delay between</font>
+
+128
+00:07:01,130 --> 00:07:05,630
+processors so there's a<font color="#E5E5E5"> huge difference</font>
+
+129
+00:07:05,630 --> 00:07:09,110
+between<font color="#E5E5E5"> this all the all the</font><font color="#CCCCCC"> processors</font>
+
+130
+00:07:09,110 --> 00:07:11,150
+have<font color="#CCCCCC"> to wait for its other values to</font>
+
+131
+00:07:11,150 --> 00:07:14,780
+become globally known and then the
+
+132
+00:07:14,780 --> 00:07:16,820
+components can be<font color="#CCCCCC"> updated</font><font color="#E5E5E5"> in lockstep</font>
+
+133
+00:07:16,820 --> 00:07:18,950
+with each other
+
+134
+00:07:18,950 --> 00:07:22,060
+<font color="#E5E5E5">here everything goes chaotically</font>
+
+135
+00:07:22,060 --> 00:07:24,410
+<font color="#E5E5E5">whatever components</font><font color="#CCCCCC"> i have from other</font>
+
+136
+00:07:24,410 --> 00:07:27,130
+processors<font color="#CCCCCC"> i can use them to do my own</font>
+
+137
+00:07:27,130 --> 00:07:30,740
+<font color="#E5E5E5">update if</font><font color="#CCCCCC"> i want okay if i</font><font color="#E5E5E5"> don't feel</font>
+
+138
+00:07:30,740 --> 00:07:32,540
+like<font color="#CCCCCC"> doing an update</font><font color="#E5E5E5"> i don't have to do</font>
+
+139
+00:07:32,540 --> 00:07:39,380
+<font color="#E5E5E5">it okay</font><font color="#CCCCCC"> now a special case of this an</font>
+
+140
+00:07:39,380 --> 00:07:41,420
+important special<font color="#E5E5E5"> case is when you</font>
+
+141
+00:07:41,420 --> 00:07:44,600
+update<font color="#E5E5E5"> one component at a time update</font>
+
+142
+00:07:44,600 --> 00:07:48,190
+want to state<font color="#CCCCCC"> for state 5 now and then</font>
+
+143
+00:07:48,190 --> 00:07:50,270
+get the<font color="#CCCCCC"> results known to other</font>
+
+144
+00:07:50,270 --> 00:07:53,000
+processors and update<font color="#CCCCCC"> estate</font><font color="#E5E5E5"> 7 then a</font>
+
+145
+00:07:53,000 --> 00:07:55,310
+<font color="#CCCCCC">state</font><font color="#E5E5E5"> 1 and so on</font><font color="#CCCCCC"> so only one state at a</font>
+
+146
+00:07:55,310 --> 00:07:59,090
+time<font color="#E5E5E5"> rather than all states at once so</font>
+
+147
+00:07:59,090 --> 00:08:01,160
+we assume<font color="#CCCCCC"> that there are</font><font color="#E5E5E5"> n states a</font>
+
+148
+00:08:01,160 --> 00:08:02,870
+separate process for<font color="#CCCCCC"> each state in no</font>
+
+149
+00:08:02,870 --> 00:08:05,510
+delays and<font color="#E5E5E5"> we generate a sequence of</font>
+
+150
+00:08:05,510 --> 00:08:08,230
+<font color="#CCCCCC">states somehow perhaps</font><font color="#E5E5E5"> by simulation</font>
+
+151
+00:08:08,230 --> 00:08:10,640
+however every state is<font color="#E5E5E5"> supposed to be</font>
+
+152
+00:08:10,640 --> 00:08:13,310
+generated infinitely often and then<font color="#E5E5E5"> a</font>
+
+153
+00:08:13,310 --> 00:08:15,830
+synchronous value<font color="#E5E5E5"> iteration does an</font>
+
+154
+00:08:15,830 --> 00:08:19,520
+update only<font color="#E5E5E5"> for one state the state that</font>
+
+155
+00:08:19,520 --> 00:08:21,710
+happens to<font color="#E5E5E5"> be happens</font><font color="#CCCCCC"> to be generated by</font>
+
+156
+00:08:21,710 --> 00:08:25,580
+this<font color="#CCCCCC"> trajectory a special case where</font><font color="#E5E5E5"> I</font>
+
+157
+00:08:25,580 --> 00:08:28,090
+go<font color="#CCCCCC"> through all</font><font color="#E5E5E5"> the states cyclically</font>
+
+158
+00:08:28,090 --> 00:08:31,970
+first update for 1 then 2 up to<font color="#CCCCCC"> n</font><font color="#E5E5E5"> and</font>
+
+159
+00:08:31,970 --> 00:08:34,099
+then back to<font color="#E5E5E5"> 1 and so</font><font color="#CCCCCC"> on</font><font color="#E5E5E5"> this is</font><font color="#CCCCCC"> a</font>
+
+160
+00:08:34,099 --> 00:08:35,479
+<font color="#CCCCCC">well-known method this</font><font color="#E5E5E5"> is called the</font>
+
+161
+00:08:35,479 --> 00:08:38,559
+Gauss Seidel<font color="#E5E5E5"> version of value iteration</font>
+
+162
+00:08:38,559 --> 00:08:42,110
+<font color="#E5E5E5">and it turns out it's faster than the</font>
+
+163
+00:08:42,110 --> 00:08:45,140
+ordinary<font color="#CCCCCC"> badly duration method okay</font>
+
+164
+00:08:45,140 --> 00:08:47,900
+Gauss Seidel<font color="#E5E5E5"> start with state 1</font><font color="#CCCCCC"> to a</font>
+
+165
+00:08:47,900 --> 00:08:50,690
+value duration use the results<font color="#CCCCCC"> to do a</font>
+
+166
+00:08:50,690 --> 00:08:52,550
+value iteration for state to the
+
+167
+00:08:52,550 --> 00:08:55,340
+and so on that's different than doing<font color="#E5E5E5"> a</font>
+
+168
+00:08:55,340 --> 00:08:57,080
+value iteration<font color="#E5E5E5"> for all states</font>
+
+169
+00:08:57,080 --> 00:09:00,980
+simultaneously<font color="#CCCCCC"> okay</font><font color="#E5E5E5"> so this gives you an</font>
+
+170
+00:09:00,980 --> 00:09:02,510
+<font color="#E5E5E5">idea</font><font color="#CCCCCC"> that perhaps</font><font color="#E5E5E5"> a synchronous</font>
+
+171
+00:09:02,510 --> 00:09:05,420
+iteration not only works<font color="#E5E5E5"> but also it may</font>
+
+172
+00:09:05,420 --> 00:09:08,270
+work faster<font color="#E5E5E5"> and indeed that can be shown</font>
+
+173
+00:09:08,270 --> 00:09:11,300
+in<font color="#E5E5E5"> some</font><font color="#CCCCCC"> lab a convincing way and also</font><font color="#E5E5E5"> in</font>
+
+174
+00:09:11,300 --> 00:09:15,860
+practice<font color="#CCCCCC"> okay now when</font><font color="#E5E5E5"> you have an</font>
+
+175
+00:09:15,860 --> 00:09:20,360
+algorithm<font color="#CCCCCC"> that's so wild like</font><font color="#E5E5E5"> this that</font>
+
+176
+00:09:20,360 --> 00:09:23,060
+it worked<font color="#CCCCCC"> why should it</font><font color="#E5E5E5"> work it turns</font>
+
+177
+00:09:23,060 --> 00:09:26,060
+out<font color="#E5E5E5"> that it does work</font><font color="#CCCCCC"> and there is</font><font color="#E5E5E5"> a</font>
+
+178
+00:09:26,060 --> 00:09:29,600
+<font color="#E5E5E5">theorem that</font><font color="#CCCCCC"> dates back now</font><font color="#E5E5E5"> to I don't</font>
+
+179
+00:09:29,600 --> 00:09:34,880
+<font color="#CCCCCC">know</font><font color="#E5E5E5"> maybe 30</font><font color="#CCCCCC"> years which gives you a</font>
+
+180
+00:09:34,880 --> 00:09:37,040
+pretty good<font color="#E5E5E5"> idea why what makes</font><font color="#CCCCCC"> the such</font>
+
+181
+00:09:37,040 --> 00:09:46,610
+algorithms work the bottom<font color="#E5E5E5"> like as I</font>
+
+182
+00:09:46,610 --> 00:09:48,500
+<font color="#E5E5E5">said is that value iteration and also</font>
+
+183
+00:09:48,500 --> 00:09:50,540
+<font color="#E5E5E5">policy duration still work on</font>
+
+184
+00:09:50,540 --> 00:09:52,190
+<font color="#CCCCCC">implemented synchronous by the way what</font>
+
+185
+00:09:52,190 --> 00:09:53,630
+<font color="#E5E5E5">would be an a synchronous version of</font>
+
+186
+00:09:53,630 --> 00:09:56,330
+policy<font color="#CCCCCC"> duration in policy direction we</font>
+
+187
+00:09:56,330 --> 00:09:58,760
+don't<font color="#CCCCCC"> have</font><font color="#E5E5E5"> just updates of course but we</font>
+
+188
+00:09:58,760 --> 00:10:01,360
+<font color="#CCCCCC">have updates of policies as well so</font>
+
+189
+00:10:01,360 --> 00:10:07,910
+example<font color="#E5E5E5"> I processor one that</font><font color="#CCCCCC"> controls</font>
+
+190
+00:10:07,910 --> 00:10:11,840
+state<font color="#E5E5E5"> one updates policy okay</font>
+
+191
+00:10:11,840 --> 00:10:16,100
+<font color="#CCCCCC">just as policy then processor two</font>
+
+192
+00:10:16,100 --> 00:10:21,190
+updates<font color="#E5E5E5"> updates at state to its cost</font>
+
+193
+00:10:21,190 --> 00:10:24,320
+<font color="#E5E5E5">then another processor updates</font><font color="#CCCCCC"> either</font>
+
+194
+00:10:24,320 --> 00:10:27,080
+policy or cost or groups of processors
+
+195
+00:10:27,080 --> 00:10:30,610
+<font color="#CCCCCC">updater</font><font color="#E5E5E5"> policy circles totally a</font>
+
+196
+00:10:30,610 --> 00:10:36,080
+<font color="#E5E5E5">synchronous updates of the policies</font><font color="#CCCCCC"> the</font>
+
+197
+00:10:36,080 --> 00:10:38,720
+local policies and the local cost<font color="#E5E5E5"> and</font>
+
+198
+00:10:38,720 --> 00:10:43,400
+again communication to other processors
+
+199
+00:10:43,400 --> 00:10:47,530
+with delays now you need a<font color="#E5E5E5"> little bit of</font>
+
+200
+00:10:47,530 --> 00:10:51,920
+a modification in the<font color="#E5E5E5"> ordinary version</font>
+
+201
+00:10:51,920 --> 00:10:53,360
+of policy direction for<font color="#E5E5E5"> this to work</font>
+
+202
+00:10:53,360 --> 00:10:57,770
+fully but basically<font color="#E5E5E5"> it does work now</font>
+
+203
+00:10:57,770 --> 00:10:59,060
+what I'm going<font color="#CCCCCC"> to do is give you a</font>
+
+204
+00:10:59,060 --> 00:11:03,770
+theorem<font color="#CCCCCC"> that allows you</font><font color="#E5E5E5"> to analyze that</font>
+
+205
+00:11:03,770 --> 00:11:04,920
+it
+
+206
+00:11:04,920 --> 00:11:08,370
+<font color="#E5E5E5">nations that</font><font color="#CCCCCC"> are a synchronous first of</font>
+
+207
+00:11:08,370 --> 00:11:09,769
+you all you need a<font color="#E5E5E5"> certain assumption</font>
+
+208
+00:11:09,769 --> 00:11:12,329
+<font color="#E5E5E5">you need an assumption that every</font>
+
+209
+00:11:12,329 --> 00:11:15,630
+processor updates<font color="#E5E5E5"> infinitely often</font><font color="#CCCCCC"> ok</font><font color="#E5E5E5"> if</font>
+
+210
+00:11:15,630 --> 00:11:18,269
+a processor stops updating then you can
+
+211
+00:11:18,269 --> 00:11:21,149
+ever hope for<font color="#E5E5E5"> the algorithm to work the</font>
+
+212
+00:11:21,149 --> 00:11:23,459
+second is that the communication<font color="#E5E5E5"> delays</font>
+
+213
+00:11:23,459 --> 00:11:27,000
+<font color="#CCCCCC">do not stay finite</font><font color="#E5E5E5"> so as time progresses</font>
+
+214
+00:11:27,000 --> 00:11:31,709
+to infinity then the<font color="#CCCCCC"> tau times</font><font color="#E5E5E5"> also go</font>
+
+215
+00:11:31,709 --> 00:11:33,959
+to infinity<font color="#CCCCCC"> even though there may be a</font>
+
+216
+00:11:33,959 --> 00:11:39,120
+gap forever<font color="#E5E5E5"> that we</font><font color="#CCCCCC"> be the</font><font color="#E5E5E5"> processors</font>
+
+217
+00:11:39,120 --> 00:11:42,149
+<font color="#E5E5E5">keep using up more up more and more</font>
+
+218
+00:11:42,149 --> 00:11:45,060
+up-to-date components so that's the
+
+219
+00:11:45,060 --> 00:11:51,500
+basic assumption and here's the theorem
+
+220
+00:11:51,500 --> 00:11:54,180
+<font color="#E5E5E5">suppose</font><font color="#CCCCCC"> that you</font><font color="#E5E5E5"> have a map in</font><font color="#CCCCCC"> T think</font>
+
+221
+00:11:54,180 --> 00:11:56,220
+<font color="#E5E5E5">of this as the</font><font color="#CCCCCC"> value as the</font><font color="#E5E5E5"> map in T of</font>
+
+222
+00:11:56,220 --> 00:11:57,870
+dynamic program it's actually<font color="#CCCCCC"> more</font>
+
+223
+00:11:57,870 --> 00:12:01,050
+general than that<font color="#CCCCCC"> supposedly has a</font>
+
+224
+00:12:01,050 --> 00:12:04,290
+unique fixed<font color="#CCCCCC"> point</font><font color="#E5E5E5"> J star and suppose</font>
+
+225
+00:12:04,290 --> 00:12:09,110
+that<font color="#E5E5E5"> you can find a sequence of sets of</font>
+
+226
+00:12:09,110 --> 00:12:14,690
+functions<font color="#CCCCCC"> s of 0 s of 1 s 2 and so on</font>
+
+227
+00:12:14,690 --> 00:12:18,899
+<font color="#E5E5E5">that are nested they are shrinking and</font>
+
+228
+00:12:18,899 --> 00:12:23,279
+they have two<font color="#E5E5E5"> properties the first</font>
+
+229
+00:12:23,279 --> 00:12:27,149
+property is<font color="#CCCCCC"> that if you have a sequence</font>
+
+230
+00:12:27,149 --> 00:12:30,839
+<font color="#CCCCCC">of functions</font><font color="#E5E5E5"> with JK being the</font>
+
+231
+00:12:30,839 --> 00:12:39,930
+corresponding set<font color="#CCCCCC"> SK then then then such</font>
+
+232
+00:12:39,930 --> 00:12:41,970
+a sequence converges point-wise to<font color="#CCCCCC"> j</font>
+
+233
+00:12:41,970 --> 00:12:44,850
+star that basically<font color="#E5E5E5"> says that</font><font color="#CCCCCC"> you have a</font>
+
+234
+00:12:44,850 --> 00:12:46,620
+<font color="#E5E5E5">sequence of sets that serve</font><font color="#CCCCCC"> like so</font>
+
+235
+00:12:46,620 --> 00:12:48,779
+luckily<font color="#E5E5E5"> up</font><font color="#CCCCCC"> no function</font><font color="#E5E5E5"> and they're</font>
+
+236
+00:12:48,779 --> 00:12:51,269
+shrinking in at the intersection is this
+
+237
+00:12:51,269 --> 00:12:54,660
+<font color="#E5E5E5">J star and you have the following</font>
+
+238
+00:12:54,660 --> 00:12:57,360
+property that if you start<font color="#E5E5E5"> with in the</font>
+
+239
+00:12:57,360 --> 00:13:01,620
+<font color="#E5E5E5">set SK</font><font color="#CCCCCC"> applying the T mapping to all</font>
+
+240
+00:13:01,620 --> 00:13:03,600
+<font color="#E5E5E5">components simultaneously takes you</font>
+
+241
+00:13:03,600 --> 00:13:07,100
+within the smaller set so this is a
+
+242
+00:13:07,100 --> 00:13:12,180
+condition that asserts that the the the
+
+243
+00:13:12,180 --> 00:13:16,440
+<font color="#E5E5E5">value</font><font color="#CCCCCC"> iteration Albert the the fixed</font>
+
+244
+00:13:16,440 --> 00:13:19,280
+point iteration<font color="#E5E5E5"> using T</font>
+
+245
+00:13:19,280 --> 00:13:22,170
+converges<font color="#E5E5E5"> you start out from the big set</font>
+
+246
+00:13:22,170 --> 00:13:24,300
+in one iteration you get one set inside
+
+247
+00:13:24,300 --> 00:13:26,790
+and so on all<font color="#E5E5E5"> the way to the</font>
+
+248
+00:13:26,790 --> 00:13:27,800
+<font color="#E5E5E5">intersection</font>
+
+249
+00:13:27,800 --> 00:13:30,810
+now the key additional assumption that
+
+250
+00:13:30,810 --> 00:13:35,160
+you need<font color="#E5E5E5"> which which guarantees are</font>
+
+251
+00:13:35,160 --> 00:13:37,800
+synchronous convergence is<font color="#E5E5E5"> that presets</font>
+
+252
+00:13:37,800 --> 00:13:41,400
+are not just nested but they are boxes
+
+253
+00:13:41,400 --> 00:13:44,960
+<font color="#E5E5E5">they're</font><font color="#CCCCCC"> partition brought boxes of</font>
+
+254
+00:13:44,960 --> 00:13:48,510
+component sets and they are and<font color="#CCCCCC"> they</font>
+
+255
+00:13:48,510 --> 00:13:52,140
+have and in that's that's the the<font color="#E5E5E5"> the</font>
+
+256
+00:13:52,140 --> 00:13:54,330
+key thing if you have these two
+
+257
+00:13:54,330 --> 00:13:56,940
+assumptions<font color="#E5E5E5"> then the conclusion is</font><font color="#CCCCCC"> that</font>
+
+258
+00:13:56,940 --> 00:13:59,610
+for every<font color="#CCCCCC"> J function every starting</font>
+
+259
+00:13:59,610 --> 00:14:02,550
+function that's<font color="#E5E5E5"> within</font><font color="#CCCCCC"> s0</font><font color="#E5E5E5"> the sequence</font>
+
+260
+00:14:02,550 --> 00:14:04,530
+generated by the a synchronous algorithm
+
+261
+00:14:04,530 --> 00:14:08,730
+converges to J star<font color="#CCCCCC"> okay perhaps</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> a</font>
+
+262
+00:14:08,730 --> 00:14:10,140
+<font color="#CCCCCC">little bit too long but let</font><font color="#E5E5E5"> me</font>
+
+263
+00:14:10,140 --> 00:14:12,240
+illustrate by means of a figure there
+
+264
+00:14:12,240 --> 00:14:15,570
+are<font color="#E5E5E5"> two assumptions here okay and the</font>
+
+265
+00:14:15,570 --> 00:14:18,480
+second assumption the<font color="#CCCCCC"> box condition says</font>
+
+266
+00:14:18,480 --> 00:14:21,240
+that<font color="#CCCCCC"> these sets are half box structure</font>
+
+267
+00:14:21,240 --> 00:14:27,930
+<font color="#E5E5E5">like this so</font><font color="#CCCCCC"> f0 is</font><font color="#E5E5E5"> this outside</font><font color="#CCCCCC"> box</font><font color="#E5E5E5"> s1</font>
+
+268
+00:14:27,930 --> 00:14:29,730
+<font color="#CCCCCC">is another</font><font color="#E5E5E5"> box</font><font color="#CCCCCC"> within it</font>
+
+269
+00:14:29,730 --> 00:14:32,670
+s2 is<font color="#E5E5E5"> another box within that and these</font>
+
+270
+00:14:32,670 --> 00:14:35,910
+<font color="#E5E5E5">boxes are nested within each other and</font>
+
+271
+00:14:35,910 --> 00:14:41,190
+have as intersection<font color="#E5E5E5"> J star the box</font>
+
+272
+00:14:41,190 --> 00:14:44,280
+<font color="#CCCCCC">s0 this assumes just</font><font color="#E5E5E5"> two processors the</font>
+
+273
+00:14:44,280 --> 00:14:44,700
+<font color="#E5E5E5">box</font>
+
+274
+00:14:44,700 --> 00:14:47,580
+<font color="#CCCCCC">s0 constants</font><font color="#E5E5E5"> or Cartesian product of</font><font color="#CCCCCC"> s1</font>
+
+275
+00:14:47,580 --> 00:14:51,240
+which is for the<font color="#E5E5E5"> first component J 1 and</font>
+
+276
+00:14:51,240 --> 00:14:54,150
+and s2 which is for the second component
+
+277
+00:14:54,150 --> 00:14:59,430
+<font color="#CCCCCC">J 2 J vectors</font><font color="#E5E5E5"> consists of two</font><font color="#CCCCCC"> components</font>
+
+278
+00:14:59,430 --> 00:15:01,110
+here because this<font color="#CCCCCC"> two-dimensional</font>
+
+279
+00:15:01,110 --> 00:15:05,670
+picture and what we what our assumptions
+
+280
+00:15:05,670 --> 00:15:10,230
+<font color="#CCCCCC">say is</font><font color="#E5E5E5"> that if you</font><font color="#CCCCCC"> have a J that's</font>
+
+281
+00:15:10,230 --> 00:15:15,300
+within SJ this box here then<font color="#E5E5E5"> T sub J</font>
+
+282
+00:15:15,300 --> 00:15:19,350
+brings you within SK plus 1 this<font color="#CCCCCC"> is the</font>
+
+283
+00:15:19,350 --> 00:15:21,210
+synchronous convergence condition<font color="#E5E5E5"> and</font>
+
+284
+00:15:21,210 --> 00:15:23,250
+the<font color="#E5E5E5"> box condition is of course that the</font>
+
+285
+00:15:23,250 --> 00:15:26,810
+sets SK have<font color="#CCCCCC"> this structure</font>
+
+286
+00:15:26,890 --> 00:15:29,050
+so these are the assumptions<font color="#CCCCCC"> you have a</font>
+
+287
+00:15:29,050 --> 00:15:31,390
+sequence<font color="#CCCCCC"> of sets of this type</font><font color="#E5E5E5"> that's all</font>
+
+288
+00:15:31,390 --> 00:15:35,260
+that that<font color="#CCCCCC"> you</font><font color="#E5E5E5"> need and the convergence</font>
+
+289
+00:15:35,260 --> 00:15:39,790
+<font color="#E5E5E5">mechanism is that you can do iterations</font>
+
+290
+00:15:39,790 --> 00:15:43,810
+on any one<font color="#CCCCCC"> component</font><font color="#E5E5E5"> but you get</font>
+
+291
+00:15:43,810 --> 00:15:45,760
+independent improvement of other
+
+292
+00:15:45,760 --> 00:15:50,980
+<font color="#E5E5E5">components so let me illustrate this by</font>
+
+293
+00:15:50,980 --> 00:15:54,670
+<font color="#E5E5E5">starting at this vector J suppose that</font>
+
+294
+00:15:54,670 --> 00:15:59,380
+processor<font color="#CCCCCC"> one</font><font color="#E5E5E5"> does an iteration then the</font>
+
+295
+00:15:59,380 --> 00:16:00,700
+second<font color="#CCCCCC"> component is not going to change</font>
+
+296
+00:16:00,700 --> 00:16:02,560
+<font color="#CCCCCC">just the first component</font><font color="#E5E5E5"> is going to</font>
+
+297
+00:16:02,560 --> 00:16:04,660
+change<font color="#CCCCCC"> and it's</font><font color="#E5E5E5"> going to get within this</font>
+
+298
+00:16:04,660 --> 00:16:07,000
+range<font color="#CCCCCC"> okay because</font><font color="#E5E5E5"> that's the</font>
+
+299
+00:16:07,000 --> 00:16:09,520
+synchronous convergence condition<font color="#E5E5E5"> now</font>
+
+300
+00:16:09,520 --> 00:16:12,910
+processor<font color="#E5E5E5"> one may do many iterations</font><font color="#CCCCCC"> but</font>
+
+301
+00:16:12,910 --> 00:16:14,950
+<font color="#E5E5E5">no matter how</font><font color="#CCCCCC"> many it does it will still</font>
+
+302
+00:16:14,950 --> 00:16:18,130
+<font color="#CCCCCC">stay within here at the first time that</font>
+
+303
+00:16:18,130 --> 00:16:20,320
+processor do<font color="#E5E5E5"> will do an iteration</font><font color="#CCCCCC"> it</font>
+
+304
+00:16:20,320 --> 00:16:25,150
+<font color="#E5E5E5">will bring you</font><font color="#CCCCCC"> into the into</font><font color="#E5E5E5"> into within</font>
+
+305
+00:16:25,150 --> 00:16:29,020
+this interval<font color="#CCCCCC"> here it will get into</font><font color="#E5E5E5"> the</font>
+
+306
+00:16:29,020 --> 00:16:34,480
+smaller set as k<font color="#CCCCCC"> plus 1 so you have this</font>
+
+307
+00:16:34,480 --> 00:16:37,270
+iterations going on but the first<font color="#E5E5E5"> time</font>
+
+308
+00:16:37,270 --> 00:16:40,420
+that the<font color="#E5E5E5"> first time that you have any</font>
+
+309
+00:16:40,420 --> 00:16:42,640
+<font color="#E5E5E5">direction from all processors you end up</font>
+
+310
+00:16:42,640 --> 00:16:44,740
+in the better set and then in the better
+
+311
+00:16:44,740 --> 00:16:47,170
+set and so on I'm not<font color="#CCCCCC"> sure I'm</font>
+
+312
+00:16:47,170 --> 00:16:48,970
+explaining<font color="#E5E5E5"> this very well I'm doing this</font>
+
+313
+00:16:48,970 --> 00:16:50,290
+in a<font color="#E5E5E5"> carry in perhaps you don't have</font>
+
+314
+00:16:50,290 --> 00:16:52,080
+much background<font color="#E5E5E5"> but it's not a difficult</font>
+
+315
+00:16:52,080 --> 00:16:55,210
+proof to understand<font color="#CCCCCC"> if you understand</font>
+
+316
+00:16:55,210 --> 00:16:59,050
+<font color="#E5E5E5">these figures here now this</font><font color="#CCCCCC"> is a general</font>
+
+317
+00:16:59,050 --> 00:17:00,940
+convergence theorem for a synchronous
+
+318
+00:17:00,940 --> 00:17:03,220
+iterations<font color="#E5E5E5"> and it applies dynamic</font>
+
+319
+00:17:03,220 --> 00:17:06,730
+<font color="#E5E5E5">programming because the boxes that</font><font color="#CCCCCC"> you</font>
+
+320
+00:17:06,730 --> 00:17:10,260
+have in dynamic programming<font color="#CCCCCC"> are spheres</font>
+
+321
+00:17:10,260 --> 00:17:13,960
+associated with the maximum<font color="#CCCCCC"> norm</font><font color="#E5E5E5"> the</font>
+
+322
+00:17:13,960 --> 00:17:16,599
+maximum norm within<font color="#E5E5E5"> for which T is a</font>
+
+323
+00:17:16,599 --> 00:17:25,150
+contraction has these spheres<font color="#E5E5E5"> as</font><font color="#CCCCCC"> as the</font>
+
+324
+00:17:25,150 --> 00:17:29,680
+spheres are<font color="#E5E5E5"> pub are nested and each one</font>
+
+325
+00:17:29,680 --> 00:17:32,740
+<font color="#E5E5E5">of these spheres is scaled by</font><font color="#CCCCCC"> the</font>
+
+326
+00:17:32,740 --> 00:17:35,290
+discount factor alpha<font color="#E5E5E5"> relative to the</font>
+
+327
+00:17:35,290 --> 00:17:38,650
+<font color="#CCCCCC">proceedings fears so by taking these</font>
+
+328
+00:17:38,650 --> 00:17:40,330
+boxes to be<font color="#E5E5E5"> super non contract</font>
+
+329
+00:17:40,330 --> 00:17:43,860
+since fears<font color="#E5E5E5"> the theorem applies and it's</font>
+
+330
+00:17:43,860 --> 00:17:47,980
+actually a<font color="#E5E5E5"> very simple argument to see</font>
+
+331
+00:17:47,980 --> 00:17:50,470
+that the argument for<font color="#E5E5E5"> a synchronous</font>
+
+332
+00:17:50,470 --> 00:17:52,480
+convergence<font color="#E5E5E5"> of policy</font><font color="#CCCCCC"> direction is a</font>
+
+333
+00:17:52,480 --> 00:17:54,309
+<font color="#E5E5E5">little bit more complicated but still</font>
+
+334
+00:17:54,309 --> 00:17:58,510
+<font color="#E5E5E5">based on similar ideas</font><font color="#CCCCCC"> okay I'm going</font><font color="#E5E5E5"> to</font>
+
+335
+00:17:58,510 --> 00:18:00,840
+stop here<font color="#CCCCCC"> and I can take your questions</font>
+
+336
+00:18:00,840 --> 00:18:02,950
+<font color="#CCCCCC">this</font><font color="#E5E5E5"> is sort of takes us to the other</font>
+
+337
+00:18:02,950 --> 00:18:06,970
+<font color="#E5E5E5">edges of the theory and and we're not</font>
+
+338
+00:18:06,970 --> 00:18:09,279
+going<font color="#E5E5E5"> to revisit it but I want you</font><font color="#CCCCCC"> to be</font>
+
+339
+00:18:09,279 --> 00:18:11,140
+aware<font color="#CCCCCC"> of the</font><font color="#E5E5E5"> fact that when we talk</font>
+
+340
+00:18:11,140 --> 00:18:13,029
+about<font color="#E5E5E5"> our synchronous algorithms there's</font>
+
+341
+00:18:13,029 --> 00:18:15,130
+something<font color="#E5E5E5"> like this going on that makes</font>
+
+342
+00:18:15,130 --> 00:18:17,639
+things work
+
+343
+00:18:19,440 --> 00:18:39,220
+questions yes the first condition the
+
+344
+00:18:39,220 --> 00:18:40,870
+assumption that when you start with<font color="#CCCCCC"> a</font><font color="#E5E5E5"> J</font>
+
+345
+00:18:40,870 --> 00:18:43,000
+within one set<font color="#E5E5E5"> then T so J will bring</font>
+
+346
+00:18:43,000 --> 00:18:44,830
+you to the next<font color="#E5E5E5"> set that guarantees</font>
+
+347
+00:18:44,830 --> 00:18:48,159
+convergence in a<font color="#E5E5E5"> synchronous fashion so</font>
+
+348
+00:18:48,159 --> 00:18:50,200
+if you were to apply<font color="#E5E5E5"> the directional</font>
+
+349
+00:18:50,200 --> 00:18:52,299
+<font color="#E5E5E5">component simultaneously then from one</font>
+
+350
+00:18:52,299 --> 00:18:53,919
+box<font color="#E5E5E5"> you'd get to the second box the</font>
+
+351
+00:18:53,919 --> 00:19:01,480
+third box and so on in this<font color="#E5E5E5"> yeah the</font>
+
+352
+00:19:01,480 --> 00:19:04,120
+boxes converge to<font color="#CCCCCC"> ones to one</font><font color="#E5E5E5"> point</font>
+
+353
+00:19:04,120 --> 00:19:06,549
+that's<font color="#E5E5E5"> the assumption in this in this</font>
+
+354
+00:19:06,549 --> 00:19:09,309
+theorem<font color="#E5E5E5"> however there</font><font color="#CCCCCC"> is a more</font><font color="#E5E5E5"> general</font>
+
+355
+00:19:09,309 --> 00:19:11,529
+<font color="#CCCCCC">version of</font><font color="#E5E5E5"> this theorem where the box is</font>
+
+356
+00:19:11,529 --> 00:19:15,570
+converged to a set<font color="#E5E5E5"> of solutions okay</font>
+
+357
+00:19:22,769 --> 00:19:32,200
+that's right<font color="#E5E5E5"> okay yeah</font><font color="#CCCCCC"> your question has</font>
+
+358
+00:19:32,200 --> 00:19:34,840
+<font color="#CCCCCC">to do with</font><font color="#E5E5E5"> whether what happens if you</font>
+
+359
+00:19:34,840 --> 00:19:37,570
+<font color="#E5E5E5">have not just a single fixed point</font><font color="#CCCCCC"> but</font>
+
+360
+00:19:37,570 --> 00:19:39,610
+you have multiple<font color="#E5E5E5"> fixed points then you</font>
+
+361
+00:19:39,610 --> 00:19:42,789
+<font color="#E5E5E5">have a whole set</font><font color="#CCCCCC"> of solutions</font><font color="#E5E5E5"> and the</font>
+
+362
+00:19:42,789 --> 00:19:45,039
+<font color="#E5E5E5">assumption would be then that the</font>
+
+363
+00:19:45,039 --> 00:19:47,679
+<font color="#E5E5E5">intersection of all these boxes is the</font>
+
+364
+00:19:47,679 --> 00:19:49,690
+set of<font color="#CCCCCC"> solutions</font><font color="#E5E5E5"> but there is no</font>
+
+365
+00:19:49,690 --> 00:19:51,580
+guarantee<font color="#CCCCCC"> that there</font><font color="#E5E5E5"> will be convergence</font>
+
+366
+00:19:51,580 --> 00:19:53,440
+to a single fixed point<font color="#E5E5E5"> it</font>
+
+367
+00:19:53,440 --> 00:19:55,149
+<font color="#E5E5E5">maybe that you may be wandering around</font>
+
+368
+00:19:55,149 --> 00:19:58,090
+the<font color="#CCCCCC"> periphery</font><font color="#E5E5E5"> of the set of</font><font color="#CCCCCC"> solutions</font>
+
+369
+00:19:58,090 --> 00:20:00,970
+<font color="#E5E5E5">and converge to the set</font><font color="#CCCCCC"> rather</font><font color="#E5E5E5"> than</font>
+
+370
+00:20:00,970 --> 00:20:03,700
+<font color="#CCCCCC">converge to a single point yeah</font><font color="#E5E5E5"> that's</font>
+
+371
+00:20:03,700 --> 00:20:05,879
+true
+
+372
+00:20:09,389 --> 00:20:13,049
+any other questions
+
+373
+00:20:13,049 --> 00:20:27,639
+yes if we want<font color="#E5E5E5"> to so approximate</font><font color="#CCCCCC"> suggest</font>
+
+374
+00:20:27,639 --> 00:20:38,019
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> we have to construct okay okay the</font>
+
+375
+00:20:38,019 --> 00:20:39,549
+question<font color="#E5E5E5"> is what happens if you have</font>
+
+376
+00:20:39,549 --> 00:20:42,309
+approximations<font color="#E5E5E5"> and instead of</font>
+
+377
+00:20:42,309 --> 00:20:45,070
+considering<font color="#E5E5E5"> exact value</font><font color="#CCCCCC"> duration</font>
+
+378
+00:20:45,070 --> 00:20:47,649
+consider approximate value<font color="#CCCCCC"> duration</font><font color="#E5E5E5"> or</font>
+
+379
+00:20:47,649 --> 00:20:52,169
+even<font color="#E5E5E5"> worse</font><font color="#CCCCCC"> randomize kind of algorithm</font>
+
+380
+00:20:52,169 --> 00:20:56,129
+involving samples<font color="#E5E5E5"> in which case the</font><font color="#CCCCCC"> T</font>
+
+381
+00:20:56,129 --> 00:21:00,639
+mapping<font color="#E5E5E5"> contains uncertainty contains</font>
+
+382
+00:21:00,639 --> 00:21:04,269
+stochastic stochastic element<font color="#CCCCCC"> okay the</font>
+
+383
+00:21:04,269 --> 00:21:06,610
+best view of<font color="#E5E5E5"> convergence has to be</font>
+
+384
+00:21:06,610 --> 00:21:10,000
+<font color="#E5E5E5">modified in that case the classical</font>
+
+385
+00:21:10,000 --> 00:21:12,659
+proof of V<font color="#E5E5E5"> of convergence of Q learning</font>
+
+386
+00:21:12,659 --> 00:21:16,360
+<font color="#E5E5E5">I'm sorry the classical view of</font>
+
+387
+00:21:16,360 --> 00:21:18,309
+convergence<font color="#E5E5E5"> of Q learning involves an</font>
+
+388
+00:21:18,309 --> 00:21:20,049
+argument like<font color="#E5E5E5"> that</font><font color="#CCCCCC"> but more</font>
+
+389
+00:21:20,049 --> 00:21:22,690
+<font color="#CCCCCC">sophisticated to take into account the</font>
+
+390
+00:21:22,690 --> 00:21:27,639
+presence of uncertainty<font color="#E5E5E5"> so to give</font><font color="#CCCCCC"> you</font>
+
+391
+00:21:27,639 --> 00:21:29,879
+an idea
+
+392
+00:21:33,440 --> 00:21:35,750
+the<font color="#CCCCCC"> assumption the synchronous</font>
+
+393
+00:21:35,750 --> 00:21:39,170
+convergence assumption that from<font color="#CCCCCC"> J tfj</font>
+
+394
+00:21:39,170 --> 00:21:41,570
+brings you to the next<font color="#E5E5E5"> set has to be</font>
+
+395
+00:21:41,570 --> 00:21:45,470
+relaxed and and with<font color="#E5E5E5"> something like that</font>
+
+396
+00:21:45,470 --> 00:21:48,110
+<font color="#E5E5E5">eventually with sufficient number</font><font color="#CCCCCC"> of</font>
+
+397
+00:21:48,110 --> 00:21:50,330
+samples<font color="#CCCCCC"> you're going to get into a</font>
+
+398
+00:21:50,330 --> 00:21:54,260
+smaller set however<font color="#E5E5E5"> it may be that just</font>
+
+399
+00:21:54,260 --> 00:21:56,210
+<font color="#CCCCCC">a</font><font color="#E5E5E5"> single iteration will not bring</font><font color="#CCCCCC"> you to</font>
+
+400
+00:21:56,210 --> 00:21:59,210
+<font color="#E5E5E5">the set but with many iterations over</font>
+
+401
+00:21:59,210 --> 00:22:10,040
+time you will get to the set<font color="#E5E5E5"> the box</font><font color="#CCCCCC"> ok</font>
+
+402
+00:22:10,040 --> 00:22:12,650
+so<font color="#CCCCCC"> is</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> Box random no the</font><font color="#E5E5E5"> box is not</font>
+
+403
+00:22:12,650 --> 00:22:14,330
+random but the algorithm involves random
+
+404
+00:22:14,330 --> 00:22:15,910
+<font color="#E5E5E5">elements so it may be wandering around</font>
+
+405
+00:22:15,910 --> 00:22:20,330
+but you<font color="#E5E5E5"> can prove in the case of Q</font>
+
+406
+00:22:20,330 --> 00:22:23,540
+<font color="#E5E5E5">learning that with probability 1 it will</font>
+
+407
+00:22:23,540 --> 00:22:26,510
+get into<font color="#CCCCCC"> the next box</font><font color="#E5E5E5"> and then with</font>
+
+408
+00:22:26,510 --> 00:22:28,310
+probability<font color="#CCCCCC"> 1</font><font color="#E5E5E5"> we'll get to the second</font>
+
+409
+00:22:28,310 --> 00:22:31,940
+box<font color="#E5E5E5"> and so on so there is a more complex</font>
+
+410
+00:22:31,940 --> 00:22:35,480
+version of this argument<font color="#CCCCCC"> that involves</font>
+
+411
+00:22:35,480 --> 00:22:38,840
+an algorithm<font color="#CCCCCC"> so cap stick iterative</font>
+
+412
+00:22:38,840 --> 00:22:40,250
+algorithm that's what I'm saying the
+
+413
+00:22:40,250 --> 00:22:42,260
+<font color="#E5E5E5">boxes</font><font color="#CCCCCC"> will go stay the same</font><font color="#E5E5E5"> they're</font>
+
+414
+00:22:42,260 --> 00:22:46,640
+going<font color="#E5E5E5"> to be soup norm spheres around the</font>
+
+415
+00:22:46,640 --> 00:22:53,900
+optimal solution<font color="#CCCCCC"> ok</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> is actually the</font>
+
+416
+00:22:53,900 --> 00:22:56,180
+paper of<font color="#E5E5E5"> the proofs convergence of Q</font>
+
+417
+00:22:56,180 --> 00:22:57,230
+<font color="#CCCCCC">learnings and actually very very</font>
+
+418
+00:22:57,230 --> 00:22:59,690
+<font color="#CCCCCC">sophisticated and it's hard for me to</font>
+
+419
+00:22:59,690 --> 00:23:03,050
+explain<font color="#E5E5E5"> the values no one says but at</font>
+
+420
+00:23:03,050 --> 00:23:05,030
+<font color="#E5E5E5">it's at the heart of the proof it's this</font>
+
+421
+00:23:05,030 --> 00:23:08,500
+kind<font color="#E5E5E5"> of picture that that is that</font>
+
+422
+00:23:08,500 --> 00:23:13,030
+underlies that<font color="#E5E5E5"> yes</font>
+
+423
+00:23:29,260 --> 00:23:31,390
+<font color="#CCCCCC">in a</font><font color="#E5E5E5"> bit so we're here now</font><font color="#CCCCCC"> whether the</font>
+
+424
+00:23:31,390 --> 00:23:36,240
+optimal<font color="#CCCCCC"> valerie's</font><font color="#E5E5E5"> it's a single value</font>
+
+425
+00:23:40,550 --> 00:23:43,650
+[Music]
+
+426
+00:23:45,960 --> 00:23:48,310
+<font color="#CCCCCC">okay yeah that's</font><font color="#E5E5E5"> a good question how do</font>
+
+427
+00:23:48,310 --> 00:23:51,490
+we<font color="#CCCCCC"> know that the intersection of</font><font color="#E5E5E5"> this</font>
+
+428
+00:23:51,490 --> 00:23:52,960
+<font color="#E5E5E5">box is a single point the set of</font>
+
+429
+00:23:52,960 --> 00:23:55,330
+<font color="#CCCCCC">solutions</font><font color="#E5E5E5"> a single point well in some</font>
+
+430
+00:23:55,330 --> 00:23:57,040
+cases we know<font color="#E5E5E5"> that it's a single point</font>
+
+431
+00:23:57,040 --> 00:23:58,720
+for example<font color="#CCCCCC"> if the mapping T is a</font>
+
+432
+00:23:58,720 --> 00:24:00,550
+contraction mapping the soup normal
+
+433
+00:24:00,550 --> 00:24:02,140
+interaction<font color="#CCCCCC"> mean has a unique fixed</font>
+
+434
+00:24:02,140 --> 00:24:05,890
+<font color="#E5E5E5">point in this balls</font><font color="#CCCCCC"> converge</font><font color="#E5E5E5"> to the</font>
+
+435
+00:24:05,890 --> 00:24:08,320
+unique fixed point if the mapping T is
+
+436
+00:24:08,320 --> 00:24:11,110
+just monotone it may happen that<font color="#E5E5E5"> you</font>
+
+437
+00:24:11,110 --> 00:24:14,140
+have<font color="#E5E5E5"> multiple fixed points and then you</font>
+
+438
+00:24:14,140 --> 00:24:18,190
+need to<font color="#CCCCCC"> be to be more careful it's also</font>
+
+439
+00:24:18,190 --> 00:24:24,880
+possible to have okay<font color="#CCCCCC"> in the case of</font>
+
+440
+00:24:24,880 --> 00:24:28,030
+monotone mappings you may be able to you
+
+441
+00:24:28,030 --> 00:24:30,010
+<font color="#E5E5E5">don't have a contraction but you may be</font>
+
+442
+00:24:30,010 --> 00:24:33,330
+able to show by other means
+
+443
+00:24:46,370 --> 00:24:49,470
+[Music]
+
+444
+00:25:12,340 --> 00:25:17,240
+the number of<font color="#CCCCCC"> the areas</font><font color="#E5E5E5"> I think</font><font color="#CCCCCC"> your</font>
+
+445
+00:25:17,240 --> 00:25:18,740
+<font color="#E5E5E5">question has to do</font><font color="#CCCCCC"> with the</font><font color="#E5E5E5"> co-operative</font>
+
+446
+00:25:18,740 --> 00:25:20,690
+<font color="#E5E5E5">question of whether the solution set is</font>
+
+447
+00:25:20,690 --> 00:25:34,330
+connected or<font color="#CCCCCC"> not in dynamic programming</font>
+
+448
+00:25:34,330 --> 00:25:37,220
+<font color="#CCCCCC">the set of solutions</font><font color="#E5E5E5"> of</font><font color="#CCCCCC"> balance equation</font>
+
+449
+00:25:37,220 --> 00:25:40,250
+is either<font color="#E5E5E5"> a unique fixed point</font><font color="#CCCCCC"> or else</font>
+
+450
+00:25:40,250 --> 00:25:42,590
+<font color="#E5E5E5">it has some nice structure in other</font>
+
+451
+00:25:42,590 --> 00:25:45,950
+words it is<font color="#CCCCCC"> the set of it can</font><font color="#E5E5E5"> be</font>
+
+452
+00:25:45,950 --> 00:25:50,990
+characterized<font color="#E5E5E5"> in</font><font color="#CCCCCC"> alpena</font><font color="#E5E5E5"> as the set of</font>
+
+453
+00:25:50,990 --> 00:25:54,770
+<font color="#CCCCCC">all functions</font><font color="#E5E5E5"> that lie above a certain</font>
+
+454
+00:25:54,770 --> 00:25:58,130
+floor<font color="#CCCCCC"> function something</font><font color="#E5E5E5"> like this you</font>
+
+455
+00:25:58,130 --> 00:26:01,220
+<font color="#CCCCCC">don't</font><font color="#E5E5E5"> really</font><font color="#CCCCCC"> seldom do you</font><font color="#E5E5E5"> have where it</font>
+
+456
+00:26:01,220 --> 00:26:03,790
+is<font color="#CCCCCC"> i don't</font><font color="#E5E5E5"> know of cases where</font><font color="#CCCCCC"> you have</font>
+
+457
+00:26:03,790 --> 00:26:13,280
+isolated<font color="#E5E5E5"> solutions at in in space and i</font>
+
+458
+00:26:13,280 --> 00:26:16,850
+<font color="#E5E5E5">think that i think</font><font color="#CCCCCC"> however this</font><font color="#E5E5E5"> is true</font>
+
+459
+00:26:16,850 --> 00:26:19,220
+for exact dynamic programming<font color="#CCCCCC"> for</font>
+
+460
+00:26:19,220 --> 00:26:22,040
+approximate dynamic programming you can
+
+461
+00:26:22,040 --> 00:26:25,970
+<font color="#E5E5E5">have very wild set of attraction points</font>
+
+462
+00:26:25,970 --> 00:26:27,470
+of different algorithms<font color="#CCCCCC"> you may have</font>
+
+463
+00:26:27,470 --> 00:26:29,870
+things<font color="#E5E5E5"> like local minima that</font><font color="#CCCCCC"> are very</font>
+
+464
+00:26:29,870 --> 00:26:33,500
+complicated<font color="#E5E5E5"> in which the structure of</font>
+
+465
+00:26:33,500 --> 00:26:35,780
+which<font color="#E5E5E5"> are not and is not understood that</font>
+
+466
+00:26:35,780 --> 00:26:38,200
+present
+
+467
+00:26:42,320 --> 00:26:49,909
+convergence<font color="#E5E5E5"> to the assumption I think</font>
+
+468
+00:26:49,909 --> 00:26:59,779
+<font color="#E5E5E5">this RL the second one when vehicles to</font>
+
+469
+00:26:59,779 --> 00:27:02,240
+infinity and this<font color="#CCCCCC"> cow</font><font color="#E5E5E5"> also goes to</font>
+
+470
+00:27:02,240 --> 00:27:05,240
+infinity<font color="#CCCCCC"> that means</font><font color="#E5E5E5"> every state or every</font>
+
+471
+00:27:05,240 --> 00:27:09,169
+region has<font color="#CCCCCC"> to be</font><font color="#E5E5E5"> to be updated</font>
+
+472
+00:27:09,169 --> 00:27:11,990
+meaning not terminating<font color="#CCCCCC"> the finite</font>
+
+473
+00:27:11,990 --> 00:27:14,509
+<font color="#E5E5E5">number</font><font color="#CCCCCC"> of iteration</font><font color="#E5E5E5"> so I think</font>
+
+474
+00:27:14,509 --> 00:27:17,240
+intentionally<font color="#E5E5E5"> it's very difficult to</font>
+
+475
+00:27:17,240 --> 00:27:20,690
+because some state may be trapped<font color="#CCCCCC"> I mean</font>
+
+476
+00:27:20,690 --> 00:27:22,190
+the<font color="#E5E5E5"> value of may be trapped in some</font>
+
+477
+00:27:22,190 --> 00:27:24,860
+<font color="#E5E5E5">subset of the state meaning if I have a</font>
+
+478
+00:27:24,860 --> 00:27:27,409
+<font color="#E5E5E5">long evaluation in a finite</font><font color="#CCCCCC"> number</font><font color="#E5E5E5"> of</font>
+
+479
+00:27:27,409 --> 00:27:46,940
+<font color="#CCCCCC">iterations and</font><font color="#E5E5E5"> then okay I</font><font color="#CCCCCC"> think I</font>
+
+480
+00:27:46,940 --> 00:27:48,379
+understand your<font color="#E5E5E5"> question let</font><font color="#CCCCCC"> me rephrase</font>
+
+481
+00:27:48,379 --> 00:27:51,490
+your question<font color="#E5E5E5"> what you're saying is that</font>
+
+482
+00:27:51,490 --> 00:27:54,500
+<font color="#E5E5E5">is</font><font color="#CCCCCC"> that suppose</font><font color="#E5E5E5"> that you use simulation</font>
+
+483
+00:27:54,500 --> 00:27:56,509
+<font color="#CCCCCC">to pick the states at which you update</font>
+
+484
+00:27:56,509 --> 00:27:59,059
+the<font color="#E5E5E5"> algorithm how do we know that we're</font>
+
+485
+00:27:59,059 --> 00:28:03,110
+going<font color="#E5E5E5"> to visit all states if we can't do</font>
+
+486
+00:28:03,110 --> 00:28:04,970
+if we're not<font color="#E5E5E5"> sure</font><font color="#CCCCCC"> that we can visit all</font>
+
+487
+00:28:04,970 --> 00:28:06,830
+states then this algorithm<font color="#CCCCCC"> will not</font><font color="#E5E5E5"> work</font>
+
+488
+00:28:06,830 --> 00:28:09,320
+you have to<font color="#CCCCCC"> be able</font><font color="#E5E5E5"> to guarantee that</font>
+
+489
+00:28:09,320 --> 00:28:12,529
+<font color="#CCCCCC">all</font><font color="#E5E5E5"> states over</font><font color="#CCCCCC"> an infinite amount</font><font color="#E5E5E5"> of</font>
+
+490
+00:28:12,529 --> 00:28:14,720
+time<font color="#E5E5E5"> will be visited infinitely often</font>
+
+491
+00:28:14,720 --> 00:28:17,269
+this is this is<font color="#E5E5E5"> frequently an assumption</font>
+
+492
+00:28:17,269 --> 00:28:19,820
+in various approximate dynamic
+
+493
+00:28:19,820 --> 00:28:23,059
+programming algorithms so how do you
+
+494
+00:28:23,059 --> 00:28:26,269
+<font color="#CCCCCC">enforce that</font><font color="#E5E5E5"> okay</font><font color="#CCCCCC"> I'm not sure that</font>
+
+495
+00:28:26,269 --> 00:28:32,919
+<font color="#CCCCCC">there's</font><font color="#E5E5E5"> a foolproof recipe warrant yes</font>
+
+496
+00:28:56,690 --> 00:28:58,770
+<font color="#E5E5E5">okay so what is the practical</font>
+
+497
+00:28:58,770 --> 00:29:01,080
+significance of<font color="#E5E5E5"> all this the practical</font>
+
+498
+00:29:01,080 --> 00:29:02,400
+significance is<font color="#CCCCCC"> that just</font><font color="#E5E5E5"> about</font>
+
+499
+00:29:02,400 --> 00:29:04,050
+everything in dynamic programming it
+
+500
+00:29:04,050 --> 00:29:06,810
+revolves around<font color="#E5E5E5"> a value</font><font color="#CCCCCC"> duration policy</font>
+
+501
+00:29:06,810 --> 00:29:10,140
+duration<font color="#E5E5E5"> even though my viewpoint here</font>
+
+502
+00:29:10,140 --> 00:29:12,330
+is a little<font color="#CCCCCC"> abstract in mathematical</font>
+
+503
+00:29:12,330 --> 00:29:14,430
+that doesn't mean<font color="#E5E5E5"> that the algorithms do</font>
+
+504
+00:29:14,430 --> 00:29:16,410
+not apply<font color="#E5E5E5"> to practical problems</font><font color="#CCCCCC"> there's</font>
+
+505
+00:29:16,410 --> 00:29:18,960
+<font color="#CCCCCC">a vast array of problems for</font><font color="#E5E5E5"> which these</font>
+
+506
+00:29:18,960 --> 00:29:21,750
+algorithms<font color="#E5E5E5"> are used and in many of these</font>
+
+507
+00:29:21,750 --> 00:29:23,850
+problems<font color="#CCCCCC"> you have</font><font color="#E5E5E5"> you want</font><font color="#CCCCCC"> to use</font>
+
+508
+00:29:23,850 --> 00:29:27,420
+parallel<font color="#E5E5E5"> computation</font><font color="#CCCCCC"> or you the</font>
+
+509
+00:29:27,420 --> 00:29:29,340
+assimilation driven and I mentioned<font color="#CCCCCC"> to</font>
+
+510
+00:29:29,340 --> 00:29:32,100
+learning earlier<font color="#E5E5E5"> which is definitely a</font>
+
+511
+00:29:32,100 --> 00:29:36,060
+practical algorithm<font color="#E5E5E5"> so so that's the</font>
+
+512
+00:29:36,060 --> 00:29:38,550
+<font color="#CCCCCC">reason we want we want</font><font color="#E5E5E5"> to look at</font>
+
+513
+00:29:38,550 --> 00:29:40,440
+practical algorithms that have very wide
+
+514
+00:29:40,440 --> 00:29:42,840
+applicability<font color="#CCCCCC"> but we want to do them</font>
+
+515
+00:29:42,840 --> 00:29:44,940
+<font color="#E5E5E5">from</font><font color="#CCCCCC"> a theoretical point of</font><font color="#E5E5E5"> view in the</font>
+
+516
+00:29:44,940 --> 00:29:46,770
+most<font color="#E5E5E5"> economical way at least that's</font><font color="#CCCCCC"> my</font>
+
+517
+00:29:46,770 --> 00:29:49,440
+style<font color="#CCCCCC"> I'd like to do them in a unified</font>
+
+518
+00:29:49,440 --> 00:29:51,540
+<font color="#E5E5E5">way so I don't have to prove many</font>
+
+519
+00:29:51,540 --> 00:29:53,340
+<font color="#E5E5E5">theorems about many different problems</font>
+
+520
+00:29:53,340 --> 00:29:55,530
+<font color="#CCCCCC">I'd like to prove just</font><font color="#E5E5E5"> a few theorems</font>
+
+521
+00:29:55,530 --> 00:30:00,630
+<font color="#CCCCCC">that cover many problems ok but some</font>
+
+522
+00:30:00,630 --> 00:30:02,700
+legitimate question<font color="#CCCCCC"> you know</font><font color="#E5E5E5"> why do we</font>
+
+523
+00:30:02,700 --> 00:30:04,590
+have to go to this kind<font color="#E5E5E5"> of abstraction</font>
+
+524
+00:30:04,590 --> 00:30:06,810
+<font color="#CCCCCC">or what's the</font><font color="#E5E5E5"> meaning of all this do I</font>
+
+525
+00:30:06,810 --> 00:30:08,520
+have<font color="#CCCCCC"> to go through all this this seems</font>
+
+526
+00:30:08,520 --> 00:30:12,510
+very<font color="#CCCCCC"> difficult very legitimate question</font>
+
+527
+00:30:12,510 --> 00:30:18,800
+<font color="#CCCCCC">to ask any other questions</font>
+
+528
+00:30:21,870 --> 00:30:26,680
+<font color="#E5E5E5">okay so next time</font><font color="#CCCCCC"> in the</font><font color="#E5E5E5"> next lecture we</font>
+
+529
+00:30:26,680 --> 00:30:30,630
+are going<font color="#E5E5E5"> to to go into approximations</font>
+
+530
+00:30:30,630 --> 00:30:33,160
+<font color="#CCCCCC">and</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> next lecture is going</font><font color="#E5E5E5"> to be an</font>
+
+531
+00:30:33,160 --> 00:30:34,900
+<font color="#E5E5E5">orientation lecture</font><font color="#CCCCCC"> it's an overview of</font>
+
+532
+00:30:34,900 --> 00:30:37,540
+the field of approximations<font color="#CCCCCC"> and then in</font>
+
+533
+00:30:37,540 --> 00:30:40,870
+the second week next<font color="#E5E5E5"> week we're going to</font>
+
+534
+00:30:40,870 --> 00:30:44,140
+<font color="#E5E5E5">focus on</font><font color="#CCCCCC"> specific aspects of the</font><font color="#E5E5E5"> field</font>
+
+535
+00:30:44,140 --> 00:30:46,360
+of approximate dynamic programming
+
+536
+00:30:46,360 --> 00:30:49,120
+algorithms and<font color="#CCCCCC"> we're going</font><font color="#E5E5E5"> to go in more</font>
+
+537
+00:30:49,120 --> 00:30:54,230
+depth<font color="#E5E5E5"> in those at that time okay</font>
+
+538
+00:30:54,230 --> 00:00:00,000
+[Applause]
+

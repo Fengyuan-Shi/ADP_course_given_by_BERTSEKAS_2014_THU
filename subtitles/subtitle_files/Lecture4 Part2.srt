@@ -1,0 +1,3060 @@
+1
+00:00:06,150 --> 00:00:08,650
+maybe there's a<font color="#E5E5E5"> way to bring other</font>
+
+2
+00:00:08,650 --> 00:00:11,220
+people<font color="#E5E5E5"> in</font>
+
+3
+00:00:35,910 --> 00:00:40,650
+<font color="#E5E5E5">okay so let's continue we have been</font>
+
+4
+00:00:40,650 --> 00:00:42,930
+talking<font color="#E5E5E5"> about the approximations to the</font>
+
+5
+00:00:42,930 --> 00:00:44,880
+<font color="#E5E5E5">two basic methods of discount for</font>
+
+6
+00:00:44,880 --> 00:00:47,730
+discounted<font color="#E5E5E5"> infinite horizon problems</font>
+
+7
+00:00:47,730 --> 00:00:50,880
+value iteration and for the duration<font color="#E5E5E5"> and</font>
+
+8
+00:00:50,880 --> 00:00:53,550
+we saw the approximate<font color="#CCCCCC"> version of value</font>
+
+9
+00:00:53,550 --> 00:00:55,800
+iteration<font color="#E5E5E5"> now let's go into</font><font color="#CCCCCC"> an</font>
+
+10
+00:00:55,800 --> 00:00:59,239
+approximate<font color="#E5E5E5"> version of policy direction</font>
+
+11
+00:00:59,239 --> 00:01:02,160
+okay so policy<font color="#CCCCCC"> Direction starts with a</font>
+
+12
+00:01:02,160 --> 00:01:04,559
+policy evaluated then computes an
+
+13
+00:01:04,559 --> 00:01:07,229
+improved policy and so<font color="#E5E5E5"> on approximate</font>
+
+14
+00:01:07,229 --> 00:01:10,320
+policy<font color="#CCCCCC"> is either</font><font color="#E5E5E5"> iteration simply</font>
+
+15
+00:01:10,320 --> 00:01:13,410
+involves an approximation<font color="#E5E5E5"> at the policy</font>
+
+16
+00:01:13,410 --> 00:01:16,740
+evaluation stage<font color="#E5E5E5"> instead</font><font color="#CCCCCC"> of solving the</font>
+
+17
+00:01:16,740 --> 00:01:18,509
+corresponding evaluation equation
+
+18
+00:01:18,509 --> 00:01:21,050
+exactly<font color="#E5E5E5"> which is a linear</font><font color="#CCCCCC"> equation</font><font color="#E5E5E5"> of</font>
+
+19
+00:01:21,050 --> 00:01:25,290
+gigantic potentially gigantic size<font color="#E5E5E5"> we</font>
+
+20
+00:01:25,290 --> 00:01:28,619
+consider an approximation<font color="#E5E5E5"> to that which</font>
+
+21
+00:01:28,619 --> 00:01:30,750
+involves<font color="#CCCCCC"> our approximation architecture</font>
+
+22
+00:01:30,750 --> 00:01:34,320
+<font color="#CCCCCC">in the parameter R and then</font><font color="#E5E5E5"> we use this</font>
+
+23
+00:01:34,320 --> 00:01:36,240
+<font color="#CCCCCC">approximation to generate</font><font color="#E5E5E5"> and improve</font>
+
+24
+00:01:36,240 --> 00:01:41,130
+<font color="#CCCCCC">points so how do we evaluate a typical</font>
+
+25
+00:01:41,130 --> 00:01:44,670
+Coliseum in this box here we will use a
+
+26
+00:01:44,670 --> 00:01:46,670
+linear cost function approximation
+
+27
+00:01:46,670 --> 00:01:51,360
+<font color="#E5E5E5">involving as vector matrix of features</font>
+
+28
+00:01:51,360 --> 00:01:55,440
+<font color="#CCCCCC">phi phi is a full rank</font><font color="#E5E5E5"> and by n matrix</font>
+
+29
+00:01:55,440 --> 00:01:57,060
+with columns which are the basis
+
+30
+00:01:57,060 --> 00:02:00,420
+functions and the<font color="#CCCCCC"> i throw is defined is</font>
+
+31
+00:02:00,420 --> 00:02:04,020
+denoted<font color="#E5E5E5"> by</font><font color="#CCCCCC"> Phi</font><font color="#E5E5E5"> so Y prime</font><font color="#CCCCCC"> same notation</font>
+
+32
+00:02:04,020 --> 00:02:07,380
+as we had earlier<font color="#CCCCCC"> and the policy</font>
+
+33
+00:02:07,380 --> 00:02:10,970
+improvement once I have an approximation
+
+34
+00:02:10,970 --> 00:02:14,550
+from<font color="#E5E5E5"> this box here evaluating the</font>
+
+35
+00:02:14,550 --> 00:02:17,130
+current policy new policy improvement is
+
+36
+00:02:17,130 --> 00:02:20,580
+obtained from this equation<font color="#CCCCCC"> and I assume</font>
+
+37
+00:02:20,580 --> 00:02:22,470
+that<font color="#E5E5E5"> this is done</font><font color="#CCCCCC"> exactly you could</font>
+
+38
+00:02:22,470 --> 00:02:23,940
+consider approximations to<font color="#E5E5E5"> this</font>
+
+39
+00:02:23,940 --> 00:02:25,440
+minimization but<font color="#E5E5E5"> we'll assume</font><font color="#CCCCCC"> that's</font>
+
+40
+00:02:25,440 --> 00:02:28,170
+done exactly what<font color="#CCCCCC"> we want to focus you</font>
+
+41
+00:02:28,170 --> 00:02:29,970
+<font color="#E5E5E5">is how to deal with this approximate</font>
+
+42
+00:02:29,970 --> 00:02:35,340
+policy evaluation for the moment if you
+
+43
+00:02:35,340 --> 00:02:39,349
+do this<font color="#CCCCCC"> and if the policy evaluation is</font>
+
+44
+00:02:39,349 --> 00:02:42,980
+approximate to<font color="#E5E5E5"> within Delta okay</font>
+
+45
+00:02:42,980 --> 00:02:44,930
+there's an error bound<font color="#E5E5E5"> that says that</font>
+
+46
+00:02:44,930 --> 00:02:47,810
+the successive policies<font color="#E5E5E5"> come to within</font>
+
+47
+00:02:47,810 --> 00:02:51,650
+this expression from<font color="#E5E5E5"> the optimum and by</font>
+
+48
+00:02:51,650 --> 00:02:53,330
+the way this is exactly the same error
+
+49
+00:02:53,330 --> 00:02:56,209
+<font color="#E5E5E5">bound as approximate value</font><font color="#CCCCCC"> direction so</font>
+
+50
+00:02:56,209 --> 00:02:57,709
+approximate value<font color="#CCCCCC"> Direction</font><font color="#E5E5E5"> an</font>
+
+51
+00:02:57,709 --> 00:02:59,420
+approximate<font color="#CCCCCC"> policy</font><font color="#E5E5E5"> duration give you the</font>
+
+52
+00:02:59,420 --> 00:03:01,819
+same error bound even though there are
+
+53
+00:03:01,819 --> 00:03:03,799
+<font color="#E5E5E5">different methods</font><font color="#CCCCCC"> it just turns</font><font color="#E5E5E5"> out this</font>
+
+54
+00:03:03,799 --> 00:03:07,099
+way<font color="#E5E5E5"> so that's the overall framework</font><font color="#CCCCCC"> and</font>
+
+55
+00:03:07,099 --> 00:03:09,620
+now we want<font color="#E5E5E5"> to focus on</font><font color="#CCCCCC"> evaluate</font>
+
+56
+00:03:09,620 --> 00:03:13,060
+approximate<font color="#E5E5E5"> points evaluation so I</font>
+
+57
+00:03:13,060 --> 00:03:15,410
+mentioned last time<font color="#E5E5E5"> that there are two</font>
+
+58
+00:03:15,410 --> 00:03:18,890
+approaches one direct the direct method
+
+59
+00:03:18,890 --> 00:03:21,459
+<font color="#E5E5E5">and the</font><font color="#CCCCCC"> other one is the indirect method</font>
+
+60
+00:03:21,459 --> 00:03:24,950
+<font color="#E5E5E5">in the direct method we have this chain</font>
+
+61
+00:03:24,950 --> 00:03:27,560
+<font color="#CCCCCC">knew that we want</font><font color="#E5E5E5"> to approximate and we</font>
+
+62
+00:03:27,560 --> 00:03:29,780
+project<font color="#E5E5E5"> it down</font><font color="#CCCCCC"> within</font><font color="#E5E5E5"> the approximation</font>
+
+63
+00:03:29,780 --> 00:03:32,390
+subspace and we could use simulation<font color="#E5E5E5"> to</font>
+
+64
+00:03:32,390 --> 00:03:37,310
+<font color="#E5E5E5">do that</font><font color="#CCCCCC"> as I mentioned earlier this</font>
+
+65
+00:03:37,310 --> 00:03:39,709
+approach is legitimate but<font color="#E5E5E5"> it is not</font>
+
+66
+00:03:39,709 --> 00:03:42,470
+<font color="#E5E5E5">very popular and are quite a few</font><font color="#CCCCCC"> reasons</font>
+
+67
+00:03:42,470 --> 00:03:44,900
+for<font color="#E5E5E5"> that one of them is that to</font>
+
+68
+00:03:44,900 --> 00:03:47,840
+calculate<font color="#CCCCCC"> this chain</font><font color="#E5E5E5"> new samples of</font><font color="#CCCCCC"> JMU</font>
+
+69
+00:03:47,840 --> 00:03:50,900
+<font color="#E5E5E5">you need to do simulation for a given</font>
+
+70
+00:03:50,900 --> 00:03:53,180
+<font color="#E5E5E5">state you need</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> calculate the</font>
+
+71
+00:03:53,180 --> 00:03:54,950
+corresponding cost of the<font color="#CCCCCC"> policy so you</font>
+
+72
+00:03:54,950 --> 00:03:57,099
+<font color="#E5E5E5">have to run the policy many times</font><font color="#CCCCCC"> in</font>
+
+73
+00:03:57,099 --> 00:04:02,720
+average to obtain some an approximate
+
+74
+00:04:02,720 --> 00:04:05,630
+version<font color="#CCCCCC"> of just one sample</font><font color="#E5E5E5"> of chain</font><font color="#CCCCCC"> U</font>
+
+75
+00:04:05,630 --> 00:04:07,549
+and then you have to do this<font color="#E5E5E5"> for many</font>
+
+76
+00:04:07,549 --> 00:04:09,919
+states and<font color="#CCCCCC"> there's a lot</font><font color="#E5E5E5"> of noise in</font>
+
+77
+00:04:09,919 --> 00:04:11,780
+this a lot of<font color="#CCCCCC"> simulation mode noise</font>
+
+78
+00:04:11,780 --> 00:04:14,590
+involved in this<font color="#CCCCCC"> process and this noise</font>
+
+79
+00:04:14,590 --> 00:04:17,510
+shows up<font color="#E5E5E5"> when you try to use this method</font>
+
+80
+00:04:17,510 --> 00:04:19,070
+<font color="#CCCCCC">you find that you</font><font color="#E5E5E5"> need an extreme</font>
+
+81
+00:04:19,070 --> 00:04:22,160
+extreme amount of simulation so people
+
+82
+00:04:22,160 --> 00:04:27,080
+don't use this method<font color="#CCCCCC"> very</font><font color="#E5E5E5"> much instead</font>
+
+83
+00:04:27,080 --> 00:04:29,360
+the more popular method<font color="#E5E5E5"> is the indirect</font>
+
+84
+00:04:29,360 --> 00:04:32,450
+method<font color="#E5E5E5"> whereby instead of projecting the</font>
+
+85
+00:04:32,450 --> 00:04:35,750
+solution you project<font color="#E5E5E5"> the equation itself</font>
+
+86
+00:04:35,750 --> 00:04:39,590
+<font color="#CCCCCC">this is</font><font color="#E5E5E5"> called the galerkin method and</font>
+
+87
+00:04:39,590 --> 00:04:44,090
+it amounts to solving this equation if
+
+88
+00:04:44,090 --> 00:04:46,940
+there was no<font color="#CCCCCC"> approximation</font><font color="#E5E5E5"> then we would</font>
+
+89
+00:04:46,940 --> 00:04:49,729
+not need a<font color="#E5E5E5"> projection here so what we do</font>
+
+90
+00:04:49,729 --> 00:04:52,849
+is we project the equation and try<font color="#E5E5E5"> to</font>
+
+91
+00:04:52,849 --> 00:04:54,940
+find an R<font color="#CCCCCC"> that satisfies this</font>
+
+92
+00:04:54,940 --> 00:04:57,790
+equation so the solution<font color="#E5E5E5"> has</font><font color="#CCCCCC"> the</font>
+
+93
+00:04:57,790 --> 00:05:00,490
+property that<font color="#CCCCCC"> when you apply T to it</font><font color="#E5E5E5"> and</font>
+
+94
+00:05:00,490 --> 00:05:02,980
+then project down<font color="#E5E5E5"> you end</font><font color="#CCCCCC"> up at</font><font color="#E5E5E5"> the same</font>
+
+95
+00:05:02,980 --> 00:05:05,200
+point<font color="#CCCCCC"> that's the concept</font><font color="#E5E5E5"> of the solution</font>
+
+96
+00:05:05,200 --> 00:05:10,780
+here so let's accept that<font color="#E5E5E5"> this</font><font color="#CCCCCC"> is a</font>
+
+97
+00:05:10,780 --> 00:05:12,670
+legitimate<font color="#CCCCCC"> method it has</font><font color="#E5E5E5"> arrow</font><font color="#CCCCCC"> bounce</font>
+
+98
+00:05:12,670 --> 00:05:15,520
+<font color="#E5E5E5">it's it's something</font><font color="#CCCCCC"> that</font><font color="#E5E5E5"> does work</font><font color="#CCCCCC"> to a</font>
+
+99
+00:05:15,520 --> 00:05:19,240
+certain<font color="#E5E5E5"> extent</font><font color="#CCCCCC"> practice how do we</font>
+
+100
+00:05:19,240 --> 00:05:21,010
+implement<font color="#E5E5E5"> it how do we find</font>
+
+101
+00:05:21,010 --> 00:05:23,230
+approximately a solution to this by
+
+102
+00:05:23,230 --> 00:05:28,150
+simulation<font color="#CCCCCC"> that's our issue well first</font>
+
+103
+00:05:28,150 --> 00:05:30,250
+of all generally projection as I
+
+104
+00:05:30,250 --> 00:05:31,720
+mentioned can<font color="#E5E5E5"> be implemented by</font>
+
+105
+00:05:31,720 --> 00:05:34,780
+simulation<font color="#CCCCCC"> in</font><font color="#E5E5E5"> these squares so</font><font color="#CCCCCC"> somehow</font>
+
+106
+00:05:34,780 --> 00:05:37,600
+we<font color="#E5E5E5"> have</font><font color="#CCCCCC"> to find a way to</font><font color="#E5E5E5"> factor a really</font>
+
+107
+00:05:37,600 --> 00:05:39,790
+simulation in these squares<font color="#CCCCCC"> into this</font>
+
+108
+00:05:39,790 --> 00:05:48,370
+<font color="#CCCCCC">equation here okay so let's focus on on</font>
+
+109
+00:05:48,370 --> 00:05:53,320
+this<font color="#E5E5E5"> method</font><font color="#CCCCCC"> that uses indirect policy</font>
+
+110
+00:05:53,320 --> 00:05:56,650
+evaluation given the current policy<font color="#E5E5E5"> we</font>
+
+111
+00:05:56,650 --> 00:05:59,950
+<font color="#E5E5E5">solve this projected equation and then</font>
+
+112
+00:05:59,950 --> 00:06:04,390
+<font color="#CCCCCC">we approximate so basically we</font>
+
+113
+00:06:04,390 --> 00:06:05,919
+approximate the<font color="#CCCCCC"> solution of balanced</font>
+
+114
+00:06:05,919 --> 00:06:07,900
+equation with a solution<font color="#E5E5E5"> of projected</font>
+
+115
+00:06:07,900 --> 00:06:14,770
+equation in<font color="#CCCCCC"> color questions here well</font>
+
+116
+00:06:14,770 --> 00:06:16,900
+<font color="#E5E5E5">first of all does the projected equation</font>
+
+117
+00:06:16,900 --> 00:06:17,740
+have a solution
+
+118
+00:06:17,740 --> 00:06:19,840
+how do we<font color="#E5E5E5"> know that has</font><font color="#CCCCCC"> a solution</font><font color="#E5E5E5"> how</font>
+
+119
+00:06:19,840 --> 00:06:22,540
+do we know that<font color="#E5E5E5"> has a unique solution so</font>
+
+120
+00:06:22,540 --> 00:06:24,760
+under and so this is the<font color="#E5E5E5"> same as asking</font>
+
+121
+00:06:24,760 --> 00:06:27,520
+<font color="#CCCCCC">under what condition is this mapping PI</font>
+
+122
+00:06:27,520 --> 00:06:32,890
+T at contraction so that PI T has a
+
+123
+00:06:32,890 --> 00:06:35,320
+unique<font color="#E5E5E5"> fixed point and remember this is</font>
+
+124
+00:06:35,320 --> 00:06:38,830
+the<font color="#CCCCCC"> same issue</font><font color="#E5E5E5"> that we raised earlier</font>
+
+125
+00:06:38,830 --> 00:06:41,800
+<font color="#E5E5E5">under what circumstances the team a P</font>
+
+126
+00:06:41,800 --> 00:06:45,850
+and the projection are matched<font color="#E5E5E5"> so that</font>
+
+127
+00:06:45,850 --> 00:06:50,560
+PI T is a contraction so now here's the
+
+128
+00:06:50,560 --> 00:06:52,870
+<font color="#E5E5E5">magical thing we are going to</font><font color="#CCCCCC"> determine</font>
+
+129
+00:06:52,870 --> 00:06:57,040
+a weighted norm<font color="#CCCCCC"> under which this is a</font>
+
+130
+00:06:57,040 --> 00:07:00,480
+contraction and here is the assumption
+
+131
+00:07:00,480 --> 00:07:03,150
+<font color="#E5E5E5">we assume that the Markov chain</font>
+
+132
+00:07:03,150 --> 00:07:06,240
+corresponding to the current policy
+
+133
+00:07:06,240 --> 00:07:09,870
+<font color="#E5E5E5">gadi it has a single recurrent class and</font>
+
+134
+00:07:09,870 --> 00:07:13,710
+no transient<font color="#E5E5E5"> states so you</font><font color="#CCCCCC"> plug in this</font>
+
+135
+00:07:13,710 --> 00:07:17,160
+policy<font color="#CCCCCC"> Markov chain runs and it visits</font>
+
+136
+00:07:17,160 --> 00:07:20,340
+<font color="#E5E5E5">all states infinitely often with certain</font>
+
+137
+00:07:20,340 --> 00:07:22,800
+<font color="#E5E5E5">long-term frequencies and these</font>
+
+138
+00:07:22,800 --> 00:07:25,530
+<font color="#E5E5E5">long-term frequencies are we</font>
+
+139
+00:07:25,530 --> 00:07:28,020
+<font color="#CCCCCC">steady-state probabilities this is</font>
+
+140
+00:07:28,020 --> 00:07:30,539
+standard Markov chain<font color="#E5E5E5"> theory</font><font color="#CCCCCC"> you have a</font>
+
+141
+00:07:30,539 --> 00:07:33,270
+<font color="#E5E5E5">singular recurrent class no transient</font>
+
+142
+00:07:33,270 --> 00:07:35,910
+<font color="#CCCCCC">States</font><font color="#E5E5E5"> then the steady state</font>
+
+143
+00:07:35,910 --> 00:07:37,020
+probabilities
+
+144
+00:07:37,020 --> 00:07:40,370
+okay these are occupation measures or
+
+145
+00:07:40,370 --> 00:07:43,259
+<font color="#CCCCCC">the average probability</font><font color="#E5E5E5"> that you will</font><font color="#CCCCCC"> be</font>
+
+146
+00:07:43,259 --> 00:07:47,280
+at state<font color="#E5E5E5"> J if you start at state</font><font color="#CCCCCC"> I in</font>
+
+147
+00:07:47,280 --> 00:07:50,370
+the limit this is<font color="#E5E5E5"> independent of where</font>
+
+148
+00:07:50,370 --> 00:07:54,449
+you start and it is positive so<font color="#CCCCCC"> this</font>
+
+149
+00:07:54,449 --> 00:07:56,490
+<font color="#CCCCCC">steady-state distribution</font><font color="#E5E5E5"> which</font><font color="#CCCCCC"> is</font><font color="#E5E5E5"> the</font>
+
+150
+00:07:56,490 --> 00:07:58,590
+state with the distribution<font color="#E5E5E5"> involved in</font>
+
+151
+00:07:58,590 --> 00:08:00,720
+the<font color="#CCCCCC"> long term frequencies of the various</font>
+
+152
+00:08:00,720 --> 00:08:06,000
+<font color="#E5E5E5">states is a positive vector okay and now</font>
+
+153
+00:08:06,000 --> 00:08:07,770
+we are going to<font color="#E5E5E5"> use</font><font color="#CCCCCC"> projection</font><font color="#E5E5E5"> with</font>
+
+154
+00:08:07,770 --> 00:08:10,020
+<font color="#E5E5E5">respect to this</font><font color="#CCCCCC"> factor and</font><font color="#E5E5E5"> things will</font>
+
+155
+00:08:10,020 --> 00:08:12,449
+<font color="#E5E5E5">work out this is a magical norm that we</font>
+
+156
+00:08:12,449 --> 00:08:15,539
+<font color="#CCCCCC">are used that we are looking for</font><font color="#E5E5E5"> here is</font>
+
+157
+00:08:15,539 --> 00:08:18,539
+a proposition<font color="#E5E5E5"> suppose</font><font color="#CCCCCC"> that a</font><font color="#E5E5E5"> projection</font>
+
+158
+00:08:18,539 --> 00:08:21,080
+is with<font color="#CCCCCC"> respect to this distribution</font>
+
+159
+00:08:21,080 --> 00:08:27,180
+<font color="#E5E5E5">norm</font><font color="#CCCCCC"> okay then</font><font color="#E5E5E5"> PI T nu is a contraction</font>
+
+160
+00:08:27,180 --> 00:08:30,000
+<font color="#E5E5E5">of modules alpha with respect</font><font color="#CCCCCC"> to</font><font color="#E5E5E5"> this</font>
+
+161
+00:08:30,000 --> 00:08:33,719
+norm<font color="#E5E5E5"> and moreover the unique fixed point</font>
+
+162
+00:08:33,719 --> 00:08:37,440
+<font color="#E5E5E5">of this mapping which is what we are</font>
+
+163
+00:08:37,440 --> 00:08:40,200
+going to<font color="#E5E5E5"> use to approximate a new has an</font>
+
+164
+00:08:40,200 --> 00:08:45,740
+error bound that satisfies this relation
+
+165
+00:08:45,740 --> 00:08:51,360
+<font color="#E5E5E5">okay notice that what you get is</font><font color="#CCCCCC"> not the</font>
+
+166
+00:08:51,360 --> 00:08:57,089
+projection<font color="#CCCCCC"> of</font><font color="#E5E5E5"> Jamie but the distance of</font>
+
+167
+00:08:57,089 --> 00:09:01,230
+J<font color="#E5E5E5"> nu from this approximation is bounded</font>
+
+168
+00:09:01,230 --> 00:09:04,500
+by a scalar<font color="#CCCCCC"> multiple of the distance</font><font color="#E5E5E5"> or</font>
+
+169
+00:09:04,500 --> 00:09:06,060
+chain you from the approximation
+
+170
+00:09:06,060 --> 00:09:08,700
+subspace always with<font color="#CCCCCC"> respect to this</font>
+
+171
+00:09:08,700 --> 00:09:11,060
+norm
+
+172
+00:09:13,400 --> 00:09:15,510
+for the<font color="#E5E5E5"> moment this bound is not</font>
+
+173
+00:09:15,510 --> 00:09:18,540
+important<font color="#E5E5E5"> what's important is that I</font>
+
+174
+00:09:18,540 --> 00:09:20,810
+<font color="#CCCCCC">have found some</font><font color="#E5E5E5"> sampling distribution</font>
+
+175
+00:09:20,810 --> 00:09:23,010
+with respect<font color="#CCCCCC"> to</font><font color="#E5E5E5"> which to do the</font>
+
+176
+00:09:23,010 --> 00:09:27,570
+projection<font color="#E5E5E5"> so that I get a solution of</font>
+
+177
+00:09:27,570 --> 00:09:31,740
+<font color="#CCCCCC">this equation and</font><font color="#E5E5E5"> the process the</font><font color="#CCCCCC"> ND</font><font color="#E5E5E5"> and</font>
+
+178
+00:09:31,740 --> 00:09:34,710
+the divergence that<font color="#E5E5E5"> I experienced in the</font>
+
+179
+00:09:34,710 --> 00:09:38,240
+previous<font color="#E5E5E5"> method does</font><font color="#CCCCCC"> not occur</font>
+
+180
+00:09:45,350 --> 00:09:49,010
+<font color="#E5E5E5">okay so let's say a few things about why</font>
+
+181
+00:09:49,010 --> 00:09:53,720
+this<font color="#E5E5E5"> thing works first of all let's talk</font>
+
+182
+00:09:53,720 --> 00:09:56,900
+about projections<font color="#E5E5E5"> an important</font><font color="#CCCCCC"> property</font>
+
+183
+00:09:56,900 --> 00:10:01,370
+of projection onto a<font color="#E5E5E5"> subspace spanned by</font>
+
+184
+00:10:01,370 --> 00:10:04,610
+the columns of a matrix<font color="#CCCCCC"> fee is</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> tag</font>
+
+185
+00:10:04,610 --> 00:10:08,270
+<font color="#E5E5E5">Orient theorem okay</font><font color="#CCCCCC"> projection this</font>
+
+186
+00:10:08,270 --> 00:10:13,070
+vector is orthogonal<font color="#CCCCCC"> to this vector</font><font color="#E5E5E5"> here</font>
+
+187
+00:10:13,070 --> 00:10:16,130
+<font color="#CCCCCC">in the square</font><font color="#E5E5E5"> of the distance or is</font>
+
+188
+00:10:16,130 --> 00:10:18,170
+equal<font color="#CCCCCC"> to the sum of the squares of</font><font color="#E5E5E5"> these</font>
+
+189
+00:10:18,170 --> 00:10:20,060
+two norms okay
+
+190
+00:10:20,060 --> 00:10:24,830
+this is a an abstract extensions of the
+
+191
+00:10:24,830 --> 00:10:27,020
+classical Pythagorean theorem for
+
+192
+00:10:27,020 --> 00:10:31,420
+triangles for orthogonal triangles and
+
+193
+00:10:31,420 --> 00:10:34,130
+the orthogonality<font color="#E5E5E5"> of courses with</font>
+
+194
+00:10:34,130 --> 00:10:38,570
+<font color="#CCCCCC">respect</font><font color="#E5E5E5"> to the sky here and</font><font color="#CCCCCC"> here's the</font>
+
+195
+00:10:38,570 --> 00:10:42,230
+<font color="#E5E5E5">second important fact for</font><font color="#CCCCCC"> us</font><font color="#E5E5E5"> projection</font>
+
+196
+00:10:42,230 --> 00:10:45,050
+is<font color="#E5E5E5"> non</font><font color="#CCCCCC"> expensive if you project two</font>
+
+197
+00:10:45,050 --> 00:10:51,790
+vectors J and J bar with<font color="#CCCCCC"> respect to a</font>
+
+198
+00:10:52,630 --> 00:10:55,100
+projection<font color="#CCCCCC"> a weighted</font><font color="#E5E5E5"> Euclidean</font>
+
+199
+00:10:55,100 --> 00:10:58,370
+projection norm then the distance of the
+
+200
+00:10:58,370 --> 00:11:01,040
+projection is smaller<font color="#E5E5E5"> or</font><font color="#CCCCCC"> at least no</font>
+
+201
+00:11:01,040 --> 00:11:03,410
+larger<font color="#CCCCCC"> than</font><font color="#E5E5E5"> the distance</font><font color="#CCCCCC"> of the vectors</font>
+
+202
+00:11:03,410 --> 00:11:08,720
+and the proof of this<font color="#E5E5E5"> is one line the</font>
+
+203
+00:11:08,720 --> 00:11:12,410
+difference<font color="#CCCCCC"> between the projections which</font>
+
+204
+00:11:12,410 --> 00:11:16,370
+is this because<font color="#E5E5E5"> pi is linear is less</font>
+
+205
+00:11:16,370 --> 00:11:19,810
+than that plus some positive thing<font color="#E5E5E5"> and</font>
+
+206
+00:11:19,810 --> 00:11:24,170
+<font color="#CCCCCC">by by the projection</font><font color="#E5E5E5"> theorem by the</font>
+
+207
+00:11:24,170 --> 00:11:26,870
+<font color="#CCCCCC">Gordian theorem this sum here is</font><font color="#E5E5E5"> equal</font>
+
+208
+00:11:26,870 --> 00:11:30,890
+<font color="#E5E5E5">to J minus J bar let's not focus on</font><font color="#CCCCCC"> this</font>
+
+209
+00:11:30,890 --> 00:11:33,200
+algebra<font color="#E5E5E5"> just suffice it to say that's a</font>
+
+210
+00:11:33,200 --> 00:11:35,750
+<font color="#E5E5E5">one-line proof based on the Pythagorean</font>
+
+211
+00:11:35,750 --> 00:11:38,470
+<font color="#E5E5E5">theorem</font>
+
+212
+00:11:39,690 --> 00:11:43,440
+now here is the important theorem<font color="#E5E5E5"> and</font>
+
+213
+00:11:43,440 --> 00:11:47,020
+applies to<font color="#CCCCCC"> any</font><font color="#E5E5E5"> Markov chain</font><font color="#CCCCCC"> but</font><font color="#E5E5E5"> these</font>
+
+214
+00:11:47,020 --> 00:11:50,200
+<font color="#E5E5E5">are body suppose</font><font color="#CCCCCC"> that you</font><font color="#E5E5E5"> have a Markov</font>
+
+215
+00:11:50,200 --> 00:11:52,180
+<font color="#CCCCCC">chain that corresponds let's say the</font><font color="#E5E5E5"> one</font>
+
+216
+00:11:52,180 --> 00:11:55,870
+that corresponds to a<font color="#E5E5E5"> policy new and P</font>
+
+217
+00:11:55,870 --> 00:11:59,100
+is its transition<font color="#E5E5E5"> probability matrix</font><font color="#CCCCCC"> and</font>
+
+218
+00:11:59,100 --> 00:12:03,010
+<font color="#E5E5E5">sy is the steady state probability</font>
+
+219
+00:12:03,010 --> 00:12:05,530
+vector corresponding<font color="#CCCCCC"> to this Markov</font>
+
+220
+00:12:05,530 --> 00:12:08,620
+chain then you have this inequality
+
+221
+00:12:08,620 --> 00:12:18,040
+holding<font color="#CCCCCC"> okay so take any vector</font><font color="#E5E5E5"> Z apply</font>
+
+222
+00:12:18,040 --> 00:12:20,080
+this probability<font color="#E5E5E5"> this transition</font>
+
+223
+00:12:20,080 --> 00:12:22,390
+probability<font color="#CCCCCC"> sort</font><font color="#E5E5E5"> of randomized according</font>
+
+224
+00:12:22,390 --> 00:12:25,600
+to<font color="#E5E5E5"> T and we get</font><font color="#CCCCCC"> something that's smaller</font>
+
+225
+00:12:25,600 --> 00:12:32,340
+a smaller norm okay
+
+226
+00:12:32,340 --> 00:12:35,650
+the proof of this takes takes like five
+
+227
+00:12:35,650 --> 00:12:39,580
+minutes<font color="#E5E5E5"> to go</font><font color="#CCCCCC"> through</font><font color="#E5E5E5"> it involves you do</font>
+
+228
+00:12:39,580 --> 00:12:41,200
+the natural things<font color="#CCCCCC"> take the square of</font>
+
+229
+00:12:41,200 --> 00:12:45,070
+that<font color="#CCCCCC"> write it in</font><font color="#E5E5E5"> terms of</font><font color="#CCCCCC"> V of sy</font>
+
+230
+00:12:45,070 --> 00:12:46,750
+okay this is equal to<font color="#E5E5E5"> this by definition</font>
+
+231
+00:12:46,750 --> 00:12:50,920
+<font color="#E5E5E5">and then you use okay there's a there's</font>
+
+232
+00:12:50,920 --> 00:12:52,630
+a convexity property of<font color="#CCCCCC"> a quadratic</font><font color="#E5E5E5"> that</font>
+
+233
+00:12:52,630 --> 00:12:56,770
+<font color="#E5E5E5">you use here and using the steady state</font>
+
+234
+00:12:56,770 --> 00:13:00,760
+<font color="#CCCCCC">okay take this out here</font><font color="#E5E5E5"> and then use the</font>
+
+235
+00:13:00,760 --> 00:13:03,010
+definition of steady state<font color="#CCCCCC"> probabilities</font>
+
+236
+00:13:03,010 --> 00:13:05,380
+you get<font color="#CCCCCC"> this equality</font><font color="#E5E5E5"> and this is</font>
+
+237
+00:13:05,380 --> 00:13:10,960
+<font color="#E5E5E5">precisely the the the norm of Z squared</font>
+
+238
+00:13:10,960 --> 00:13:13,300
+so it's a one-line proof<font color="#E5E5E5"> a little tricky</font>
+
+239
+00:13:13,300 --> 00:13:17,640
+<font color="#E5E5E5">and but it still fits</font><font color="#CCCCCC"> in one paragraph</font>
+
+240
+00:13:17,640 --> 00:13:20,740
+so that's not the time<font color="#CCCCCC"> to do this detail</font>
+
+241
+00:13:20,740 --> 00:13:22,780
+<font color="#E5E5E5">proofs here but I want to show you that</font>
+
+242
+00:13:22,780 --> 00:13:27,640
+<font color="#E5E5E5">this is relatively simple now once I</font>
+
+243
+00:13:27,640 --> 00:13:32,620
+<font color="#CCCCCC">have</font><font color="#E5E5E5"> this</font><font color="#CCCCCC"> relationship</font><font color="#E5E5E5"> then I used a non</font>
+
+244
+00:13:32,620 --> 00:13:34,780
+expensiveness of Phi<font color="#CCCCCC"> in the definition</font>
+
+245
+00:13:34,780 --> 00:13:37,960
+the definition of<font color="#CCCCCC"> T</font><font color="#E5E5E5"> news of J involves</font>
+
+246
+00:13:37,960 --> 00:13:40,720
+the cost vector<font color="#E5E5E5"> of mu and also the</font>
+
+247
+00:13:40,720 --> 00:13:44,700
+transition probability matrix of new and
+
+248
+00:13:44,700 --> 00:13:48,150
+the difference<font color="#E5E5E5"> okay</font><font color="#CCCCCC"> I want you to see</font>
+
+249
+00:13:48,150 --> 00:13:54,270
+how to to look<font color="#E5E5E5"> at</font><font color="#CCCCCC"> the difference of Pi</font><font color="#E5E5E5"> T</font>
+
+250
+00:13:54,270 --> 00:13:57,570
+<font color="#E5E5E5">applied on to generic vectors J and J</font>
+
+251
+00:13:57,570 --> 00:14:02,400
+<font color="#CCCCCC">bar because of this inequality here</font><font color="#E5E5E5"> when</font>
+
+252
+00:14:02,400 --> 00:14:05,090
+you subtract these two this goes<font color="#E5E5E5"> away</font>
+
+253
+00:14:05,090 --> 00:14:12,630
+and what's<font color="#E5E5E5"> left</font><font color="#CCCCCC"> is</font><font color="#E5E5E5"> okay</font><font color="#CCCCCC"> first we use</font><font color="#E5E5E5"> the</font>
+
+254
+00:14:12,630 --> 00:14:15,060
+non<font color="#CCCCCC"> expensiveness of the projection</font><font color="#E5E5E5"> okay</font>
+
+255
+00:14:15,060 --> 00:14:18,720
+to get<font color="#E5E5E5"> this relation in this relation is</font>
+
+256
+00:14:18,720 --> 00:14:22,470
+equal to this and now I<font color="#E5E5E5"> use this lemma</font>
+
+257
+00:14:22,470 --> 00:14:27,870
+<font color="#E5E5E5">to get the last part of inequality which</font>
+
+258
+00:14:27,870 --> 00:14:32,900
+says that<font color="#CCCCCC"> PI T is a contraction with</font>
+
+259
+00:14:32,900 --> 00:14:40,830
+modulus<font color="#E5E5E5"> alpha so that's it</font><font color="#CCCCCC"> very simple</font>
+
+260
+00:14:40,830 --> 00:14:45,480
+<font color="#CCCCCC">proof to establish</font><font color="#E5E5E5"> the right norm for</font>
+
+261
+00:14:45,480 --> 00:14:48,150
+projection which<font color="#CCCCCC"> is the steady state</font>
+
+262
+00:14:48,150 --> 00:14:52,460
+<font color="#E5E5E5">distribution of the current policy</font>
+
+263
+00:14:58,110 --> 00:15:02,160
+yes you use the property<font color="#E5E5E5"> of their body</font>
+
+264
+00:15:02,160 --> 00:15:05,280
+<font color="#E5E5E5">because if</font><font color="#CCCCCC"> Sai does not have positive</font>
+
+265
+00:15:05,280 --> 00:15:09,940
+components everywhere<font color="#E5E5E5"> then this is not a</font>
+
+266
+00:15:09,940 --> 00:15:12,580
+norm anymore<font color="#E5E5E5"> okay</font>
+
+267
+00:15:12,580 --> 00:15:14,830
+you have to have positive<font color="#CCCCCC"> components</font>
+
+268
+00:15:14,830 --> 00:15:18,930
+<font color="#CCCCCC">oxide</font><font color="#E5E5E5"> for it to qualify as a norm</font>
+
+269
+00:15:26,780 --> 00:15:29,600
+<font color="#E5E5E5">okay so there</font><font color="#CCCCCC"> is also this proof of the</font>
+
+270
+00:15:29,600 --> 00:15:32,750
+error bound and against a one-line proof
+
+271
+00:15:32,750 --> 00:15:35,480
+which I will<font color="#E5E5E5"> not</font><font color="#CCCCCC"> go through the first</font>
+
+272
+00:15:35,480 --> 00:15:38,080
+equality here uses the Ligurian theorem
+
+273
+00:15:38,080 --> 00:15:42,140
+the second inequality<font color="#E5E5E5"> uses the second</font>
+
+274
+00:15:42,140 --> 00:15:44,660
+equality<font color="#E5E5E5"> is because jail use a fixed</font>
+
+275
+00:15:44,660 --> 00:15:48,770
+point<font color="#E5E5E5"> of T and Phi R star the</font>
+
+276
+00:15:48,770 --> 00:15:52,720
+<font color="#CCCCCC">approximations</font><font color="#E5E5E5"> effects point of Pi T and</font>
+
+277
+00:15:52,720 --> 00:15:56,810
+finally this by<font color="#CCCCCC"> we by the fact that PI T</font>
+
+278
+00:15:56,810 --> 00:15:59,510
+is a contraction<font color="#E5E5E5"> of modulus alpha gives</font>
+
+279
+00:15:59,510 --> 00:16:02,300
+you<font color="#E5E5E5"> this take this on the</font><font color="#CCCCCC"> other</font><font color="#E5E5E5"> side and</font>
+
+280
+00:16:02,300 --> 00:16:05,600
+<font color="#CCCCCC">divide and you get the result that's</font>
+
+281
+00:16:05,600 --> 00:16:12,200
+<font color="#E5E5E5">that so what it</font><font color="#CCCCCC"> says is that if you</font>
+
+282
+00:16:12,200 --> 00:16:14,900
+project<font color="#CCCCCC"> J</font><font color="#E5E5E5"> according</font><font color="#CCCCCC"> to this</font><font color="#E5E5E5"> side</font>
+
+283
+00:16:14,900 --> 00:16:16,790
+<font color="#CCCCCC">distribution</font><font color="#E5E5E5"> the corresponding Markov</font>
+
+284
+00:16:16,790 --> 00:16:22,910
+chain<font color="#E5E5E5"> then the error that of that that</font>
+
+285
+00:16:22,910 --> 00:16:27,070
+that<font color="#E5E5E5"> you get is something that</font><font color="#CCCCCC"> is</font>
+
+286
+00:16:27,070 --> 00:16:31,300
+bounded by the<font color="#E5E5E5"> minimum possible error</font>
+
+287
+00:16:31,300 --> 00:16:35,980
+over<font color="#E5E5E5"> the approximation subspace</font>
+
+288
+00:16:37,900 --> 00:16:44,950
+<font color="#E5E5E5">okay so all of this fuss was to show</font>
+
+289
+00:16:44,950 --> 00:16:49,360
+this proposition<font color="#E5E5E5"> okay now what we're</font>
+
+290
+00:16:49,360 --> 00:16:53,650
+going to do is put this<font color="#CCCCCC"> proposition into</font>
+
+291
+00:16:53,650 --> 00:17:02,050
+practice using simulation so we have to
+
+292
+00:17:02,050 --> 00:17:04,119
+project<font color="#E5E5E5"> this equation and when we want</font>
+
+293
+00:17:04,119 --> 00:17:07,020
+to see how do<font color="#E5E5E5"> you solve it by simulation</font>
+
+294
+00:17:07,020 --> 00:17:11,559
+<font color="#E5E5E5">again here's the figure we have a given</font>
+
+295
+00:17:11,559 --> 00:17:14,890
+policy and the team<font color="#CCCCCC"> new mapping</font><font color="#E5E5E5"> is given</font>
+
+296
+00:17:14,890 --> 00:17:17,109
+by this<font color="#E5E5E5"> with PI being the distribution</font>
+
+297
+00:17:17,109 --> 00:17:20,319
+<font color="#E5E5E5">the transition probability matrix of</font><font color="#CCCCCC"> MU</font>
+
+298
+00:17:20,319 --> 00:17:23,349
+and G being<font color="#E5E5E5"> the cost</font><font color="#CCCCCC"> vector</font><font color="#E5E5E5"> and I want</font>
+
+299
+00:17:23,349 --> 00:17:27,010
+to find R where Phi R<font color="#CCCCCC"> is an</font><font color="#E5E5E5"> element of</font>
+
+300
+00:17:27,010 --> 00:17:29,470
+the approximation subspace that<font color="#E5E5E5"> solves</font>
+
+301
+00:17:29,470 --> 00:17:37,000
+this equation here okay now I have a
+
+302
+00:17:37,000 --> 00:17:39,580
+<font color="#E5E5E5">projection here from T news of VR into</font>
+
+303
+00:17:39,580 --> 00:17:42,610
+<font color="#E5E5E5">fee R and this project</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> this distance</font>
+
+304
+00:17:42,610 --> 00:17:45,010
+is orthogonal<font color="#E5E5E5"> to be approximation</font>
+
+305
+00:17:45,010 --> 00:17:46,780
+subspace<font color="#CCCCCC"> this is the orthogonality</font>
+
+306
+00:17:46,780 --> 00:17:50,830
+<font color="#E5E5E5">principle in particular</font><font color="#CCCCCC"> the error the</font>
+
+307
+00:17:50,830 --> 00:17:52,900
+<font color="#CCCCCC">difference between this and that</font><font color="#E5E5E5"> this</font>
+
+308
+00:17:52,900 --> 00:17:56,290
+broken line okay<font color="#E5E5E5"> is orthogonal to the</font>
+
+309
+00:17:56,290 --> 00:17:59,700
+subspace<font color="#E5E5E5"> spanned</font><font color="#CCCCCC"> by the columns of fee</font>
+
+310
+00:17:59,700 --> 00:18:04,809
+okay<font color="#CCCCCC"> so this error is orthogonal</font><font color="#E5E5E5"> to the</font>
+
+311
+00:18:04,809 --> 00:18:05,950
+columns of fee
+
+312
+00:18:05,950 --> 00:18:09,280
+but orthogonal in the sense of the side
+
+313
+00:18:09,280 --> 00:18:12,400
+normally<font color="#E5E5E5"> capital side here is a diagonal</font>
+
+314
+00:18:12,400 --> 00:18:14,320
+matrix<font color="#E5E5E5"> with the steady state</font>
+
+315
+00:18:14,320 --> 00:18:18,130
+probabilities<font color="#E5E5E5"> along the diagonal</font><font color="#CCCCCC"> okay so</font>
+
+316
+00:18:18,130 --> 00:18:19,780
+<font color="#E5E5E5">that's what we mean by orthogonality</font>
+
+317
+00:18:19,780 --> 00:18:23,470
+orthogonality with respect to<font color="#E5E5E5"> B to the</font>
+
+318
+00:18:23,470 --> 00:18:27,870
+scaled<font color="#E5E5E5"> norm of projection</font>
+
+319
+00:18:29,190 --> 00:18:32,220
+so the projected equation is equivalent
+
+320
+00:18:32,220 --> 00:18:36,479
+<font color="#CCCCCC">to a matrix equation and this matrix</font>
+
+321
+00:18:36,479 --> 00:18:40,970
+<font color="#E5E5E5">equation is</font><font color="#CCCCCC"> just this C</font><font color="#E5E5E5"> R star equals</font><font color="#CCCCCC"> 2d</font>
+
+322
+00:18:40,970 --> 00:18:44,879
+with<font color="#CCCCCC"> the matrix C being you read it</font><font color="#E5E5E5"> from</font>
+
+323
+00:18:44,879 --> 00:18:51,379
+here<font color="#E5E5E5"> Phi X I times I minus AP and Phi</font>
+
+324
+00:18:51,379 --> 00:18:59,220
+<font color="#CCCCCC">and the constant</font><font color="#E5E5E5"> is this times that so</font>
+
+325
+00:18:59,220 --> 00:19:00,869
+now this project<font color="#CCCCCC"> equation is seeing a</font>
+
+326
+00:19:00,869 --> 00:19:02,220
+little abstract<font color="#CCCCCC"> it has become very</font>
+
+327
+00:19:02,220 --> 00:19:05,149
+concrete<font color="#E5E5E5"> it's just a</font><font color="#CCCCCC"> matrix equation</font>
+
+328
+00:19:05,149 --> 00:19:07,169
+<font color="#E5E5E5">what's the dimension of this matrix</font>
+
+329
+00:19:07,169 --> 00:19:13,080
+equation<font color="#CCCCCC"> it is small small because the</font>
+
+330
+00:19:13,080 --> 00:19:16,919
+row dimension because the column
+
+331
+00:19:16,919 --> 00:19:19,619
+dimension of field is small so<font color="#E5E5E5"> this</font>
+
+332
+00:19:19,619 --> 00:19:26,729
+equation<font color="#E5E5E5"> is s by s naught n by n</font><font color="#CCCCCC"> ok it's</font>
+
+333
+00:19:26,729 --> 00:19:31,279
+a low dimensional equation however
+
+334
+00:19:31,279 --> 00:19:34,109
+computing this matrix so if I<font color="#CCCCCC"> could</font>
+
+335
+00:19:34,109 --> 00:19:36,479
+compute this matrix<font color="#E5E5E5"> a and the vector D</font>
+
+336
+00:19:36,479 --> 00:19:39,149
+that would be great it<font color="#E5E5E5"> would that you</font>
+
+337
+00:19:39,149 --> 00:19:41,729
+can give to<font color="#E5E5E5"> MATLAB</font><font color="#CCCCCC"> okay</font><font color="#E5E5E5"> it's a low</font>
+
+338
+00:19:41,729 --> 00:19:43,950
+dimensional matrix inversion<font color="#E5E5E5"> give it to</font>
+
+339
+00:19:43,950 --> 00:19:45,799
+MATLAB<font color="#CCCCCC"> it will give you the answer but</font>
+
+340
+00:19:45,799 --> 00:19:49,559
+<font color="#CCCCCC">there is a catch here you cannot</font>
+
+341
+00:19:49,559 --> 00:19:53,369
+calculate this<font color="#CCCCCC"> matrix C easily because</font>
+
+342
+00:19:53,369 --> 00:19:56,159
+it involves vector<font color="#CCCCCC"> or matrix or matrix</font>
+
+343
+00:19:56,159 --> 00:19:58,859
+matrix multiplies that<font color="#CCCCCC"> are high</font>
+
+344
+00:19:58,859 --> 00:20:04,139
+dimensional this<font color="#CCCCCC"> fee prime</font><font color="#E5E5E5"> matrix is</font>
+
+345
+00:20:04,139 --> 00:20:07,200
+like this<font color="#E5E5E5"> it's multiplied with a big</font>
+
+346
+00:20:07,200 --> 00:20:11,460
+huge gigantic diagonal matrix<font color="#CCCCCC"> sigh and a</font>
+
+347
+00:20:11,460 --> 00:20:16,109
+gigantic matrix again and by n so this
+
+348
+00:20:16,109 --> 00:20:20,429
+<font color="#CCCCCC">is a huge calculation even though the</font>
+
+349
+00:20:20,429 --> 00:20:22,649
+end result is low dimensional<font color="#E5E5E5"> this is a</font>
+
+350
+00:20:22,649 --> 00:20:26,820
+huge calculation similarly here I have
+
+351
+00:20:26,820 --> 00:20:29,119
+this<font color="#CCCCCC"> Phi prime which</font><font color="#E5E5E5"> is like this</font>
+
+352
+00:20:29,119 --> 00:20:32,429
+multiplied with<font color="#CCCCCC"> X I which is</font><font color="#E5E5E5"> gigantic</font>
+
+353
+00:20:32,429 --> 00:20:34,950
+<font color="#E5E5E5">and multiplied with G which is also</font>
+
+354
+00:20:34,950 --> 00:20:39,240
+gigantic all<font color="#E5E5E5"> this inner products end up</font>
+
+355
+00:20:39,240 --> 00:20:42,179
+you a low dimensional vector but
+
+356
+00:20:42,179 --> 00:20:44,640
+carrying out these calculations<font color="#E5E5E5"> is</font>
+
+357
+00:20:44,640 --> 00:20:50,040
+difficult what's the<font color="#E5E5E5"> answer to this well</font>
+
+358
+00:20:50,040 --> 00:20:52,380
+last time I<font color="#CCCCCC"> mentioned that the primary</font>
+
+359
+00:20:52,380 --> 00:20:54,929
+<font color="#CCCCCC">use of</font><font color="#E5E5E5"> simulation within our context is</font>
+
+360
+00:20:54,929 --> 00:20:58,710
+<font color="#E5E5E5">to be able to make huge inner products</font>
+
+361
+00:20:58,710 --> 00:21:02,910
+make them manageable by sampling<font color="#E5E5E5"> instead</font>
+
+362
+00:21:02,910 --> 00:21:05,970
+of<font color="#E5E5E5"> adding all the terms and similarly</font>
+
+363
+00:21:05,970 --> 00:21:08,360
+that's what we do here<font color="#CCCCCC"> we calculate</font>
+
+364
+00:21:08,360 --> 00:21:11,370
+simulation based approximations of C and
+
+365
+00:21:11,370 --> 00:21:15,179
+<font color="#E5E5E5">D that are manageable</font><font color="#CCCCCC"> and then we use</font>
+
+366
+00:21:15,179 --> 00:21:18,179
+<font color="#CCCCCC">the approximations in place</font><font color="#E5E5E5"> of the real</font>
+
+367
+00:21:18,179 --> 00:21:21,059
+things<font color="#E5E5E5"> in</font><font color="#CCCCCC"> this equation and get an</font>
+
+368
+00:21:21,059 --> 00:21:24,950
+approximation to<font color="#CCCCCC"> our</font><font color="#E5E5E5"> star</font>
+
+369
+00:21:31,380 --> 00:21:34,160
+<font color="#E5E5E5">okay</font>
+
+370
+00:21:35,860 --> 00:21:39,730
+so suppose that<font color="#E5E5E5"> we have I give you C and</font>
+
+371
+00:21:39,730 --> 00:21:41,890
+<font color="#E5E5E5">D some hub in a magical way we have</font>
+
+372
+00:21:41,890 --> 00:21:45,789
+found C and D I can solve this<font color="#CCCCCC"> by matrix</font>
+
+373
+00:21:45,789 --> 00:21:47,830
+<font color="#E5E5E5">inversion</font><font color="#CCCCCC"> assuming</font><font color="#E5E5E5"> of course that c is</font>
+
+374
+00:21:47,830 --> 00:21:51,279
+invertible<font color="#CCCCCC"> okay which</font><font color="#E5E5E5"> is not entirely a</font>
+
+375
+00:21:51,279 --> 00:21:53,590
+trivial<font color="#E5E5E5"> issue</font><font color="#CCCCCC"> assuming that</font><font color="#E5E5E5"> is</font>
+
+376
+00:21:53,590 --> 00:21:56,320
+invertible<font color="#CCCCCC"> you can use just matrix</font>
+
+377
+00:21:56,320 --> 00:21:59,950
+inversion<font color="#E5E5E5"> the alternative to matrix</font>
+
+378
+00:21:59,950 --> 00:22:02,110
+inversion<font color="#E5E5E5"> is to solve this linear</font>
+
+379
+00:22:02,110 --> 00:22:04,990
+equation by iteration<font color="#E5E5E5"> linear</font><font color="#CCCCCC"> equations</font>
+
+380
+00:22:04,990 --> 00:22:08,500
+are solved<font color="#E5E5E5"> in two ways either</font><font color="#CCCCCC"> by matrix</font>
+
+381
+00:22:08,500 --> 00:22:10,960
+inversion<font color="#E5E5E5"> or by using some kind</font><font color="#CCCCCC"> of</font><font color="#E5E5E5"> an</font>
+
+382
+00:22:10,960 --> 00:22:14,139
+iterative method<font color="#E5E5E5"> to solve them in</font>
+
+383
+00:22:14,139 --> 00:22:16,870
+<font color="#E5E5E5">particular we may try to</font><font color="#CCCCCC"> use this</font>
+
+384
+00:22:16,870 --> 00:22:21,760
+iteration which is called projected
+
+385
+00:22:21,760 --> 00:22:24,159
+value iteration<font color="#CCCCCC"> it's similar to be to</font>
+
+386
+00:22:24,159 --> 00:22:27,610
+the to the one that<font color="#E5E5E5"> I discussed</font><font color="#CCCCCC"> earlier</font>
+
+387
+00:22:27,610 --> 00:22:30,639
+<font color="#E5E5E5">fitted value iteration how the</font><font color="#CCCCCC"> direction</font>
+
+388
+00:22:30,639 --> 00:22:33,190
+K you<font color="#CCCCCC"> have</font><font color="#E5E5E5"> fields of RK</font><font color="#CCCCCC"> and</font>
+
+389
+00:22:33,190 --> 00:22:36,130
+approximation of the what you're trying
+
+390
+00:22:36,130 --> 00:22:39,070
+<font color="#E5E5E5">to compute me</font><font color="#CCCCCC"> Jane you back to apply</font><font color="#E5E5E5"> PI</font>
+
+391
+00:22:39,070 --> 00:22:42,010
+T to it and then get a new<font color="#CCCCCC"> approximation</font>
+
+392
+00:22:42,010 --> 00:22:43,210
+and keep<font color="#E5E5E5"> going</font>
+
+393
+00:22:43,210 --> 00:22:45,610
+so here's<font color="#E5E5E5"> approximate excuse projected</font>
+
+394
+00:22:45,610 --> 00:22:48,730
+value<font color="#CCCCCC"> Direction you</font><font color="#E5E5E5"> are at</font><font color="#CCCCCC"> phase of RK</font>
+
+395
+00:22:48,730 --> 00:22:51,519
+you go to T<font color="#CCCCCC"> Sofia of RK which is this</font>
+
+396
+00:22:51,519 --> 00:22:54,940
+<font color="#E5E5E5">expression here project it</font><font color="#CCCCCC"> down yet RK</font>
+
+397
+00:22:54,940 --> 00:22:57,730
+plus<font color="#E5E5E5"> one then get another one project</font>
+
+398
+00:22:57,730 --> 00:23:03,760
+<font color="#CCCCCC">another one project</font><font color="#E5E5E5"> and so</font><font color="#CCCCCC"> on now this</font>
+
+399
+00:23:03,760 --> 00:23:06,880
+can be<font color="#E5E5E5"> also written</font><font color="#CCCCCC"> in</font><font color="#E5E5E5"> terms of the</font>
+
+400
+00:23:06,880 --> 00:23:10,870
+<font color="#E5E5E5">matrices</font><font color="#CCCCCC"> C and the vector D in</font>
+
+401
+00:23:10,870 --> 00:23:17,110
+particular the projected iteration tries
+
+402
+00:23:17,110 --> 00:23:20,679
+<font color="#E5E5E5">to find the vector RK plus 1 such that</font>
+
+403
+00:23:20,679 --> 00:23:24,870
+the distance<font color="#CCCCCC"> between these two is</font>
+
+404
+00:23:24,870 --> 00:23:28,179
+<font color="#E5E5E5">minimized okay so this is a least</font>
+
+405
+00:23:28,179 --> 00:23:31,630
+squares problem in our setting the
+
+406
+00:23:31,630 --> 00:23:34,630
+gradient<font color="#CCCCCC"> of this objective to 0</font><font color="#E5E5E5"> you get</font>
+
+407
+00:23:34,630 --> 00:23:38,230
+this equation<font color="#E5E5E5"> here and</font><font color="#CCCCCC"> after you</font>
+
+408
+00:23:38,230 --> 00:23:40,360
+manipulate it<font color="#E5E5E5"> you see that the new</font>
+
+409
+00:23:40,360 --> 00:23:43,090
+vector<font color="#E5E5E5"> RK plus 1 is given by</font><font color="#CCCCCC"> the old</font>
+
+410
+00:23:43,090 --> 00:23:46,120
+vector times
+
+411
+00:23:46,120 --> 00:23:52,670
+<font color="#E5E5E5">some some correction which is</font>
+
+412
+00:23:52,670 --> 00:23:55,910
+<font color="#CCCCCC">proportional to</font><font color="#E5E5E5"> the residual</font><font color="#CCCCCC"> the error</font>
+
+413
+00:23:55,910 --> 00:24:01,420
+that<font color="#E5E5E5"> RK makes in satisfying the equation</font>
+
+414
+00:24:01,420 --> 00:24:05,570
+<font color="#E5E5E5">and there is also this matrix here so</font>
+
+415
+00:24:05,570 --> 00:24:07,310
+again<font color="#CCCCCC"> this is a low dimensional</font>
+
+416
+00:24:07,310 --> 00:24:10,850
+direction but it involves some gigantic
+
+417
+00:24:10,850 --> 00:24:14,720
+inner products<font color="#E5E5E5"> in here in here in here</font>
+
+418
+00:24:14,720 --> 00:24:18,620
+<font color="#CCCCCC">in this gigantic in their products our</font>
+
+419
+00:24:18,620 --> 00:24:21,350
+next step<font color="#E5E5E5"> is</font><font color="#CCCCCC"> to address</font><font color="#E5E5E5"> them by</font>
+
+420
+00:24:21,350 --> 00:24:23,180
+simulation<font color="#E5E5E5"> to approximate them by</font>
+
+421
+00:24:23,180 --> 00:24:31,850
+simulation<font color="#E5E5E5"> these are two major methods</font>
+
+422
+00:24:31,850 --> 00:24:35,180
+<font color="#E5E5E5">for solving projected equations but of</font>
+
+423
+00:24:35,180 --> 00:24:38,240
+course the<font color="#CCCCCC"> solution here is exact</font><font color="#E5E5E5"> the</font>
+
+424
+00:24:38,240 --> 00:24:40,940
+first one leads to<font color="#E5E5E5"> a method called</font><font color="#CCCCCC"> LS TD</font>
+
+425
+00:24:40,940 --> 00:24:43,310
+the second<font color="#CCCCCC"> least unethical LSP and we're</font>
+
+426
+00:24:43,310 --> 00:24:45,340
+going<font color="#CCCCCC"> to get</font><font color="#E5E5E5"> into this method shortly</font>
+
+427
+00:24:45,340 --> 00:24:47,960
+there are also some other methods<font color="#E5E5E5"> but we</font>
+
+428
+00:24:47,960 --> 00:24:52,690
+can't we can't get into<font color="#E5E5E5"> those present</font>
+
+429
+00:24:55,180 --> 00:25:04,580
+<font color="#E5E5E5">okay have any questions here</font><font color="#CCCCCC"> so now what</font>
+
+430
+00:25:04,580 --> 00:25:07,640
+<font color="#E5E5E5">we're going to do is use sampling to</font>
+
+431
+00:25:07,640 --> 00:25:09,830
+<font color="#E5E5E5">approximate the Mac in the matrix and</font>
+
+432
+00:25:09,830 --> 00:25:11,570
+<font color="#E5E5E5">vector involved in this projected</font>
+
+433
+00:25:11,570 --> 00:25:14,690
+equation approximate<font color="#E5E5E5"> C with CJ</font>
+
+434
+00:25:14,690 --> 00:25:18,050
+<font color="#CCCCCC">approximate deal with DJ and then after</font>
+
+435
+00:25:18,050 --> 00:25:20,810
+we do that<font color="#E5E5E5"> then the matrix inversion</font>
+
+436
+00:25:20,810 --> 00:25:23,480
+method is approximately implemented<font color="#E5E5E5"> like</font>
+
+437
+00:25:23,480 --> 00:25:27,080
+so this<font color="#E5E5E5"> is</font><font color="#CCCCCC"> the</font><font color="#E5E5E5"> air</font><font color="#CCCCCC"> HDD method probably</font>
+
+438
+00:25:27,080 --> 00:25:28,640
+the most<font color="#E5E5E5"> popular method for solving</font>
+
+439
+00:25:28,640 --> 00:25:31,430
+projected equations calculate by
+
+440
+00:25:31,430 --> 00:25:34,460
+simulation approximations to C and D and
+
+441
+00:25:34,460 --> 00:25:41,390
+just<font color="#E5E5E5"> use the inverse</font><font color="#CCCCCC"> the alternative</font><font color="#E5E5E5"> is</font>
+
+442
+00:25:41,390 --> 00:25:43,010
+<font color="#E5E5E5">to consider this projected value</font>
+
+443
+00:25:43,010 --> 00:25:46,910
+iteration<font color="#E5E5E5"> and replace this C with</font><font color="#CCCCCC"> ck</font>
+
+444
+00:25:46,910 --> 00:25:51,200
+replace D with<font color="#E5E5E5"> D K and replace this</font>
+
+445
+00:25:51,200 --> 00:25:53,540
+again the<font color="#E5E5E5"> simulation based approximation</font>
+
+446
+00:25:53,540 --> 00:25:57,880
+which<font color="#CCCCCC"> is possible to do by</font><font color="#E5E5E5"> sampling</font>
+
+447
+00:26:01,990 --> 00:26:03,879
+and the key fact<font color="#E5E5E5"> is that these</font>
+
+448
+00:26:03,879 --> 00:26:06,490
+<font color="#E5E5E5">approximations can</font><font color="#CCCCCC"> be computed with</font><font color="#E5E5E5"> low</font>
+
+449
+00:26:06,490 --> 00:26:09,730
+dimensional<font color="#E5E5E5"> linear algebra of order of</font>
+
+450
+00:26:09,730 --> 00:26:12,490
+the number of<font color="#CCCCCC"> basis functions</font><font color="#E5E5E5"> in not</font>
+
+451
+00:26:12,490 --> 00:26:15,690
+<font color="#E5E5E5">only</font><font color="#CCCCCC"> dimension of the space</font>
+
+452
+00:26:22,230 --> 00:26:26,629
+<font color="#E5E5E5">any questions okay</font>
+
+453
+00:26:26,629 --> 00:26:31,379
+so now I have a<font color="#CCCCCC"> matrix that</font><font color="#E5E5E5"> I want to</font>
+
+454
+00:26:31,379 --> 00:26:34,169
+approximate by<font color="#E5E5E5"> simulation what do I do</font>
+
+455
+00:26:34,169 --> 00:26:37,470
+<font color="#E5E5E5">well against the old trick if you want</font>
+
+456
+00:26:37,470 --> 00:26:39,809
+to calculate quantities by<font color="#CCCCCC"> simulation</font>
+
+457
+00:26:39,809 --> 00:26:43,129
+you express them as expected<font color="#E5E5E5"> values</font>
+
+458
+00:26:43,129 --> 00:26:48,409
+<font color="#E5E5E5">somehow you put you you express them as</font>
+
+459
+00:26:48,409 --> 00:26:50,279
+expectation with respect to some
+
+460
+00:26:50,279 --> 00:26:52,350
+<font color="#CCCCCC">distribution and then you sample</font>
+
+461
+00:26:52,350 --> 00:26:54,480
+according<font color="#CCCCCC"> to</font><font color="#E5E5E5"> that distribution</font><font color="#CCCCCC"> and you</font>
+
+462
+00:26:54,480 --> 00:26:57,559
+make the approximate it's<font color="#E5E5E5"> similar here</font>
+
+463
+00:26:57,559 --> 00:27:00,840
+we collect now the main thing<font color="#CCCCCC"> if what's</font>
+
+464
+00:27:00,840 --> 00:27:03,899
+important is<font color="#CCCCCC"> to introduce a sampling</font>
+
+465
+00:27:03,899 --> 00:27:08,009
+method that involves<font color="#E5E5E5"> the steady</font><font color="#CCCCCC"> steady</font>
+
+466
+00:27:08,009 --> 00:27:10,919
+probabilities of the Markov<font color="#CCCCCC"> chain</font><font color="#E5E5E5"> so we</font>
+
+467
+00:27:10,919 --> 00:27:13,649
+can't generate samples arbitrarily but
+
+468
+00:27:13,649 --> 00:27:17,879
+instead we use the Markov<font color="#CCCCCC"> chain to</font>
+
+469
+00:27:17,879 --> 00:27:20,369
+generate the samples<font color="#E5E5E5"> so we have this</font>
+
+470
+00:27:20,369 --> 00:27:21,330
+Markov chain
+
+471
+00:27:21,330 --> 00:27:23,820
+<font color="#E5E5E5">I want to involve in the simulation</font><font color="#CCCCCC"> the</font>
+
+472
+00:27:23,820 --> 00:27:27,720
+size of that<font color="#E5E5E5"> Markov chain so I run an</font>
+
+473
+00:27:27,720 --> 00:27:29,609
+infinitely long<font color="#CCCCCC"> trajectory of this</font>
+
+474
+00:27:29,609 --> 00:27:32,309
+<font color="#E5E5E5">Markov chain it generates a sequence</font>
+
+475
+00:27:32,309 --> 00:27:34,109
+starting from<font color="#CCCCCC"> this state</font><font color="#E5E5E5"> it generates</font>
+
+476
+00:27:34,109 --> 00:27:36,710
+another state<font color="#E5E5E5"> another state</font><font color="#CCCCCC"> and so on</font>
+
+477
+00:27:36,710 --> 00:27:39,359
+<font color="#E5E5E5">because of the ergodicity that</font><font color="#CCCCCC"> i have</font>
+
+478
+00:27:39,359 --> 00:27:41,730
+assumed<font color="#E5E5E5"> all the states</font><font color="#CCCCCC"> and</font><font color="#E5E5E5"> all the</font>
+
+479
+00:27:41,730 --> 00:27:44,580
+transitions appear with long term
+
+480
+00:27:44,580 --> 00:27:48,720
+frequencies<font color="#CCCCCC"> I</font><font color="#E5E5E5"> I and P IJ T IJ being the</font>
+
+481
+00:27:48,720 --> 00:27:51,739
+transition probabilities
+
+482
+00:27:53,700 --> 00:27:57,090
+with every transition<font color="#E5E5E5"> that I generate I</font>
+
+483
+00:27:57,090 --> 00:28:01,030
+compute the corresponding<font color="#E5E5E5"> row</font><font color="#CCCCCC"> or</font><font color="#E5E5E5"> fee</font>
+
+484
+00:28:01,030 --> 00:28:04,059
+<font color="#E5E5E5">this is a low dimensional vector</font><font color="#CCCCCC"> and the</font>
+
+485
+00:28:04,059 --> 00:28:08,860
+corresponding cost component so I<font color="#E5E5E5"> try</font>
+
+486
+00:28:08,860 --> 00:28:11,650
+<font color="#CCCCCC">attic simulation infinitely long</font><font color="#E5E5E5"> gives</font>
+
+487
+00:28:11,650 --> 00:28:15,360
+me a lot of<font color="#E5E5E5"> samples of states and</font>
+
+488
+00:28:15,360 --> 00:28:19,780
+transitions<font color="#E5E5E5"> with corresponding costs and</font>
+
+489
+00:28:19,780 --> 00:28:22,570
+the states appear with this<font color="#CCCCCC"> distribution</font>
+
+490
+00:28:22,570 --> 00:28:24,610
+the transitions appear with a<font color="#CCCCCC"> product of</font>
+
+491
+00:28:24,610 --> 00:28:28,299
+these two<font color="#CCCCCC"> distributions and</font><font color="#E5E5E5"> now the</font>
+
+492
+00:28:28,299 --> 00:28:32,169
+formulas are given here<font color="#CCCCCC"> I want to</font>
+
+493
+00:28:32,169 --> 00:28:36,340
+<font color="#CCCCCC">approximate this vector here okay it</font>
+
+494
+00:28:36,340 --> 00:28:39,549
+involves<font color="#E5E5E5"> this matrix side and this</font>
+
+495
+00:28:39,549 --> 00:28:44,470
+vector<font color="#CCCCCC"> hi view this has an expected</font>
+
+496
+00:28:44,470 --> 00:28:51,640
+<font color="#E5E5E5">value</font><font color="#CCCCCC"> I write it like this</font><font color="#E5E5E5"> okay if you</font>
+
+497
+00:28:51,640 --> 00:28:56,230
+expand<font color="#E5E5E5"> P and P and so on you can be</font>
+
+498
+00:28:56,230 --> 00:28:59,799
+<font color="#CCCCCC">written exactly</font><font color="#E5E5E5"> like so and</font><font color="#CCCCCC"> now you can</font>
+
+499
+00:28:59,799 --> 00:29:05,370
+see that it<font color="#CCCCCC"> is a it is an expectation</font>
+
+500
+00:29:05,370 --> 00:29:10,330
+involving these probabilities<font color="#CCCCCC"> now my</font>
+
+501
+00:29:10,330 --> 00:29:12,850
+simulation generates these probabilities
+
+502
+00:29:12,850 --> 00:29:14,140
+they are the probabilities of<font color="#E5E5E5"> these</font>
+
+503
+00:29:14,140 --> 00:29:17,169
+transitions<font color="#CCCCCC"> SCI is a</font><font color="#E5E5E5"> probability of</font>
+
+504
+00:29:17,169 --> 00:29:20,380
+being a state<font color="#CCCCCC"> i</font><font color="#E5E5E5"> p IJ is a probability of</font>
+
+505
+00:29:20,380 --> 00:29:23,950
+going to state J afterwards<font color="#E5E5E5"> so this is</font>
+
+506
+00:29:23,950 --> 00:29:27,130
+the steady state<font color="#CCCCCC"> long</font><font color="#E5E5E5"> term frequency of</font>
+
+507
+00:29:27,130 --> 00:29:31,299
+transitions<font color="#E5E5E5"> like that and the</font><font color="#CCCCCC"> Monte</font>
+
+508
+00:29:31,299 --> 00:29:35,850
+<font color="#CCCCCC">Carlo estimate of this is precisely this</font>
+
+509
+00:29:38,190 --> 00:29:40,440
+so that's the<font color="#E5E5E5"> simulation-based estimate</font>
+
+510
+00:29:40,440 --> 00:29:45,690
+of the D vector run an infinitely long
+
+511
+00:29:45,690 --> 00:29:49,230
+sequence<font color="#E5E5E5"> states and transitions occur</font>
+
+512
+00:29:49,230 --> 00:29:52,050
+with the<font color="#E5E5E5"> right probabilities yeah if you</font>
+
+513
+00:29:52,050 --> 00:29:54,260
+<font color="#CCCCCC">average this expression by Monte Carlo</font>
+
+514
+00:29:54,260 --> 00:29:58,230
+<font color="#E5E5E5">up to time</font><font color="#CCCCCC"> K will generate K samples</font><font color="#E5E5E5"> a</font>
+
+515
+00:29:58,230 --> 00:29:59,730
+<font color="#E5E5E5">fine number</font><font color="#CCCCCC"> of samples</font><font color="#E5E5E5"> it's an</font>
+
+516
+00:29:59,730 --> 00:30:02,070
+<font color="#E5E5E5">approximation to this that converges to</font>
+
+517
+00:30:02,070 --> 00:30:04,890
+it<font color="#E5E5E5"> for K going to infinity</font><font color="#CCCCCC"> with an</font>
+
+518
+00:30:04,890 --> 00:30:14,010
+infinite number<font color="#E5E5E5"> of samples notice that</font>
+
+519
+00:30:14,010 --> 00:30:16,110
+everything here is<font color="#CCCCCC"> finite is</font><font color="#E5E5E5"> low</font>
+
+520
+00:30:16,110 --> 00:30:18,990
+<font color="#E5E5E5">dimensional Phi is a small dimensional</font>
+
+521
+00:30:18,990 --> 00:30:22,050
+vector and<font color="#CCCCCC"> this</font><font color="#E5E5E5"> is a number</font><font color="#CCCCCC"> so I'm just</font>
+
+522
+00:30:22,050 --> 00:30:24,890
+average in small dimensional vectors<font color="#E5E5E5"> and</font>
+
+523
+00:30:24,890 --> 00:30:27,360
+nowhere do I have to deal<font color="#CCCCCC"> with a large</font>
+
+524
+00:30:27,360 --> 00:30:29,640
+dimension of a Markov<font color="#CCCCCC"> chain it's the</font>
+
+525
+00:30:29,640 --> 00:30:32,250
+sampling that takes care<font color="#E5E5E5"> of visiting the</font>
+
+526
+00:30:32,250 --> 00:30:34,880
+various<font color="#CCCCCC"> states</font>
+
+527
+00:30:40,380 --> 00:30:42,929
+now the projected equation involves a
+
+528
+00:30:42,929 --> 00:30:46,559
+matrix<font color="#E5E5E5"> ela vector D the vector D is</font>
+
+529
+00:30:46,559 --> 00:30:51,389
+obtained<font color="#E5E5E5"> like so the matrix C</font><font color="#CCCCCC"> is this</font>
+
+530
+00:30:51,389 --> 00:30:55,740
+<font color="#E5E5E5">matrix here again</font><font color="#CCCCCC"> low-dimensional but</font>
+
+531
+00:30:55,740 --> 00:30:58,259
+with gigantic inner products and matrix
+
+532
+00:30:58,259 --> 00:31:02,940
+multiplies in here and it turns<font color="#E5E5E5"> out</font><font color="#CCCCCC"> ok</font>
+
+533
+00:31:02,940 --> 00:31:04,500
+it takes a little<font color="#E5E5E5"> bit of algebra to see</font>
+
+534
+00:31:04,500 --> 00:31:06,990
+that this can be written<font color="#E5E5E5"> again as an</font>
+
+535
+00:31:06,990 --> 00:31:09,539
+expected<font color="#CCCCCC"> value and</font><font color="#E5E5E5"> this expected value</font>
+
+536
+00:31:09,539 --> 00:31:12,629
+can be<font color="#E5E5E5"> approximated by Monte Carlo like</font>
+
+537
+00:31:12,629 --> 00:31:16,350
+this<font color="#CCCCCC"> ok so look what this</font><font color="#E5E5E5"> is it's a</font>
+
+538
+00:31:16,350 --> 00:31:19,470
+small<font color="#E5E5E5"> column vector multiplied with a</font>
+
+539
+00:31:19,470 --> 00:31:22,830
+small<font color="#CCCCCC"> role vector okay so these are</font>
+
+540
+00:31:22,830 --> 00:31:25,409
+small matrices<font color="#E5E5E5"> small rank one matrices</font>
+
+541
+00:31:25,409 --> 00:31:29,279
+<font color="#E5E5E5">which I averaged over over a large</font>
+
+542
+00:31:29,279 --> 00:31:32,509
+<font color="#E5E5E5">number of transitions</font>
+
+543
+00:31:36,040 --> 00:31:39,370
+and that's<font color="#E5E5E5"> basically it these are the</font>
+
+544
+00:31:39,370 --> 00:31:44,140
+formulas<font color="#E5E5E5"> and</font><font color="#CCCCCC"> of course there are</font>
+
+545
+00:31:44,140 --> 00:31:46,059
+extensions<font color="#E5E5E5"> but these are the basic</font>
+
+546
+00:31:46,059 --> 00:31:49,150
+formulas<font color="#CCCCCC"> if I also need</font><font color="#E5E5E5"> to calculate</font>
+
+547
+00:31:49,150 --> 00:31:52,900
+<font color="#E5E5E5">this</font><font color="#CCCCCC"> matrix here</font><font color="#E5E5E5"> I can I can also</font><font color="#CCCCCC"> the</font>
+
+548
+00:31:52,900 --> 00:31:56,350
+same simulation<font color="#E5E5E5"> can give me a simulation</font>
+
+549
+00:31:56,350 --> 00:31:58,419
+<font color="#E5E5E5">based approximation to this and this is</font>
+
+550
+00:31:58,419 --> 00:32:00,520
+<font color="#CCCCCC">useful in</font><font color="#E5E5E5"> the case of the iterative</font>
+
+551
+00:32:00,520 --> 00:32:21,220
+method yes yes<font color="#E5E5E5"> right the question</font><font color="#CCCCCC"> is the</font>
+
+552
+00:32:21,220 --> 00:32:28,110
+following<font color="#CCCCCC"> do I</font><font color="#E5E5E5"> need do I need to know</font>
+
+553
+00:32:28,110 --> 00:32:34,660
+<font color="#CCCCCC">sigh</font><font color="#E5E5E5"> I don't need to know it</font><font color="#CCCCCC"> I just let</font>
+
+554
+00:32:34,660 --> 00:32:38,200
+the Markov chain<font color="#CCCCCC"> work</font><font color="#E5E5E5"> and automatically</font>
+
+555
+00:32:38,200 --> 00:32:40,240
+it<font color="#E5E5E5"> generates transitions and</font><font color="#CCCCCC"> States</font>
+
+556
+00:32:40,240 --> 00:32:43,240
+according<font color="#E5E5E5"> to science I</font><font color="#CCCCCC"> write so I need a</font>
+
+557
+00:32:43,240 --> 00:32:59,320
+simulator of<font color="#E5E5E5"> the Markov</font><font color="#CCCCCC"> chain right yeah</font>
+
+558
+00:32:59,320 --> 00:33:02,080
+<font color="#CCCCCC">ok ok I'm right</font><font color="#E5E5E5"> you're absolutely right</font>
+
+559
+00:33:02,080 --> 00:33:03,880
+your question has to do also<font color="#E5E5E5"> with</font>
+
+560
+00:33:03,880 --> 00:33:10,210
+whether<font color="#E5E5E5"> we do need this assumption we</font><font color="#CCCCCC"> do</font>
+
+561
+00:33:10,210 --> 00:33:12,700
+and we don't<font color="#E5E5E5"> okay we definitely need it</font>
+
+562
+00:33:12,700 --> 00:33:15,400
+<font color="#E5E5E5">for the theory as I gave it to you but</font>
+
+563
+00:33:15,400 --> 00:33:17,169
+there's a version of<font color="#CCCCCC"> the theory that</font>
+
+564
+00:33:17,169 --> 00:33:22,360
+<font color="#E5E5E5">allows you to</font><font color="#CCCCCC"> to allows approximations</font>
+
+565
+00:33:22,360 --> 00:33:25,980
+of Markov chains that<font color="#E5E5E5"> are not exotic and</font>
+
+566
+00:33:25,980 --> 00:33:28,570
+then what you get with the<font color="#E5E5E5"> simulation</font>
+
+567
+00:33:28,570 --> 00:33:31,059
+<font color="#CCCCCC">procedure is a</font><font color="#E5E5E5"> little different but it's</font>
+
+568
+00:33:31,059 --> 00:33:37,500
+<font color="#E5E5E5">still usable</font><font color="#CCCCCC"> basically you get you get</font>
+
+569
+00:33:48,390 --> 00:33:52,030
+that's right yeah<font color="#CCCCCC"> ok you</font><font color="#E5E5E5"> bringing up</font>
+
+570
+00:33:52,030 --> 00:33:55,270
+another interesting<font color="#CCCCCC"> question if my</font>
+
+571
+00:33:55,270 --> 00:33:59,650
+simulation faithfully follows the Markov
+
+572
+00:33:59,650 --> 00:34:03,520
+chain<font color="#E5E5E5"> then I'm going to be</font><font color="#CCCCCC"> encounter</font>
+
+573
+00:34:03,520 --> 00:34:05,770
+states that are preferred by that Markov
+
+574
+00:34:05,770 --> 00:34:10,000
+chain so when I do my approximation<font color="#E5E5E5"> I'm</font>
+
+575
+00:34:10,000 --> 00:34:12,190
+going to have more samples from the
+
+576
+00:34:12,190 --> 00:34:14,859
+preferential<font color="#CCCCCC"> States</font><font color="#E5E5E5"> that this policy</font>
+
+577
+00:34:14,859 --> 00:34:17,619
+likes and the corresponding
+
+578
+00:34:17,619 --> 00:34:20,770
+approximation is going to be biased
+
+579
+00:34:20,770 --> 00:34:26,168
+towards those preferred<font color="#E5E5E5"> States and so I</font>
+
+580
+00:34:26,168 --> 00:34:28,239
+<font color="#E5E5E5">may have large errors for the other</font>
+
+581
+00:34:28,239 --> 00:34:29,980
+states the problem of exploration which
+
+582
+00:34:29,980 --> 00:34:31,510
+I touched upon you bring it up<font color="#E5E5E5"> again</font>
+
+583
+00:34:31,510 --> 00:34:34,869
+<font color="#E5E5E5">it's a very very</font><font color="#CCCCCC"> important problem and</font>
+
+584
+00:34:34,869 --> 00:34:38,250
+also<font color="#E5E5E5"> probably deal with on Wednesday</font><font color="#CCCCCC"> ok</font>
+
+585
+00:34:38,250 --> 00:34:41,710
+<font color="#E5E5E5">we're going to focus on policy issues of</font>
+
+586
+00:34:41,710 --> 00:34:44,949
+policy<font color="#E5E5E5"> improvement on Wednesday today</font>
+
+587
+00:34:44,949 --> 00:34:47,710
+<font color="#E5E5E5">we're focusing only on issues of policy</font>
+
+588
+00:34:47,710 --> 00:34:52,149
+evaluation<font color="#E5E5E5"> without regard of</font><font color="#CCCCCC"> the fact</font>
+
+589
+00:34:52,149 --> 00:34:55,210
+that<font color="#E5E5E5"> we're going to need the policy</font>
+
+590
+00:34:55,210 --> 00:34:57,160
+evaluation to do policy<font color="#E5E5E5"> improvement</font><font color="#CCCCCC"> with</font>
+
+591
+00:34:57,160 --> 00:35:00,550
+the next policy<font color="#E5E5E5"> so that's let's let's</font>
+
+592
+00:35:00,550 --> 00:35:02,440
+postpone this question until until
+
+593
+00:35:02,440 --> 00:35:04,890
+Wednesday
+
+594
+00:35:10,309 --> 00:35:15,780
+so the first I understand<font color="#E5E5E5"> we facility</font>
+
+595
+00:35:15,780 --> 00:35:18,809
+we've had this because the Markov chain
+
+596
+00:35:18,809 --> 00:35:21,780
+<font color="#CCCCCC">is a positive dependent so we assume we</font>
+
+597
+00:35:21,780 --> 00:35:24,440
+have<font color="#CCCCCC"> the right</font>
+
+598
+00:35:26,920 --> 00:35:31,890
+in<font color="#E5E5E5"> January to be</font><font color="#CCCCCC"> so laughter especially</font>
+
+599
+00:35:37,900 --> 00:35:42,970
+yes yes the question<font color="#E5E5E5"> is that do we need</font>
+
+600
+00:35:42,970 --> 00:35:47,680
+to have do<font color="#E5E5E5"> we need to to</font><font color="#CCCCCC"> be</font><font color="#E5E5E5"> able</font><font color="#CCCCCC"> to</font>
+
+601
+00:35:47,680 --> 00:35:50,680
+implement<font color="#E5E5E5"> this</font><font color="#CCCCCC"> particular policy</font><font color="#E5E5E5"> the</font>
+
+602
+00:35:50,680 --> 00:35:53,769
+answer is yes<font color="#CCCCCC"> somehow</font><font color="#E5E5E5"> either you need to</font>
+
+603
+00:35:53,769 --> 00:35:58,539
+have some analytical expression<font color="#E5E5E5"> or more</font>
+
+604
+00:35:58,539 --> 00:36:00,339
+<font color="#E5E5E5">likely to be able to simulate</font>
+
+605
+00:36:00,339 --> 00:36:03,249
+transitions from a given policy now note
+
+606
+00:36:03,249 --> 00:36:05,799
+<font color="#CCCCCC">that even</font><font color="#E5E5E5"> though we do not have</font><font color="#CCCCCC"> the</font>
+
+607
+00:36:05,799 --> 00:36:09,670
+policy has a<font color="#CCCCCC"> vector of actions because</font>
+
+608
+00:36:09,670 --> 00:36:12,339
+that's too big the assumption is that at
+
+609
+00:36:12,339 --> 00:36:15,279
+any state<font color="#E5E5E5"> we can generate the action of</font>
+
+610
+00:36:15,279 --> 00:36:17,349
+<font color="#CCCCCC">that policy there's a computer</font><font color="#E5E5E5"> routine</font>
+
+611
+00:36:17,349 --> 00:36:20,200
+<font color="#E5E5E5">that goes in and finds the action of</font>
+
+612
+00:36:20,200 --> 00:36:24,119
+that policy<font color="#E5E5E5"> typically of course by just</font>
+
+613
+00:36:24,119 --> 00:36:26,829
+doing a policy improvement on the
+
+614
+00:36:26,829 --> 00:36:30,910
+<font color="#E5E5E5">preceding policy so that's so so in</font>
+
+615
+00:36:30,910 --> 00:36:33,220
+other words you generate the action in
+
+616
+00:36:33,220 --> 00:36:35,200
+the corresponding transitions as you go
+
+617
+00:36:35,200 --> 00:36:38,019
+you don't<font color="#CCCCCC"> need</font><font color="#E5E5E5"> to have a model</font><font color="#CCCCCC"> ahead of</font>
+
+618
+00:36:38,019 --> 00:36:41,140
+time<font color="#E5E5E5"> and that's that's there's no way to</font>
+
+619
+00:36:41,140 --> 00:36:43,559
+<font color="#CCCCCC">avoid that</font>
+
+620
+00:36:48,510 --> 00:36:50,350
+yeah
+
+621
+00:36:50,350 --> 00:36:54,910
+question so in the practice we<font color="#E5E5E5"> always</font>
+
+622
+00:36:54,910 --> 00:36:58,990
+have a very finite number<font color="#CCCCCC"> of samples so</font>
+
+623
+00:36:58,990 --> 00:37:03,100
+is there any<font color="#E5E5E5"> results about</font><font color="#CCCCCC"> onami</font><font color="#E5E5E5"> simple</font>
+
+624
+00:37:03,100 --> 00:37:07,440
+passes<font color="#E5E5E5"> prior</font><font color="#CCCCCC"> to getting</font><font color="#E5E5E5"> high quality</font>
+
+625
+00:37:07,440 --> 00:37:10,800
+restoration of
+
+626
+00:37:13,000 --> 00:37:15,160
+yeah<font color="#E5E5E5"> the</font><font color="#CCCCCC"> question has to do with</font><font color="#E5E5E5"> how</font>
+
+627
+00:37:15,160 --> 00:37:16,900
+<font color="#CCCCCC">many samples do we need to have an</font>
+
+628
+00:37:16,900 --> 00:37:19,570
+accurate<font color="#E5E5E5"> accurate enough approximation</font>
+
+629
+00:37:19,570 --> 00:37:26,190
+<font color="#E5E5E5">of C and D for this method to</font><font color="#CCCCCC"> work in</font>
+
+630
+00:37:26,190 --> 00:37:28,350
+<font color="#E5E5E5">there are a lot of unanswered questions</font>
+
+631
+00:37:28,350 --> 00:37:32,530
+<font color="#CCCCCC">around this issue</font><font color="#E5E5E5"> impact in in theory</font>
+
+632
+00:37:32,530 --> 00:37:35,610
+you<font color="#E5E5E5"> would like to have many many samples</font>
+
+633
+00:37:35,610 --> 00:37:38,260
+<font color="#E5E5E5">that would make the</font><font color="#CCCCCC"> evaluation</font><font color="#E5E5E5"> of each</font>
+
+634
+00:37:38,260 --> 00:37:41,500
+policy<font color="#E5E5E5"> quite expensive in practice</font>
+
+635
+00:37:41,500 --> 00:37:44,380
+practitioners actually<font color="#CCCCCC"> use very</font><font color="#E5E5E5"> few</font>
+
+636
+00:37:44,380 --> 00:37:50,950
+samples<font color="#CCCCCC"> and put their faith in God hope</font>
+
+637
+00:37:50,950 --> 00:37:54,340
+that this will<font color="#CCCCCC"> work</font><font color="#E5E5E5"> and I have a slide</font>
+
+638
+00:37:54,340 --> 00:37:57,000
+about<font color="#E5E5E5"> that</font>
+
+639
+00:38:23,220 --> 00:38:26,110
+well first of<font color="#E5E5E5"> all it's very important to</font>
+
+640
+00:38:26,110 --> 00:38:30,910
+do exploration<font color="#E5E5E5"> and to use a somewhat</font>
+
+641
+00:38:30,910 --> 00:38:35,820
+rich<font color="#E5E5E5"> sample of</font><font color="#CCCCCC"> States to visit</font><font color="#E5E5E5"> also</font>
+
+642
+00:38:35,820 --> 00:38:38,140
+there<font color="#CCCCCC"> are some algorithms that use</font>
+
+643
+00:38:38,140 --> 00:38:41,140
+relatively<font color="#E5E5E5"> few samples with each policy</font>
+
+644
+00:38:41,140 --> 00:38:44,440
+evaluation but at the same time<font color="#CCCCCC"> do not</font>
+
+645
+00:38:44,440 --> 00:38:47,020
+<font color="#CCCCCC">make the full change</font><font color="#E5E5E5"> than the</font><font color="#CCCCCC"> new policy</font>
+
+646
+00:38:47,020 --> 00:38:50,050
+<font color="#CCCCCC">okay they change the</font><font color="#E5E5E5"> R vector</font><font color="#CCCCCC"> a little</font>
+
+647
+00:38:50,050 --> 00:38:53,410
+bit<font color="#E5E5E5"> okay and the iterative methods are</font>
+
+648
+00:38:53,410 --> 00:38:56,290
+better at that<font color="#CCCCCC"> but</font><font color="#E5E5E5"> there's a lot of art</font>
+
+649
+00:38:56,290 --> 00:38:59,740
+in here and there are few performance
+
+650
+00:38:59,740 --> 00:39:03,370
+guarantees<font color="#E5E5E5"> in theory you cannot</font>
+
+651
+00:39:03,370 --> 00:39:06,580
+guarantee<font color="#E5E5E5"> very much theory only gives an</font>
+
+652
+00:39:06,580 --> 00:39:09,520
+indication of what tricks to try and
+
+653
+00:39:09,520 --> 00:39:12,220
+then and then<font color="#CCCCCC"> you try them and hopefully</font>
+
+654
+00:39:12,220 --> 00:39:15,850
+they<font color="#E5E5E5"> work that's that's the way there is</font>
+
+655
+00:39:15,850 --> 00:39:18,360
+actually
+
+656
+00:39:23,339 --> 00:39:26,920
+okay so convergence here depends<font color="#E5E5E5"> on the</font>
+
+657
+00:39:26,920 --> 00:39:28,660
+law of<font color="#E5E5E5"> large numbers requires an</font>
+
+658
+00:39:28,660 --> 00:39:33,099
+infinite<font color="#CCCCCC"> number</font><font color="#E5E5E5"> of</font><font color="#CCCCCC"> samples and there is</font>
+
+659
+00:39:33,099 --> 00:39:36,489
+also a certain<font color="#CCCCCC"> theory of sometimes</font><font color="#E5E5E5"> these</font>
+
+660
+00:39:36,489 --> 00:39:38,559
+methods are called<font color="#E5E5E5"> temporal differences</font>
+
+661
+00:39:38,559 --> 00:39:40,689
+methods and I'm not going to get<font color="#E5E5E5"> into</font>
+
+662
+00:39:40,689 --> 00:39:42,219
+what's a temporal difference is
+
+663
+00:39:42,219 --> 00:39:43,959
+<font color="#E5E5E5">basically the sum of these two</font>
+
+664
+00:39:43,959 --> 00:39:47,319
+<font color="#CCCCCC">quantities here and because this</font>
+
+665
+00:39:47,319 --> 00:39:49,239
+temporal differences appear in all kinds
+
+666
+00:39:49,239 --> 00:39:51,119
+of implementations of<font color="#E5E5E5"> this methodology</font>
+
+667
+00:39:51,119 --> 00:39:55,599
+<font color="#CCCCCC">very</font><font color="#E5E5E5"> often people view the temporal</font>
+
+668
+00:39:55,599 --> 00:39:57,719
+differences has been an important
+
+669
+00:39:57,719 --> 00:40:05,499
+important quantity and and and they call
+
+670
+00:40:05,499 --> 00:40:07,390
+the<font color="#E5E5E5"> methods temporal difference methods</font>
+
+671
+00:40:07,390 --> 00:40:10,329
+to me temporal differences are<font color="#E5E5E5"> not</font><font color="#CCCCCC"> all</font>
+
+672
+00:40:10,329 --> 00:40:11,949
+that<font color="#E5E5E5"> important they just happen to</font>
+
+673
+00:40:11,949 --> 00:40:13,529
+<font color="#E5E5E5">appear in various mathematical</font>
+
+674
+00:40:13,529 --> 00:40:16,809
+calculations<font color="#E5E5E5"> but you may make up your</font>
+
+675
+00:40:16,809 --> 00:40:18,939
+own mind if you wish to<font color="#E5E5E5"> go a little</font>
+
+676
+00:40:18,939 --> 00:40:23,079
+further into<font color="#E5E5E5"> this field okay so now let</font>
+
+677
+00:40:23,079 --> 00:40:25,269
+me<font color="#CCCCCC"> come to a question simulation</font><font color="#E5E5E5"> this is</font>
+
+678
+00:40:25,269 --> 00:40:27,670
+the standard<font color="#E5E5E5"> version of approximate</font>
+
+679
+00:40:27,670 --> 00:40:29,319
+policy direction with an infinite number
+
+680
+00:40:29,319 --> 00:40:32,489
+<font color="#E5E5E5">of</font><font color="#CCCCCC"> samples in between policy evaluations</font>
+
+681
+00:40:32,489 --> 00:40:35,289
+instead of<font color="#CCCCCC"> calculating nearly exact</font>
+
+682
+00:40:35,289 --> 00:40:38,079
+approximations<font color="#CCCCCC"> it is possible to</font><font color="#E5E5E5"> do a</font>
+
+683
+00:40:38,079 --> 00:40:40,359
+less accurate approximation based on
+
+684
+00:40:40,359 --> 00:40:42,759
+just a few simulation samples as I
+
+685
+00:40:42,759 --> 00:40:45,269
+mentioned earlier and this is called
+
+686
+00:40:45,269 --> 00:40:48,729
+<font color="#E5E5E5">optimistic policy direction why is it</font>
+
+687
+00:40:48,729 --> 00:40:50,319
+called optimistic well first of all we
+
+688
+00:40:50,319 --> 00:40:52,719
+can't under the name optimistic earlier
+
+689
+00:40:52,719 --> 00:40:56,049
+as the value of<font color="#E5E5E5"> the policy</font><font color="#CCCCCC"> Direction</font>
+
+690
+00:40:56,049 --> 00:41:01,229
+<font color="#E5E5E5">could use only a few value iterations</font><font color="#CCCCCC"> to</font>
+
+691
+00:41:01,229 --> 00:41:07,289
+<font color="#E5E5E5">to to up to to do a policy evaluation</font>
+
+692
+00:41:07,289 --> 00:41:10,359
+<font color="#CCCCCC">here it's a similar setting</font><font color="#E5E5E5"> but a lot</font>
+
+693
+00:41:10,359 --> 00:41:12,009
+different because<font color="#E5E5E5"> the first number of</font>
+
+694
+00:41:12,009 --> 00:41:14,769
+simulation samples there are optimistic
+
+695
+00:41:14,769 --> 00:41:18,279
+methods that<font color="#CCCCCC"> just is one sample and they</font>
+
+696
+00:41:18,279 --> 00:41:20,270
+immediately<font color="#E5E5E5"> change the</font>
+
+697
+00:41:20,270 --> 00:41:23,960
+the<font color="#E5E5E5"> BR vector with one sample others</font>
+
+698
+00:41:23,960 --> 00:41:25,940
+that use<font color="#E5E5E5"> a hundred</font><font color="#CCCCCC"> samples other that</font>
+
+699
+00:41:25,940 --> 00:41:28,700
+use a thousand<font color="#E5E5E5"> samples very few methods</font>
+
+700
+00:41:28,700 --> 00:41:31,040
+<font color="#E5E5E5">in practice use an infinite or the</font>
+
+701
+00:41:31,040 --> 00:41:35,810
+extremely large<font color="#E5E5E5"> number of</font><font color="#CCCCCC"> samples often</font>
+
+702
+00:41:35,810 --> 00:41:42,380
+you get better<font color="#E5E5E5"> results but there's no</font>
+
+703
+00:41:42,380 --> 00:41:45,340
+<font color="#CCCCCC">Theory really</font><font color="#E5E5E5"> for these methods okay</font>
+
+704
+00:41:45,340 --> 00:41:48,410
+<font color="#CCCCCC">when you have approximation and and</font>
+
+705
+00:41:48,410 --> 00:41:51,530
+<font color="#CCCCCC">often</font><font color="#E5E5E5"> times the behavior is very</font><font color="#CCCCCC"> complex</font>
+
+706
+00:41:51,530 --> 00:41:57,470
+<font color="#E5E5E5">and in the next lecture</font><font color="#CCCCCC"> I'm going we're</font>
+
+707
+00:41:57,470 --> 00:42:00,410
+going to talk about how oscillations<font color="#E5E5E5"> may</font>
+
+708
+00:42:00,410 --> 00:42:03,680
+occur in how these optimistic methods
+
+709
+00:42:03,680 --> 00:42:09,620
+may make the oscillations<font color="#E5E5E5"> even worse</font><font color="#CCCCCC"> now</font>
+
+710
+00:42:09,620 --> 00:42:11,120
+here is<font color="#CCCCCC"> something that you can say</font>
+
+711
+00:42:11,120 --> 00:42:15,520
+genetically the matrix inversion method
+
+712
+00:42:15,520 --> 00:42:20,060
+inverts<font color="#E5E5E5"> an approximation matrix</font><font color="#CCCCCC"> ek but</font>
+
+713
+00:42:20,060 --> 00:42:22,640
+if the<font color="#E5E5E5"> accuracy of this approximation</font><font color="#CCCCCC"> is</font>
+
+714
+00:42:22,640 --> 00:42:25,250
+low the<font color="#E5E5E5"> CK matrix will have</font><font color="#CCCCCC"> a lot of</font>
+
+715
+00:42:25,250 --> 00:42:27,650
+noise<font color="#E5E5E5"> if you try to invert the matrix</font>
+
+716
+00:42:27,650 --> 00:42:31,010
+<font color="#E5E5E5">that has</font><font color="#CCCCCC"> a lot of noise</font><font color="#E5E5E5"> in it then we</font>
+
+717
+00:42:31,010 --> 00:42:34,850
+get nonsense very often particularly if
+
+718
+00:42:34,850 --> 00:42:37,310
+the matrix is<font color="#E5E5E5"> nearly singular as they</font>
+
+719
+00:42:37,310 --> 00:42:40,880
+often are here so<font color="#CCCCCC"> there's</font><font color="#E5E5E5"> a serious</font>
+
+720
+00:42:40,880 --> 00:42:43,700
+<font color="#E5E5E5">problem with with the matrix inversion</font>
+
+721
+00:42:43,700 --> 00:42:45,680
+method<font color="#E5E5E5"> because if you have limited</font>
+
+722
+00:42:45,680 --> 00:42:50,410
+sampling particularly for<font color="#E5E5E5"> Co conditioned</font>
+
+723
+00:42:50,410 --> 00:42:53,540
+the LSPD method does not<font color="#E5E5E5"> involve this</font>
+
+724
+00:42:53,540 --> 00:42:55,610
+matrix inversion<font color="#CCCCCC"> tends to cope a little</font>
+
+725
+00:42:55,610 --> 00:42:58,760
+better because it's also iterative in
+
+726
+00:42:58,760 --> 00:43:03,140
+nature<font color="#E5E5E5"> it adjusts the vector R little by</font>
+
+727
+00:43:03,140 --> 00:43:05,510
+<font color="#E5E5E5">little and in the meantime accumulates</font>
+
+728
+00:43:05,510 --> 00:43:09,710
+more relevant samples<font color="#CCCCCC"> it's also</font><font color="#E5E5E5"> possible</font>
+
+729
+00:43:09,710 --> 00:43:12,680
+<font color="#E5E5E5">to put a little step size in front of</font>
+
+730
+00:43:12,680 --> 00:43:16,340
+the correction of the<font color="#E5E5E5"> iterative method</font>
+
+731
+00:43:16,340 --> 00:43:19,130
+this gamma is a step size which<font color="#CCCCCC"> can be</font>
+
+732
+00:43:19,130 --> 00:43:21,680
+<font color="#E5E5E5">taken to</font><font color="#CCCCCC"> be small</font><font color="#E5E5E5"> so</font><font color="#CCCCCC"> that with few</font>
+
+733
+00:43:21,680 --> 00:43:26,540
+samples you do only<font color="#CCCCCC"> you do only</font><font color="#E5E5E5"> a small</font>
+
+734
+00:43:26,540 --> 00:43:27,410
+correction
+
+735
+00:43:27,410 --> 00:43:29,990
+and the<font color="#E5E5E5"> noises</font><font color="#CCCCCC"> sort of tends to</font>
+
+736
+00:43:29,990 --> 00:43:32,390
+attenuate<font color="#E5E5E5"> the simulation noise this</font>
+
+737
+00:43:32,390 --> 00:43:36,500
+gamma<font color="#E5E5E5"> step</font><font color="#CCCCCC"> sighs there's a lot of art</font>
+
+738
+00:43:36,500 --> 00:43:39,440
+<font color="#E5E5E5">involved here and and don't expect</font>
+
+739
+00:43:39,440 --> 00:43:43,000
+success<font color="#E5E5E5"> the</font><font color="#CCCCCC"> first time you try this</font>
+
+740
+00:43:53,940 --> 00:43:58,510
+well you have okay so what is the
+
+741
+00:43:58,510 --> 00:43:59,980
+simulation<font color="#E5E5E5"> now it's a question</font><font color="#CCCCCC"> is quite</font>
+
+742
+00:43:59,980 --> 00:44:03,280
+<font color="#E5E5E5">the simulation noise and and whether it</font>
+
+743
+00:44:03,280 --> 00:44:07,569
+is<font color="#CCCCCC"> what is it harmful well there's a we</font>
+
+744
+00:44:07,569 --> 00:44:09,849
+want to approximate<font color="#E5E5E5"> D by something that</font>
+
+745
+00:44:09,849 --> 00:44:12,309
+<font color="#E5E5E5">involves the noise here so the noise is</font>
+
+746
+00:44:12,309 --> 00:44:16,599
+<font color="#CCCCCC">DK minus D and</font><font color="#E5E5E5"> similarly here the more</font>
+
+747
+00:44:16,599 --> 00:44:19,690
+samples that<font color="#E5E5E5"> you get the noise is</font>
+
+748
+00:44:19,690 --> 00:44:22,660
+reduced<font color="#E5E5E5"> on</font><font color="#CCCCCC"> the other hand</font><font color="#E5E5E5"> still agree</font>
+
+749
+00:44:22,660 --> 00:44:25,660
+<font color="#E5E5E5">from the smaller amount of noise this</font>
+
+750
+00:44:25,660 --> 00:44:29,140
+matrix may become singular<font color="#CCCCCC"> or give you</font>
+
+751
+00:44:29,140 --> 00:44:30,880
+very different inverse that this matrix
+
+752
+00:44:30,880 --> 00:44:35,290
+<font color="#E5E5E5">here so if you're going to use this</font>
+
+753
+00:44:35,290 --> 00:44:37,839
+<font color="#E5E5E5">matrix inversion method it's important</font>
+
+754
+00:44:37,839 --> 00:44:44,230
+that you sort<font color="#E5E5E5"> of match the the the</font>
+
+755
+00:44:44,230 --> 00:44:47,040
+<font color="#E5E5E5">amount of simulation that you do to the</font>
+
+756
+00:44:47,040 --> 00:44:51,760
+to be<font color="#E5E5E5"> the condition number of that</font>
+
+757
+00:44:51,760 --> 00:44:57,490
+matrix<font color="#E5E5E5"> but clearly from the point of</font>
+
+758
+00:44:57,490 --> 00:44:59,530
+<font color="#CCCCCC">view of inversion the more samples you</font>
+
+759
+00:44:59,530 --> 00:45:01,869
+get the<font color="#E5E5E5"> better</font><font color="#CCCCCC"> off you are</font><font color="#E5E5E5"> but how</font><font color="#CCCCCC"> many</font>
+
+760
+00:45:01,869 --> 00:45:06,059
+you need is not very clear
+
+761
+00:45:16,430 --> 00:45:20,550
+<font color="#E5E5E5">okay now there are some generalizations</font>
+
+762
+00:45:20,550 --> 00:45:22,500
+of<font color="#E5E5E5"> this methodology</font><font color="#CCCCCC"> that I want to cover</font>
+
+763
+00:45:22,500 --> 00:45:24,480
+in the<font color="#E5E5E5"> last part of this lecture</font><font color="#CCCCCC"> so</font>
+
+764
+00:45:24,480 --> 00:45:25,950
+let's take a break for<font color="#CCCCCC"> ten</font><font color="#E5E5E5"> minutes I</font>
+
+765
+00:45:25,950 --> 00:00:00,000
+have a few more slides
+

@@ -1,0 +1,3360 @@
+1
+00:00:30,310 --> 00:00:35,300
+<font color="#E5E5E5">okay let's get started</font><font color="#CCCCCC"> let</font><font color="#E5E5E5"> me welcome</font>
+
+2
+00:00:35,300 --> 00:00:38,690
+<font color="#E5E5E5">you to this last lecture last time the</font>
+
+3
+00:00:38,690 --> 00:00:41,480
+six lectures when approximate dynamic
+
+4
+00:00:41,480 --> 00:00:45,860
+programming<font color="#CCCCCC"> I have a feeling that my the</font>
+
+5
+00:00:45,860 --> 00:00:49,250
+sound is not<font color="#CCCCCC"> very good let</font><font color="#E5E5E5"> me just make</font>
+
+6
+00:00:49,250 --> 00:00:56,239
+an adjustment<font color="#E5E5E5"> I'll put it over here</font><font color="#CCCCCC"> and</font>
+
+7
+00:00:56,239 --> 00:00:57,670
+see what<font color="#E5E5E5"> happens</font>
+
+8
+00:00:57,670 --> 00:01:01,990
+<font color="#E5E5E5">okay is that are you guys doing okay</font>
+
+9
+00:01:01,990 --> 00:01:03,790
+<font color="#E5E5E5">okay</font>
+
+10
+00:01:03,790 --> 00:01:06,170
+okay I think<font color="#E5E5E5"> this a little better</font><font color="#CCCCCC"> at</font>
+
+11
+00:01:06,170 --> 00:01:08,710
+least<font color="#CCCCCC"> it sounds my ears a little</font><font color="#E5E5E5"> better</font>
+
+12
+00:01:08,710 --> 00:01:11,330
+<font color="#CCCCCC">so this</font><font color="#E5E5E5"> is the last lecture lecture</font><font color="#CCCCCC"> six</font>
+
+13
+00:01:11,330 --> 00:01:14,450
+out<font color="#E5E5E5"> of in an approximate dynamic</font>
+
+14
+00:01:14,450 --> 00:01:18,440
+programming and<font color="#E5E5E5"> we have discussed quite</font>
+
+15
+00:01:18,440 --> 00:01:22,970
+<font color="#E5E5E5">a few</font><font color="#CCCCCC"> topics</font><font color="#E5E5E5"> so far and mostly having to</font>
+
+16
+00:01:22,970 --> 00:01:26,330
+do<font color="#E5E5E5"> with policy duration cost function</font>
+
+17
+00:01:26,330 --> 00:01:29,479
+approximations<font color="#CCCCCC"> today we're going</font><font color="#E5E5E5"> to look</font>
+
+18
+00:01:29,479 --> 00:01:32,380
+at two factors<font color="#E5E5E5"> and model free</font>
+
+19
+00:01:32,380 --> 00:01:34,310
+implementations of approximate dynamic
+
+20
+00:01:34,310 --> 00:01:37,369
+programming algorithms<font color="#CCCCCC"> so we are going</font>
+
+21
+00:01:37,369 --> 00:01:40,280
+<font color="#E5E5E5">to review</font><font color="#CCCCCC"> Q factors in the corresponding</font>
+
+22
+00:01:40,280 --> 00:01:43,910
+<font color="#E5E5E5">bellman equations then talk about value</font>
+
+23
+00:01:43,910 --> 00:01:47,390
+and<font color="#CCCCCC"> policy duration</font><font color="#E5E5E5"> for two factors and</font>
+
+24
+00:01:47,390 --> 00:01:50,899
+then discuss Q learning<font color="#E5E5E5"> it's an</font>
+
+25
+00:01:50,899 --> 00:01:53,450
+important algorithm that can be viewed
+
+26
+00:01:53,450 --> 00:01:56,619
+as a sampled version of value iteration
+
+27
+00:01:56,619 --> 00:02:00,679
+<font color="#E5E5E5">you can</font><font color="#CCCCCC"> do Q learning</font><font color="#E5E5E5"> for two factors</font>
+
+28
+00:02:00,679 --> 00:02:02,420
+but there<font color="#E5E5E5"> is no corresponding algorithms</font>
+
+29
+00:02:02,420 --> 00:02:04,340
+are<font color="#CCCCCC"> great for costs</font><font color="#E5E5E5"> that's an</font>
+
+30
+00:02:04,340 --> 00:02:07,039
+<font color="#E5E5E5">interesting fact</font><font color="#CCCCCC"> then we are going</font><font color="#E5E5E5"> to</font>
+
+31
+00:02:07,039 --> 00:02:09,949
+talk<font color="#E5E5E5"> about Q learning</font><font color="#CCCCCC"> in combination</font>
+
+32
+00:02:09,949 --> 00:02:12,620
+with cost function approximation then
+
+33
+00:02:12,620 --> 00:02:15,110
+<font color="#E5E5E5">say a few things about adaptive dynamic</font>
+
+34
+00:02:15,110 --> 00:02:16,459
+programming a few things about
+
+35
+00:02:16,459 --> 00:02:19,340
+approximation policy space and then we
+
+36
+00:02:19,340 --> 00:02:19,700
+are
+
+37
+00:02:19,700 --> 00:02:23,450
+to have a more<font color="#E5E5E5"> general discussion to</font>
+
+38
+00:02:23,450 --> 00:02:30,200
+close the course so let's do a little
+
+39
+00:02:30,200 --> 00:02:36,099
+<font color="#CCCCCC">review we continue</font><font color="#E5E5E5"> to talk about a</font>
+
+40
+00:02:36,099 --> 00:02:40,519
+finite state system involving<font color="#CCCCCC"> states 1</font>
+
+41
+00:02:40,519 --> 00:02:43,459
+up to<font color="#E5E5E5"> n a finite set</font><font color="#CCCCCC"> of controls</font><font color="#E5E5E5"> for</font>
+
+42
+00:02:43,459 --> 00:02:46,549
+<font color="#CCCCCC">each state I</font><font color="#E5E5E5"> the system is defined by</font>
+
+43
+00:02:46,549 --> 00:02:48,680
+transition probabilities<font color="#CCCCCC"> that depend on</font>
+
+44
+00:02:48,680 --> 00:02:51,860
+control<font color="#E5E5E5"> and we consider policies which</font>
+
+45
+00:02:51,860 --> 00:02:53,930
+are sequences of functions<font color="#E5E5E5"> from state to</font>
+
+46
+00:02:53,930 --> 00:02:59,120
+control<font color="#CCCCCC"> nu 0</font><font color="#E5E5E5"> mu 1 and so on</font><font color="#CCCCCC"> and given a</font>
+
+47
+00:02:59,120 --> 00:03:03,349
+policy starting at<font color="#E5E5E5"> a state I we can</font>
+
+48
+00:03:03,349 --> 00:03:05,840
+consider the<font color="#CCCCCC"> sequence of generated costs</font>
+
+49
+00:03:05,840 --> 00:03:09,560
+over time<font color="#CCCCCC"> discounted by a factor of by a</font>
+
+50
+00:03:09,560 --> 00:03:13,579
+discount factor alpha<font color="#CCCCCC"> and take the</font><font color="#E5E5E5"> limit</font>
+
+51
+00:03:13,579 --> 00:03:17,090
+of<font color="#CCCCCC"> the series as n goes to infinity</font><font color="#E5E5E5"> this</font>
+
+52
+00:03:17,090 --> 00:03:19,069
+defines a number<font color="#E5E5E5"> for every policy</font><font color="#CCCCCC"> in</font>
+
+53
+00:03:19,069 --> 00:03:21,769
+every state<font color="#CCCCCC"> so J pi is a cost function</font>
+
+54
+00:03:21,769 --> 00:03:23,209
+we want to<font color="#E5E5E5"> find</font><font color="#CCCCCC"> the minimal</font><font color="#E5E5E5"> cost</font>
+
+55
+00:03:23,209 --> 00:03:25,489
+function in a policy<font color="#E5E5E5"> file that attains</font>
+
+56
+00:03:25,489 --> 00:03:27,650
+the minimum we<font color="#CCCCCC"> have seen the importance</font>
+
+57
+00:03:27,650 --> 00:03:30,109
+of stationary policies policies where
+
+58
+00:03:30,109 --> 00:03:32,420
+all the mutates are the same equal to
+
+59
+00:03:32,420 --> 00:03:37,910
+some new and optimal optimal<font color="#CCCCCC"> policies</font>
+
+60
+00:03:37,910 --> 00:03:39,560
+can be<font color="#E5E5E5"> find among the stationary</font>
+
+61
+00:03:39,560 --> 00:03:41,480
+policies in those of the stationary
+
+62
+00:03:41,480 --> 00:03:43,430
+policies and in the<font color="#E5E5E5"> various algorithms</font>
+
+63
+00:03:43,430 --> 00:03:46,930
+such as policy<font color="#CCCCCC"> duration and so</font><font color="#E5E5E5"> on</font>
+
+64
+00:03:46,930 --> 00:03:49,519
+let<font color="#E5E5E5"> me remind you also of our standard</font>
+
+65
+00:03:49,519 --> 00:03:52,639
+notation which<font color="#CCCCCC"> we use occasionally to</font>
+
+66
+00:03:52,639 --> 00:03:55,370
+denote the dynamic programming mapping
+
+67
+00:03:55,370 --> 00:03:56,810
+and the corresponding mapping
+
+68
+00:03:56,810 --> 00:03:59,930
+associative<font color="#E5E5E5"> policies</font><font color="#CCCCCC"> Maps</font><font color="#E5E5E5"> jay Park</font>
+
+69
+00:03:59,930 --> 00:04:02,120
+functions or<font color="#CCCCCC"> n-dimensional</font><font color="#E5E5E5"> vectors in</font>
+
+70
+00:04:02,120 --> 00:04:04,040
+<font color="#E5E5E5">this case into</font><font color="#CCCCCC"> other n-dimensional</font>
+
+71
+00:04:04,040 --> 00:04:09,560
+vectors TJ or team use of J and<font color="#CCCCCC"> now let</font>
+
+72
+00:04:09,560 --> 00:04:13,639
+<font color="#E5E5E5">me remind you about two factors we</font>
+
+73
+00:04:13,639 --> 00:04:16,160
+discussed those learning the second
+
+74
+00:04:16,160 --> 00:04:20,450
+lecture so first<font color="#CCCCCC"> the second</font><font color="#E5E5E5"> lecture the</font>
+
+75
+00:04:20,450 --> 00:04:25,479
+given J star the optimal cost function
+
+76
+00:04:25,479 --> 00:04:30,860
+<font color="#E5E5E5">the optimal Q factor at the state I</font><font color="#CCCCCC"> can</font>
+
+77
+00:04:30,860 --> 00:04:32,180
+control<font color="#E5E5E5"> you</font>
+
+78
+00:04:32,180 --> 00:04:35,660
+is given by this expression<font color="#CCCCCC"> it's the</font>
+
+79
+00:04:35,660 --> 00:04:38,919
+expected<font color="#E5E5E5"> one stage cost starting from I</font>
+
+80
+00:04:38,919 --> 00:04:44,600
+using<font color="#CCCCCC"> you</font><font color="#E5E5E5"> plus the optimal cost to go</font>
+
+81
+00:04:44,600 --> 00:04:48,410
+starting from J so<font color="#CCCCCC"> it's cost associated</font>
+
+82
+00:04:48,410 --> 00:04:51,560
+<font color="#CCCCCC">will start me state I but using you</font>
+
+83
+00:04:51,560 --> 00:04:57,070
+first and then optimal after that<font color="#E5E5E5"> okay</font>
+
+84
+00:04:57,400 --> 00:05:00,560
+so this<font color="#E5E5E5"> is a bigger function than J star</font>
+
+85
+00:05:00,560 --> 00:05:03,590
+J star is<font color="#E5E5E5"> defined for every step you</font>
+
+86
+00:05:03,590 --> 00:05:05,180
+started to find<font color="#E5E5E5"> for every state and</font>
+
+87
+00:05:05,180 --> 00:05:10,669
+control<font color="#E5E5E5"> okay now we</font><font color="#CCCCCC"> have</font><font color="#E5E5E5"> balanced</font>
+
+88
+00:05:10,669 --> 00:05:15,020
+equation J star satisfying equal to this
+
+89
+00:05:15,020 --> 00:05:18,080
+expression<font color="#E5E5E5"> here therefore</font><font color="#CCCCCC"> if we minimize</font>
+
+90
+00:05:18,080 --> 00:05:21,169
+on both sides of<font color="#CCCCCC"> this expression</font><font color="#E5E5E5"> we see</font>
+
+91
+00:05:21,169 --> 00:05:23,930
+that<font color="#E5E5E5"> Jake starts of I is the minimum of</font>
+
+92
+00:05:23,930 --> 00:05:26,570
+<font color="#E5E5E5">the</font><font color="#CCCCCC"> Q factors</font><font color="#E5E5E5"> so if I have the optimal</font>
+
+93
+00:05:26,570 --> 00:05:28,880
+few factors I can<font color="#CCCCCC"> obtain</font><font color="#E5E5E5"> the optimal</font>
+
+94
+00:05:28,880 --> 00:05:33,160
+cost by minimizations<font color="#E5E5E5"> over you moreover</font>
+
+95
+00:05:33,160 --> 00:05:36,169
+if I substitute<font color="#CCCCCC"> this</font><font color="#E5E5E5"> expression here in</font>
+
+96
+00:05:36,169 --> 00:05:39,110
+place of<font color="#CCCCCC"> jstor I have an equation that</font>
+
+97
+00:05:39,110 --> 00:05:42,380
+<font color="#E5E5E5">does not involve a star at all it's an</font>
+
+98
+00:05:42,380 --> 00:05:46,130
+equation for Q factors this equation
+
+99
+00:05:46,130 --> 00:05:51,789
+<font color="#E5E5E5">holds for every I and you so it is a</font>
+
+100
+00:05:51,789 --> 00:05:54,889
+<font color="#E5E5E5">number of nonlinear</font><font color="#CCCCCC"> equations with equal</font>
+
+101
+00:05:54,889 --> 00:05:57,740
+number of<font color="#E5E5E5"> unknowns but</font><font color="#CCCCCC"> a bigger equation</font>
+
+102
+00:05:57,740 --> 00:05:59,479
+that<font color="#E5E5E5"> Bellman's equation has more</font>
+
+103
+00:05:59,479 --> 00:06:05,330
+variables in more equations<font color="#E5E5E5"> okay now we</font>
+
+104
+00:06:05,330 --> 00:06:07,490
+can use this equation<font color="#CCCCCC"> also as a bellman</font>
+
+105
+00:06:07,490 --> 00:06:10,430
+equation we can<font color="#E5E5E5"> view</font><font color="#CCCCCC"> Q star has been the</font>
+
+106
+00:06:10,430 --> 00:06:13,159
+fixed point of<font color="#E5E5E5"> a certain mapping okay</font>
+
+107
+00:06:13,159 --> 00:06:16,190
+<font color="#E5E5E5">and the mapping is the one here on</font><font color="#CCCCCC"> the</font>
+
+108
+00:06:16,190 --> 00:06:20,810
+<font color="#CCCCCC">right-hand</font><font color="#E5E5E5"> side</font><font color="#CCCCCC"> so it is really a</font>
+
+109
+00:06:20,810 --> 00:06:24,310
+bellman<font color="#CCCCCC"> equation</font><font color="#E5E5E5"> such this one here and</font>
+
+110
+00:06:24,310 --> 00:06:27,050
+<font color="#CCCCCC">inherits the same properties as other</font>
+
+111
+00:06:27,050 --> 00:06:30,289
+bellman equations in fact you can
+
+112
+00:06:30,289 --> 00:06:34,370
+consider<font color="#E5E5E5"> I you as a state of a bigger</font>
+
+113
+00:06:34,370 --> 00:06:39,889
+system and we move from<font color="#CCCCCC"> I</font><font color="#E5E5E5"> you to other</font><font color="#CCCCCC"> J</font>
+
+114
+00:06:39,889 --> 00:06:41,490
+u Prime
+
+115
+00:06:41,490 --> 00:06:43,650
+<font color="#E5E5E5">and the minimum over here denotes the</font>
+
+116
+00:06:43,650 --> 00:06:46,380
+minimization over control<font color="#E5E5E5"> so there is an</font>
+
+117
+00:06:46,380 --> 00:06:50,220
+underlying dynamic programming problem
+
+118
+00:06:50,220 --> 00:06:53,069
+<font color="#E5E5E5">on a bigger space that involves the two</font>
+
+119
+00:06:53,069 --> 00:06:55,860
+factors in involves<font color="#CCCCCC"> of states</font><font color="#E5E5E5"> the</font><font color="#CCCCCC"> pairs</font>
+
+120
+00:06:55,860 --> 00:06:59,160
+<font color="#E5E5E5">I</font><font color="#CCCCCC"> nu</font><font color="#E5E5E5"> and the bellman equation for that</font>
+
+121
+00:06:59,160 --> 00:07:01,349
+problem<font color="#E5E5E5"> is this one so everything</font><font color="#CCCCCC"> we</font>
+
+122
+00:07:01,349 --> 00:07:03,479
+have said about bellman equations<font color="#E5E5E5"> for J</font>
+
+123
+00:07:03,479 --> 00:07:08,550
+star or Ju applies to two<font color="#E5E5E5"> factors as</font>
+
+124
+00:07:08,550 --> 00:07:11,550
+well so there's a unique solution<font color="#E5E5E5"> to</font>
+
+125
+00:07:11,550 --> 00:07:13,590
+<font color="#E5E5E5">this equation</font><font color="#CCCCCC"> this map here</font><font color="#E5E5E5"> is a</font>
+
+126
+00:07:13,590 --> 00:07:15,690
+contraction mapping<font color="#E5E5E5"> a lot of</font><font color="#CCCCCC"> cool</font><font color="#E5E5E5"> stuff</font>
+
+127
+00:07:15,690 --> 00:07:18,139
+<font color="#E5E5E5">that we discussed earlier</font><font color="#CCCCCC"> apply and</font>
+
+128
+00:07:18,139 --> 00:07:21,330
+there is also<font color="#E5E5E5"> similar mapping</font><font color="#CCCCCC"> describing</font>
+
+129
+00:07:21,330 --> 00:07:24,690
+<font color="#E5E5E5">the Q factors of a policy and let me get</font>
+
+130
+00:07:24,690 --> 00:07:29,220
+into<font color="#CCCCCC"> those given a stationary policy we</font>
+
+131
+00:07:29,220 --> 00:07:31,830
+can<font color="#E5E5E5"> consider some larger system that</font>
+
+132
+00:07:31,830 --> 00:07:35,490
+moves from<font color="#E5E5E5"> IU to</font><font color="#CCCCCC"> our use of</font><font color="#E5E5E5"> J and then</font>
+
+133
+00:07:35,490 --> 00:07:38,150
+continues<font color="#E5E5E5"> according to this</font><font color="#CCCCCC"> mechanism</font>
+
+134
+00:07:38,150 --> 00:07:42,680
+and the<font color="#E5E5E5"> two factors of a policy satisfy</font>
+
+135
+00:07:42,680 --> 00:07:49,380
+this equation<font color="#E5E5E5"> equivalently</font><font color="#CCCCCC"> q mu is a</font>
+
+136
+00:07:49,380 --> 00:07:52,199
+fixed<font color="#E5E5E5"> point of this mapping this is a</font>
+
+137
+00:07:52,199 --> 00:07:54,960
+linear<font color="#CCCCCC"> equation now has all</font><font color="#E5E5E5"> equations</font>
+
+138
+00:07:54,960 --> 00:07:56,849
+that have to do with single policies are
+
+139
+00:07:56,849 --> 00:07:59,340
+a<font color="#E5E5E5"> linear equation involving these</font>
+
+140
+00:07:59,340 --> 00:08:02,370
+unknowns<font color="#E5E5E5"> defined for every policy in</font>
+
+141
+00:08:02,370 --> 00:08:04,680
+having an unknown for every I and you
+
+142
+00:08:04,680 --> 00:08:08,490
+<font color="#E5E5E5">and we can use this equation we can</font>
+
+143
+00:08:08,490 --> 00:08:13,710
+<font color="#E5E5E5">solve this equation we can evaluate the</font>
+
+144
+00:08:13,710 --> 00:08:16,680
+two factors<font color="#E5E5E5"> of a policy and that's</font>
+
+145
+00:08:16,680 --> 00:08:20,060
+useful in policy direction
+
+146
+00:08:23,070 --> 00:08:35,820
+I didn't understand yes it's a number<font color="#E5E5E5"> of</font>
+
+147
+00:08:35,820 --> 00:08:55,440
+states that's true<font color="#E5E5E5"> yes yes yes this in</font>
+
+148
+00:08:55,440 --> 00:08:58,560
+this is only one of<font color="#CCCCCC"> the several possible</font>
+
+149
+00:08:58,560 --> 00:09:01,020
+transitions from<font color="#CCCCCC"> I</font><font color="#E5E5E5"> you</font><font color="#CCCCCC"> okay</font>
+
+150
+00:09:01,020 --> 00:09:04,920
+<font color="#E5E5E5">it's a several address there are n</font>
+
+151
+00:09:04,920 --> 00:09:17,610
+possibilities yes<font color="#E5E5E5"> okay</font><font color="#CCCCCC"> P IJ you are the</font>
+
+152
+00:09:17,610 --> 00:09:20,970
+transition probabilities starting at I
+
+153
+00:09:20,970 --> 00:09:24,450
+going to J over you will<font color="#E5E5E5"> be using</font><font color="#CCCCCC"> those</font>
+
+154
+00:09:24,450 --> 00:09:29,360
+<font color="#CCCCCC">for six lectures so so okay that's</font><font color="#E5E5E5"> fine</font>
+
+155
+00:09:34,430 --> 00:09:39,210
+okay so we have<font color="#E5E5E5"> two fact optimal</font><font color="#CCCCCC"> two</font>
+
+156
+00:09:39,210 --> 00:09:41,840
+factors<font color="#E5E5E5"> two factors of a policy and</font>
+
+157
+00:09:41,840 --> 00:09:44,190
+generally<font color="#E5E5E5"> you value direction in policy</font>
+
+158
+00:09:44,190 --> 00:09:47,070
+<font color="#CCCCCC">direction can be carried</font><font color="#E5E5E5"> out in terms of</font>
+
+159
+00:09:47,070 --> 00:09:54,600
+two factors<font color="#E5E5E5"> now if you do value duration</font>
+
+160
+00:09:54,600 --> 00:09:56,970
+<font color="#E5E5E5">for two factors in</font><font color="#CCCCCC"> all policy direction</font>
+
+161
+00:09:56,970 --> 00:09:58,980
+for two factors<font color="#E5E5E5"> you're not getting</font>
+
+162
+00:09:58,980 --> 00:10:01,040
+anything different than<font color="#CCCCCC"> for</font><font color="#E5E5E5"> course</font>
+
+163
+00:10:01,040 --> 00:10:03,240
+mathematically they're equivalent<font color="#CCCCCC"> you</font>
+
+164
+00:10:03,240 --> 00:10:05,340
+just operate on other<font color="#CCCCCC"> things</font><font color="#E5E5E5"> you're</font>
+
+165
+00:10:05,340 --> 00:10:07,710
+you're operating on<font color="#E5E5E5"> you're using a</font>
+
+166
+00:10:07,710 --> 00:10:10,250
+transform versions of the same algorithm
+
+167
+00:10:10,250 --> 00:10:16,170
+so for exact<font color="#E5E5E5"> so for exact policy</font>
+
+168
+00:10:16,170 --> 00:10:18,960
+<font color="#E5E5E5">evaluation policy direction and value</font>
+
+169
+00:10:18,960 --> 00:10:21,920
+iteration<font color="#E5E5E5"> there is no difference between</font>
+
+170
+00:10:21,920 --> 00:10:26,340
+<font color="#E5E5E5">using two factors or policies except for</font>
+
+171
+00:10:26,340 --> 00:10:28,320
+a<font color="#E5E5E5"> few things so let that leads us to</font><font color="#CCCCCC"> a</font>
+
+172
+00:10:28,320 --> 00:10:28,900
+<font color="#CCCCCC">question</font>
+
+173
+00:10:28,900 --> 00:10:31,390
+why do we want<font color="#CCCCCC"> to use cue factors what's</font>
+
+174
+00:10:31,390 --> 00:10:35,440
+good and what's bad about<font color="#E5E5E5"> them first of</font>
+
+175
+00:10:35,440 --> 00:10:38,170
+all all<font color="#E5E5E5"> the exact theory and algorithms</font>
+
+176
+00:10:38,170 --> 00:10:41,080
+for<font color="#E5E5E5"> costs applies to two factors</font><font color="#CCCCCC"> balance</font>
+
+177
+00:10:41,080 --> 00:10:42,760
+equations<font color="#E5E5E5"> all the things that</font><font color="#CCCCCC"> we were</font>
+
+178
+00:10:42,760 --> 00:10:45,160
+<font color="#CCCCCC">discussing the last</font><font color="#E5E5E5"> in the preceding</font>
+
+179
+00:10:45,160 --> 00:10:46,600
+lectures contraction mappings
+
+180
+00:10:46,600 --> 00:10:47,920
+contraction properties optimality
+
+181
+00:10:47,920 --> 00:10:50,320
+conditions convergence<font color="#CCCCCC"> and value</font><font color="#E5E5E5"> of</font>
+
+182
+00:10:50,320 --> 00:10:52,150
+<font color="#CCCCCC">valuing policy direction all of these</font>
+
+183
+00:10:52,150 --> 00:10:56,020
+things<font color="#E5E5E5"> apply all the approximate theory</font>
+
+184
+00:10:56,020 --> 00:10:58,480
+that we discussed<font color="#E5E5E5"> also</font><font color="#CCCCCC"> applies projected</font>
+
+185
+00:10:58,480 --> 00:11:01,110
+<font color="#CCCCCC">equation</font><font color="#E5E5E5"> sampling exploration issues</font>
+
+186
+00:11:01,110 --> 00:11:05,260
+oscillation<font color="#E5E5E5"> aggregation and all of these</font>
+
+187
+00:11:05,260 --> 00:11:08,230
+phenomena<font color="#E5E5E5"> manifest themselves in</font><font color="#CCCCCC"> Q</font>
+
+188
+00:11:08,230 --> 00:11:11,850
+<font color="#CCCCCC">factor land</font><font color="#E5E5E5"> just as well as in cost land</font>
+
+189
+00:11:11,850 --> 00:11:15,010
+now here's one big thing about<font color="#E5E5E5"> you</font>
+
+190
+00:11:15,010 --> 00:11:18,850
+factors it allows<font color="#E5E5E5"> if you can find them a</font>
+
+191
+00:11:18,850 --> 00:11:22,260
+model<font color="#E5E5E5"> free controller implementation</font>
+
+192
+00:11:22,260 --> 00:11:25,420
+<font color="#CCCCCC">once we calculate</font><font color="#E5E5E5"> these</font><font color="#CCCCCC"> few factors for</font>
+
+193
+00:11:25,420 --> 00:11:28,210
+all<font color="#E5E5E5"> I and you we can calculate an</font>
+
+194
+00:11:28,210 --> 00:11:31,630
+optimal policy<font color="#CCCCCC"> not by minimizing</font><font color="#E5E5E5"> on the</font>
+
+195
+00:11:31,630 --> 00:11:33,570
+<font color="#E5E5E5">right hand side of the bellman equation</font>
+
+196
+00:11:33,570 --> 00:11:36,760
+<font color="#E5E5E5">but rather by just looking at this list</font>
+
+197
+00:11:36,760 --> 00:11:38,860
+of<font color="#E5E5E5"> Q factors and selecting the one</font>
+
+198
+00:11:38,860 --> 00:11:40,540
+that's numerically smaller
+
+199
+00:11:40,540 --> 00:11:43,720
+okay so implementation once you have
+
+200
+00:11:43,720 --> 00:11:47,230
+these<font color="#CCCCCC"> Q stars is very simple and</font>
+
+201
+00:11:47,230 --> 00:11:49,510
+moreover<font color="#CCCCCC"> I do not need</font><font color="#E5E5E5"> to</font><font color="#CCCCCC"> know</font><font color="#E5E5E5"> the</font>
+
+202
+00:11:49,510 --> 00:11:51,779
+<font color="#E5E5E5">transition probabilities of the system</font>
+
+203
+00:11:51,779 --> 00:11:55,060
+ordinarily you need to minimize<font color="#CCCCCC"> the</font>
+
+204
+00:11:55,060 --> 00:11:58,240
+expected<font color="#E5E5E5"> value of the current stage cost</font>
+
+205
+00:11:58,240 --> 00:12:01,720
+plus<font color="#CCCCCC"> the expected</font><font color="#E5E5E5"> optimal</font><font color="#CCCCCC"> costs ago that</font>
+
+206
+00:12:01,720 --> 00:12:04,110
+involves calculating an expectation<font color="#E5E5E5"> and</font>
+
+207
+00:12:04,110 --> 00:12:06,339
+involves knowing<font color="#CCCCCC"> the transition</font>
+
+208
+00:12:06,339 --> 00:12:08,500
+probabilities here you<font color="#E5E5E5"> don't need to</font>
+
+209
+00:12:08,500 --> 00:12:10,360
+know the<font color="#E5E5E5"> transition probabilities you</font>
+
+210
+00:12:10,360 --> 00:12:12,580
+don't need to know the model<font color="#E5E5E5"> if</font><font color="#CCCCCC"> you can</font>
+
+211
+00:12:12,580 --> 00:12:16,089
+find<font color="#CCCCCC"> these</font><font color="#E5E5E5"> q stars okay that's the big</font>
+
+212
+00:12:16,089 --> 00:12:20,620
+incentive<font color="#E5E5E5"> for using</font><font color="#CCCCCC"> q factors similarly</font>
+
+213
+00:12:20,620 --> 00:12:23,200
+if<font color="#E5E5E5"> you calculate a parametric</font>
+
+214
+00:12:23,200 --> 00:12:25,630
+approximation of the<font color="#CCCCCC"> q</font><font color="#E5E5E5"> factors involved</font>
+
+215
+00:12:25,630 --> 00:12:28,240
+in some approximation architecture with
+
+216
+00:12:28,240 --> 00:12:31,420
+a parameter<font color="#E5E5E5"> vector</font><font color="#CCCCCC"> r you can obtain a</font>
+
+217
+00:12:31,420 --> 00:12:34,870
+<font color="#CCCCCC">suboptimal policy by</font><font color="#E5E5E5"> minimizing</font>
+
+218
+00:12:34,870 --> 00:12:37,510
+again these few factors<font color="#E5E5E5"> without the need</font>
+
+219
+00:12:37,510 --> 00:12:42,640
+for a model what are the bad things
+
+220
+00:12:42,640 --> 00:12:44,050
+<font color="#CCCCCC">about you factors</font>
+
+221
+00:12:44,050 --> 00:12:47,320
+well greater dimension more storage<font color="#E5E5E5"> and</font>
+
+222
+00:12:47,320 --> 00:12:50,170
+some complications in calculating these
+
+223
+00:12:50,170 --> 00:12:55,390
+or<font color="#E5E5E5"> that that's a rough cut about what</font>
+
+224
+00:12:55,390 --> 00:12:59,050
+<font color="#E5E5E5">what we can expect from two factors in</font>
+
+225
+00:12:59,050 --> 00:13:00,880
+<font color="#CCCCCC">particular</font><font color="#E5E5E5"> if you want to calculate</font>
+
+226
+00:13:00,880 --> 00:13:04,240
+<font color="#E5E5E5">exactly factors then the difficult is</font>
+
+227
+00:13:04,240 --> 00:13:05,980
+increased for<font color="#CCCCCC"> large-scale problems</font><font color="#E5E5E5"> and</font>
+
+228
+00:13:05,980 --> 00:13:08,230
+you<font color="#CCCCCC"> have to think about aggregation or</font>
+
+229
+00:13:08,230 --> 00:13:10,839
+other approximation<font color="#CCCCCC"> procedures in order</font>
+
+230
+00:13:10,839 --> 00:13:19,690
+to calculate<font color="#E5E5E5"> you factors okay</font><font color="#CCCCCC"> now here's</font>
+
+231
+00:13:19,690 --> 00:13:21,190
+one<font color="#CCCCCC"> thing about two factors that we</font>
+
+232
+00:13:21,190 --> 00:13:22,630
+don't have<font color="#CCCCCC"> for cause</font><font color="#E5E5E5"> it's an algorithm</font>
+
+233
+00:13:22,630 --> 00:13:28,330
+<font color="#E5E5E5">called</font><font color="#CCCCCC"> Q</font><font color="#E5E5E5"> learning in this is in addition</font>
+
+234
+00:13:28,330 --> 00:13:30,070
+<font color="#E5E5E5">to everything else we discuss this is</font>
+
+235
+00:13:30,070 --> 00:13:33,880
+new and Q<font color="#CCCCCC"> learning is a sampled form of</font>
+
+236
+00:13:33,880 --> 00:13:36,460
+<font color="#E5E5E5">value iteration it is a stochastic</font>
+
+237
+00:13:36,460 --> 00:13:39,420
+iterative algorithm that generates
+
+238
+00:13:39,420 --> 00:13:42,850
+<font color="#E5E5E5">iterated values of these Q factors by</font>
+
+239
+00:13:42,850 --> 00:13:47,310
+using<font color="#E5E5E5"> samples from the system and it</font>
+
+240
+00:13:47,310 --> 00:13:50,230
+resembles value<font color="#CCCCCC"> generation</font><font color="#E5E5E5"> but it's not</font>
+
+241
+00:13:50,230 --> 00:13:52,600
+value duration it's a<font color="#CCCCCC"> sampled form of</font>
+
+242
+00:13:52,600 --> 00:13:56,020
+value iteration<font color="#E5E5E5"> okay so here's the</font>
+
+243
+00:13:56,020 --> 00:13:58,270
+<font color="#CCCCCC">description of Q learning</font><font color="#E5E5E5"> in the</font>
+
+244
+00:13:58,270 --> 00:13:59,740
+classical form<font color="#E5E5E5"> there</font><font color="#CCCCCC"> are many variations</font>
+
+245
+00:13:59,740 --> 00:14:01,600
+but this is the standard<font color="#E5E5E5"> view</font><font color="#CCCCCC"> learning</font>
+
+246
+00:14:01,600 --> 00:14:05,040
+algorithm remember we want to calculate
+
+247
+00:14:05,040 --> 00:14:09,970
+Q of all<font color="#E5E5E5"> I and you so we select a</font>
+
+248
+00:14:09,970 --> 00:14:12,810
+sequence<font color="#E5E5E5"> of pairs of states and controls</font>
+
+249
+00:14:12,810 --> 00:14:15,880
+we<font color="#E5E5E5"> have a system sample we get one state</font>
+
+250
+00:14:15,880 --> 00:14:17,440
+control pair here another one another
+
+251
+00:14:17,440 --> 00:14:20,170
+one<font color="#CCCCCC"> we</font><font color="#E5E5E5"> have a whole large number of them</font>
+
+252
+00:14:20,170 --> 00:14:23,050
+<font color="#E5E5E5">and we can use any mechanism for doing</font>
+
+253
+00:14:23,050 --> 00:14:25,660
+<font color="#E5E5E5">that probabilistic mechanism or</font>
+
+254
+00:14:25,660 --> 00:14:28,870
+deterministic mechanism as long as all
+
+255
+00:14:28,870 --> 00:14:32,980
+the state control pairs are represented
+
+256
+00:14:32,980 --> 00:14:36,850
+and<font color="#E5E5E5"> are sampled infinitely often was</font>
+
+257
+00:14:36,850 --> 00:14:38,800
+this an idealized algorithm practice we
+
+258
+00:14:38,800 --> 00:14:40,720
+would<font color="#CCCCCC"> not sound every state control pair</font>
+
+259
+00:14:40,720 --> 00:14:42,900
+infinitely<font color="#E5E5E5"> often but that's the</font>
+
+260
+00:14:42,900 --> 00:14:44,380
+theoretical
+
+261
+00:14:44,380 --> 00:14:49,260
+version of the algorithm so a
+
+262
+00:14:49,260 --> 00:14:53,170
+degeneration<font color="#CCCCCC"> cake</font><font color="#E5E5E5"> we had some two</font>
+
+263
+00:14:53,170 --> 00:14:56,560
+factors<font color="#E5E5E5"> QK a whole big vector of two</font>
+
+264
+00:14:56,560 --> 00:15:00,370
+factors and<font color="#CCCCCC"> we update</font><font color="#E5E5E5"> we said we have a</font>
+
+265
+00:15:00,370 --> 00:15:04,360
+sample<font color="#E5E5E5"> we</font><font color="#CCCCCC"> have this ika okay and we</font>
+
+266
+00:15:04,360 --> 00:15:06,790
+sample the next state<font color="#E5E5E5"> according</font><font color="#CCCCCC"> to this</font>
+
+267
+00:15:06,790 --> 00:15:10,560
+<font color="#E5E5E5">transition probabilities so we have</font><font color="#CCCCCC"> I K</font>
+
+268
+00:15:10,560 --> 00:15:16,060
+UK and JK and we<font color="#E5E5E5"> have we</font><font color="#CCCCCC"> an and we</font>
+
+269
+00:15:16,060 --> 00:15:19,180
+update<font color="#E5E5E5"> the Q factor of that particular</font>
+
+270
+00:15:19,180 --> 00:15:22,660
+pair<font color="#E5E5E5"> according</font><font color="#CCCCCC"> to this formula</font><font color="#E5E5E5"> and we</font>
+
+271
+00:15:22,660 --> 00:15:25,380
+live only<font color="#E5E5E5"> all the other two</font><font color="#CCCCCC"> factors</font>
+
+272
+00:15:25,380 --> 00:15:31,900
+unchanged<font color="#E5E5E5"> okay so here</font><font color="#CCCCCC"> i am i select ika</font>
+
+273
+00:15:31,900 --> 00:15:35,650
+UK and<font color="#CCCCCC"> i pick</font><font color="#E5E5E5"> the key factor of only</font>
+
+274
+00:15:35,650 --> 00:15:40,750
+that pair and i sample<font color="#E5E5E5"> the next state to</font>
+
+275
+00:15:40,750 --> 00:15:43,810
+<font color="#E5E5E5">obtain JK and</font><font color="#CCCCCC"> i calculate this</font>
+
+276
+00:15:43,810 --> 00:15:47,170
+<font color="#CCCCCC">expression which is a sample of the</font>
+
+277
+00:15:47,170 --> 00:15:50,140
+<font color="#CCCCCC">expected value that appears in</font><font color="#E5E5E5"> balance</font>
+
+278
+00:15:50,140 --> 00:15:51,880
+equation<font color="#E5E5E5"> okay</font>
+
+279
+00:15:51,880 --> 00:15:55,090
+<font color="#E5E5E5">sample because it's not some over p IJ s</font>
+
+280
+00:15:55,090 --> 00:16:01,120
+but<font color="#E5E5E5"> in rather just</font><font color="#CCCCCC"> j k okay and we move</font>
+
+281
+00:16:01,120 --> 00:16:05,080
+the Q factor of<font color="#E5E5E5"> only that pair in the</font>
+
+282
+00:16:05,080 --> 00:16:08,290
+<font color="#CCCCCC">direction of this sample but</font><font color="#E5E5E5"> we also</font>
+
+283
+00:16:08,290 --> 00:16:11,740
+interpolate with a current value gamma<font color="#CCCCCC"> K</font>
+
+284
+00:16:11,740 --> 00:16:14,500
+<font color="#CCCCCC">is a step size typically a small</font><font color="#E5E5E5"> step</font>
+
+285
+00:16:14,500 --> 00:16:17,740
+size in fact it is necessary<font color="#E5E5E5"> but the</font>
+
+286
+00:16:17,740 --> 00:16:20,800
+step size goes to<font color="#CCCCCC"> 0</font><font color="#E5E5E5"> lightly at a rate of</font>
+
+287
+00:16:20,800 --> 00:16:24,850
+1 over<font color="#CCCCCC"> K proportional to a constant</font><font color="#E5E5E5"> over</font>
+
+288
+00:16:24,850 --> 00:16:31,690
+K so we calculate the<font color="#CCCCCC"> sample which is</font>
+
+289
+00:16:31,690 --> 00:16:36,460
+like value<font color="#CCCCCC"> direction okay but it's only</font>
+
+290
+00:16:36,460 --> 00:16:39,840
+a sample and<font color="#CCCCCC"> then we</font><font color="#E5E5E5"> make this update</font>
+
+291
+00:16:39,840 --> 00:16:43,180
+<font color="#E5E5E5">leave all the others and change then I</font>
+
+292
+00:16:43,180 --> 00:16:47,110
+pick out the<font color="#E5E5E5"> next sample i ka plus 1</font><font color="#CCCCCC"> u k</font>
+
+293
+00:16:47,110 --> 00:16:51,370
+plus<font color="#E5E5E5"> 1</font><font color="#CCCCCC"> i do again a change for that you</font>
+
+294
+00:16:51,370 --> 00:16:55,149
+factor and keep<font color="#E5E5E5"> going like the</font>
+
+295
+00:16:55,149 --> 00:16:57,589
+all the<font color="#E5E5E5"> few factors are going to be</font>
+
+296
+00:16:57,589 --> 00:17:00,560
+updated infinitely often but only one<font color="#E5E5E5"> at</font>
+
+297
+00:17:00,560 --> 00:17:08,770
+a time<font color="#CCCCCC"> okay so that's the idea</font>
+
+298
+00:17:08,770 --> 00:17:14,329
+value<font color="#CCCCCC"> direction would move in that</font>
+
+299
+00:17:14,329 --> 00:17:17,150
+direction<font color="#CCCCCC"> fully with step size</font><font color="#E5E5E5"> equal to</font>
+
+300
+00:17:17,150 --> 00:17:21,289
+<font color="#CCCCCC">one Q learning moves in the direction of</font>
+
+301
+00:17:21,289 --> 00:17:27,400
+a sample of this by a step size<font color="#E5E5E5"> gamma K</font>
+
+302
+00:17:37,240 --> 00:17:39,850
+so let's say<font color="#E5E5E5"> let's before we</font><font color="#CCCCCC"> go into</font>
+
+303
+00:17:39,850 --> 00:17:42,400
+<font color="#CCCCCC">questions as to why this works and</font><font color="#E5E5E5"> so on</font>
+
+304
+00:17:42,400 --> 00:17:44,010
+let's just<font color="#CCCCCC"> look</font><font color="#E5E5E5"> at it and try to</font>
+
+305
+00:17:44,010 --> 00:17:46,450
+understand it a little<font color="#E5E5E5"> bit better here</font>
+
+306
+00:17:46,450 --> 00:17:49,240
+is the algorithm<font color="#CCCCCC"> I've just restated the</font>
+
+307
+00:17:49,240 --> 00:17:57,400
+algorithm here the first thing is that
+
+308
+00:17:57,400 --> 00:18:00,250
+<font color="#E5E5E5">to implement</font><font color="#CCCCCC"> the algorithm I don't need</font>
+
+309
+00:18:00,250 --> 00:18:02,830
+to have a<font color="#E5E5E5"> detailed model</font><font color="#CCCCCC"> of the system I</font>
+
+310
+00:18:02,830 --> 00:18:05,350
+don't<font color="#CCCCCC"> need to have the pIJ probabilities</font>
+
+311
+00:18:05,350 --> 00:18:08,950
+<font color="#CCCCCC">all I need is to have</font><font color="#E5E5E5"> a simulator or</font>
+
+312
+00:18:08,950 --> 00:18:12,880
+some mechanism so<font color="#CCCCCC"> that given AI</font><font color="#E5E5E5"> K and UK</font>
+
+313
+00:18:12,880 --> 00:18:16,030
+I can generate<font color="#CCCCCC"> the next state so all I</font>
+
+314
+00:18:16,030 --> 00:18:18,580
+need<font color="#CCCCCC"> is a box that samples next States</font>
+
+315
+00:18:18,580 --> 00:18:21,610
+and<font color="#E5E5E5"> also gives me values of one state</font>
+
+316
+00:18:21,610 --> 00:18:30,610
+cause there is no need for<font color="#CCCCCC"> a model the</font>
+
+317
+00:18:30,610 --> 00:18:32,950
+<font color="#E5E5E5">other thing is</font><font color="#CCCCCC"> that it operates at only</font>
+
+318
+00:18:32,950 --> 00:18:35,020
+one state control pair at a time<font color="#E5E5E5"> and</font>
+
+319
+00:18:35,020 --> 00:18:38,140
+this is<font color="#E5E5E5"> convenient if you</font><font color="#CCCCCC"> want to</font>
+
+320
+00:18:38,140 --> 00:18:40,600
+generate the<font color="#CCCCCC"> state control pairs by</font>
+
+321
+00:18:40,600 --> 00:18:43,960
+simulation<font color="#E5E5E5"> so you have one to state</font>
+
+322
+00:18:43,960 --> 00:18:45,790
+control pair<font color="#E5E5E5"> that moves you</font><font color="#CCCCCC"> to a</font><font color="#E5E5E5"> next</font>
+
+323
+00:18:45,790 --> 00:18:47,950
+state and<font color="#E5E5E5"> then you use that</font><font color="#CCCCCC"> next state</font>
+
+324
+00:18:47,950 --> 00:18:51,970
+as as part of the<font color="#E5E5E5"> next state control</font>
+
+325
+00:18:51,970 --> 00:18:55,030
+pair and<font color="#E5E5E5"> so on so even though the</font>
+
+326
+00:18:55,030 --> 00:18:58,060
+mechanism<font color="#CCCCCC"> for</font><font color="#E5E5E5"> generating this this state</font>
+
+327
+00:18:58,060 --> 00:19:00,460
+control<font color="#CCCCCC"> persons arbitrary</font><font color="#E5E5E5"> often times</font>
+
+328
+00:19:00,460 --> 00:19:02,380
+you use us the simulator<font color="#E5E5E5"> of the system</font>
+
+329
+00:19:02,380 --> 00:19:05,830
+and in that context<font color="#CCCCCC"> it's convenient that</font>
+
+330
+00:19:05,830 --> 00:19:08,620
+you operate at only<font color="#CCCCCC"> one state control</font>
+
+331
+00:19:08,620 --> 00:19:11,110
+<font color="#E5E5E5">pair at a</font><font color="#CCCCCC"> time</font><font color="#E5E5E5"> because that's consistent</font>
+
+332
+00:19:11,110 --> 00:19:16,060
+with simulation however with this type
+
+333
+00:19:16,060 --> 00:19:18,640
+of<font color="#E5E5E5"> operation the algorithm becomes a</font>
+
+334
+00:19:18,640 --> 00:19:21,280
+synchronous remember we talked<font color="#CCCCCC"> about</font><font color="#E5E5E5"> as</font>
+
+335
+00:19:21,280 --> 00:19:24,910
+<font color="#CCCCCC">engrams algorithms backing in second</font>
+
+336
+00:19:24,910 --> 00:19:27,520
+<font color="#E5E5E5">lecture where we operate somewhat</font>
+
+337
+00:19:27,520 --> 00:19:30,640
+chaotically among the components<font color="#CCCCCC"> of the</font>
+
+338
+00:19:30,640 --> 00:19:33,550
+vector that we<font color="#CCCCCC"> update so and one</font>
+
+339
+00:19:33,550 --> 00:19:36,310
+possibility is<font color="#CCCCCC"> to update components one</font>
+
+340
+00:19:36,310 --> 00:19:39,070
+at a time well that's what we do here<font color="#E5E5E5"> we</font>
+
+341
+00:19:39,070 --> 00:19:42,580
+operate on<font color="#E5E5E5"> two</font><font color="#CCCCCC"> factors of only one</font>
+
+342
+00:19:42,580 --> 00:19:46,179
+component at<font color="#CCCCCC"> operate and only one</font>
+
+343
+00:19:46,179 --> 00:19:52,090
+factor at a<font color="#E5E5E5"> time now there are no</font>
+
+344
+00:19:52,090 --> 00:19:53,980
+approximations in this<font color="#CCCCCC"> out good we aim</font>
+
+345
+00:19:53,980 --> 00:19:56,230
+to find the exactly optimal few factors
+
+346
+00:19:56,230 --> 00:19:59,259
+<font color="#E5E5E5">okay we don't cook</font><font color="#CCCCCC"> multiple suboptimal</font>
+
+347
+00:19:59,259 --> 00:20:02,320
+here<font color="#E5E5E5"> we want to</font><font color="#CCCCCC"> we aiming straight for</font>
+
+348
+00:20:02,320 --> 00:20:05,769
+the optimal few factors and then the
+
+349
+00:20:05,769 --> 00:20:09,100
+question is why<font color="#CCCCCC"> does this work</font><font color="#E5E5E5"> why does</font>
+
+350
+00:20:09,100 --> 00:20:12,490
+this algorithm converge to Hue star<font color="#E5E5E5"> we</font>
+
+351
+00:20:12,490 --> 00:20:16,389
+ought not<font color="#E5E5E5"> few factors and also why can I</font>
+
+352
+00:20:16,389 --> 00:20:19,179
+not use<font color="#E5E5E5"> a sample</font><font color="#CCCCCC"> version of value</font>
+
+353
+00:20:19,179 --> 00:20:23,700
+iteration<font color="#E5E5E5"> to calculate optimal costs</font>
+
+354
+00:20:23,700 --> 00:20:27,850
+well the reason<font color="#E5E5E5"> for this is actually</font>
+
+355
+00:20:27,850 --> 00:20:31,720
+Mathematica<font color="#E5E5E5"> it's just a fine point in</font>
+
+356
+00:20:31,720 --> 00:20:35,220
+the mathematics generally speaking for
+
+357
+00:20:35,220 --> 00:20:38,460
+stochastic<font color="#E5E5E5"> iterative algorithms to</font><font color="#CCCCCC"> work</font>
+
+358
+00:20:38,460 --> 00:20:41,950
+what you need to have is an<font color="#E5E5E5"> expected</font>
+
+359
+00:20:41,950 --> 00:20:43,779
+value an iteration that involves an
+
+360
+00:20:43,779 --> 00:20:46,679
+expected value that you can sample
+
+361
+00:20:46,679 --> 00:20:50,919
+<font color="#E5E5E5">however in</font><font color="#CCCCCC"> melman's equation you have a</font>
+
+362
+00:20:50,919 --> 00:20:52,570
+mapping<font color="#CCCCCC"> that does not involve an</font>
+
+363
+00:20:52,570 --> 00:20:55,119
+expected value<font color="#E5E5E5"> only but rather the</font>
+
+364
+00:20:55,119 --> 00:20:58,389
+minimum of an<font color="#CCCCCC"> expected value if I were</font>
+
+365
+00:20:58,389 --> 00:21:01,749
+to<font color="#CCCCCC"> sample this expected value and</font>
+
+366
+00:21:01,749 --> 00:21:03,429
+consider an algorithm that invoke
+
+367
+00:21:03,429 --> 00:21:06,220
+minimization over example this<font color="#E5E5E5"> would</font>
+
+368
+00:21:06,220 --> 00:21:10,059
+just not work the sample of minimum of
+
+369
+00:21:10,059 --> 00:21:13,419
+minimum<font color="#E5E5E5"> works but many more sample the</font>
+
+370
+00:21:13,419 --> 00:21:16,029
+mathematics don't work because<font color="#E5E5E5"> when you</font>
+
+371
+00:21:16,029 --> 00:21:18,340
+take expected<font color="#E5E5E5"> values of a minimum of the</font>
+
+372
+00:21:18,340 --> 00:21:19,990
+sample<font color="#E5E5E5"> you don't get the same as the</font>
+
+373
+00:21:19,990 --> 00:21:22,990
+minimum<font color="#CCCCCC"> of</font><font color="#E5E5E5"> the expected value so it's a</font>
+
+374
+00:21:22,990 --> 00:21:25,269
+<font color="#E5E5E5">fine mathematical point but it makes a</font>
+
+375
+00:21:25,269 --> 00:21:27,789
+<font color="#E5E5E5">big difference</font><font color="#CCCCCC"> because I would like to</font>
+
+376
+00:21:27,789 --> 00:21:30,490
+work<font color="#E5E5E5"> with</font><font color="#CCCCCC"> I would like</font><font color="#E5E5E5"> to have a sampled</font>
+
+377
+00:21:30,490 --> 00:21:34,179
+value iteration of involved<font color="#E5E5E5"> in cost but</font>
+
+378
+00:21:34,179 --> 00:21:36,759
+<font color="#CCCCCC">I can't do</font><font color="#E5E5E5"> it because the minimum and</font>
+
+379
+00:21:36,759 --> 00:21:38,590
+the expectation are in the wrong
+
+380
+00:21:38,590 --> 00:21:44,559
+relation okay we're not<font color="#E5E5E5"> going to</font><font color="#CCCCCC"> go back</font>
+
+381
+00:21:44,559 --> 00:21:47,470
+<font color="#E5E5E5">to this point but instead let's consider</font>
+
+382
+00:21:47,470 --> 00:21:49,210
+why do we get convergence
+
+383
+00:21:49,210 --> 00:21:54,990
+I think questions at this point
+
+384
+00:22:07,360 --> 00:22:14,500
+<font color="#CCCCCC">okay you can show convergence to the</font>
+
+385
+00:22:14,500 --> 00:22:16,660
+<font color="#CCCCCC">true exact you factors and the</font><font color="#E5E5E5"> fairly</font>
+
+386
+00:22:16,660 --> 00:22:20,220
+mild assumptions<font color="#E5E5E5"> and the line of proof</font>
+
+387
+00:22:20,220 --> 00:22:23,650
+involves two types of arguments<font color="#E5E5E5"> two</font>
+
+388
+00:22:23,650 --> 00:22:26,050
+types<font color="#E5E5E5"> of theories</font><font color="#CCCCCC"> why is the theory of</font>
+
+389
+00:22:26,050 --> 00:22:28,780
+stochastic approximation iterations and
+
+390
+00:22:28,780 --> 00:22:32,230
+the other is the theory of<font color="#E5E5E5"> a synchronous</font>
+
+391
+00:22:32,230 --> 00:22:35,560
+algorithms mathematically the key fact
+
+392
+00:22:35,560 --> 00:22:38,380
+is that the<font color="#E5E5E5"> q-learning mapping that</font>
+
+393
+00:22:38,380 --> 00:22:38,860
+map's
+
+394
+00:22:38,860 --> 00:22:43,090
+<font color="#CCCCCC">Q into FQ is a contraction with</font><font color="#E5E5E5"> respect</font>
+
+395
+00:22:43,090 --> 00:22:44,740
+to the soup norm<font color="#CCCCCC"> okay</font>
+
+396
+00:22:44,740 --> 00:22:47,620
+the maximum norm contraction is
+
+397
+00:22:47,620 --> 00:22:49,630
+important in order<font color="#E5E5E5"> to be able to use the</font>
+
+398
+00:22:49,630 --> 00:22:52,510
+<font color="#CCCCCC">Cask approximation soup norm</font><font color="#E5E5E5"> is</font>
+
+399
+00:22:52,510 --> 00:22:55,390
+important because because of<font color="#CCCCCC"> the a</font>
+
+400
+00:22:55,390 --> 00:22:57,430
+synchronous operation<font color="#CCCCCC"> you may</font><font color="#E5E5E5"> remember</font>
+
+401
+00:22:57,430 --> 00:22:59,320
+on my discussion<font color="#E5E5E5"> about a synchronous</font>
+
+402
+00:22:59,320 --> 00:23:01,510
+algorithms<font color="#CCCCCC"> a synchronous values are</font>
+
+403
+00:23:01,510 --> 00:23:04,150
+valid<font color="#E5E5E5"> provided there's some kind of</font>
+
+404
+00:23:04,150 --> 00:23:06,430
+contraction<font color="#CCCCCC"> light property with respect</font>
+
+405
+00:23:06,430 --> 00:23:08,410
+<font color="#E5E5E5">to the soup norm if you remember this</font>
+
+406
+00:23:08,410 --> 00:23:11,740
+box conditions and so<font color="#CCCCCC"> on that's</font><font color="#E5E5E5"> what in</font>
+
+407
+00:23:11,740 --> 00:23:15,190
+effect<font color="#E5E5E5"> here when you look into in depth</font>
+
+408
+00:23:15,190 --> 00:23:18,880
+into the<font color="#E5E5E5"> proof soup norm works well with</font>
+
+409
+00:23:18,880 --> 00:23:21,070
+a synchronous contraction works well
+
+410
+00:23:21,070 --> 00:23:25,960
+with stochastic approximation<font color="#CCCCCC"> okay</font>
+
+411
+00:23:25,960 --> 00:23:27,940
+now let's understand the connection with
+
+412
+00:23:27,940 --> 00:23:34,300
+stochastic approximation let's step take
+
+413
+00:23:34,300 --> 00:23:36,700
+one step back from<font color="#E5E5E5"> Q learning and look</font>
+
+414
+00:23:36,700 --> 00:23:39,130
+at a<font color="#E5E5E5"> generic fixed point problem</font>
+
+415
+00:23:39,130 --> 00:23:42,850
+involving an expectation<font color="#E5E5E5"> we want to find</font>
+
+416
+00:23:42,850 --> 00:23:46,360
+a fixed<font color="#CCCCCC"> point of</font><font color="#E5E5E5"> this expected</font><font color="#CCCCCC"> value of</font>
+
+417
+00:23:46,360 --> 00:23:50,070
+<font color="#CCCCCC">f mapping where W</font><font color="#E5E5E5"> is a random</font><font color="#CCCCCC"> variable</font>
+
+418
+00:23:50,070 --> 00:23:54,550
+<font color="#CCCCCC">okay</font><font color="#E5E5E5"> so in</font><font color="#CCCCCC"> our</font><font color="#E5E5E5"> case of</font><font color="#CCCCCC"> course this</font>
+
+419
+00:23:54,550 --> 00:23:56,890
+involves<font color="#E5E5E5"> a bellman equation so one but</font>
+
+420
+00:23:56,890 --> 00:23:59,410
+let's<font color="#CCCCCC"> in</font><font color="#E5E5E5"> what</font><font color="#CCCCCC"> in greater generality and</font>
+
+421
+00:23:59,410 --> 00:24:01,330
+let's<font color="#CCCCCC"> assume that this</font><font color="#E5E5E5"> mapping is a</font>
+
+422
+00:24:01,330 --> 00:24:03,250
+contraction mapping with respect to some
+
+423
+00:24:03,250 --> 00:24:06,820
+norm so that this<font color="#E5E5E5"> equation has</font><font color="#CCCCCC"> a unique</font>
+
+424
+00:24:06,820 --> 00:24:09,400
+solution<font color="#E5E5E5"> and</font><font color="#CCCCCC"> also</font><font color="#E5E5E5"> this iteration</font>
+
+425
+00:24:09,400 --> 00:24:13,590
+<font color="#E5E5E5">converges to the unique fixed point okay</font>
+
+426
+00:24:13,590 --> 00:24:17,710
+now how<font color="#CCCCCC"> would you work this how do you</font>
+
+427
+00:24:17,710 --> 00:24:19,120
+modify<font color="#E5E5E5"> this</font><font color="#CCCCCC"> outward</font>
+
+428
+00:24:19,120 --> 00:24:21,760
+so that<font color="#E5E5E5"> instead</font><font color="#CCCCCC"> of iterating</font><font color="#E5E5E5"> with full</font>
+
+429
+00:24:21,760 --> 00:24:24,520
+expected values<font color="#E5E5E5"> you just</font><font color="#CCCCCC"> use samples</font>
+
+430
+00:24:24,520 --> 00:24:30,700
+sampled approximations<font color="#E5E5E5"> well we could</font>
+
+431
+00:24:30,700 --> 00:24:35,050
+generate<font color="#E5E5E5"> a sequence</font><font color="#CCCCCC"> of damages</font><font color="#E5E5E5"> and use</font>
+
+432
+00:24:35,050 --> 00:24:38,680
+the sequence<font color="#E5E5E5"> to</font><font color="#CCCCCC"> approximate the expected</font>
+
+433
+00:24:38,680 --> 00:24:43,180
+value appears in<font color="#E5E5E5"> this direction so</font><font color="#CCCCCC"> the</font>
+
+434
+00:24:43,180 --> 00:24:48,130
+duration<font color="#CCCCCC"> K to approximate this</font>
+
+435
+00:24:48,130 --> 00:24:49,830
+expression here<font color="#E5E5E5"> this expected value</font>
+
+436
+00:24:49,830 --> 00:24:54,070
+<font color="#E5E5E5">let's use a Monte Carlo average using</font>
+
+437
+00:24:54,070 --> 00:24:56,850
+<font color="#E5E5E5">the first</font><font color="#CCCCCC"> J samples</font><font color="#E5E5E5"> okay</font>
+
+438
+00:24:56,850 --> 00:24:59,410
+that's certainly<font color="#E5E5E5"> an algorithm that</font><font color="#CCCCCC"> makes</font>
+
+439
+00:24:59,410 --> 00:25:03,310
+sense<font color="#CCCCCC"> and as K increases</font><font color="#E5E5E5"> this Monte</font>
+
+440
+00:25:03,310 --> 00:25:06,100
+Carlo approximation is going<font color="#E5E5E5"> to be more</font>
+
+441
+00:25:06,100 --> 00:25:08,140
+and<font color="#CCCCCC"> more accurate so asymptotically</font>
+
+442
+00:25:08,140 --> 00:25:10,870
+<font color="#CCCCCC">you're getting</font><font color="#E5E5E5"> this algorithm in this</font>
+
+443
+00:25:10,870 --> 00:25:13,090
+it's<font color="#CCCCCC"> very</font><font color="#E5E5E5"> simple to show that this kind</font>
+
+444
+00:25:13,090 --> 00:25:14,200
+of<font color="#E5E5E5"> algorithm works</font>
+
+445
+00:25:14,200 --> 00:25:16,840
+<font color="#E5E5E5">it's like iterating with a contraction</font>
+
+446
+00:25:16,840 --> 00:25:20,230
+<font color="#E5E5E5">fixed point iteration that converges but</font>
+
+447
+00:25:20,230 --> 00:25:22,060
+there is a problem<font color="#E5E5E5"> with this and</font><font color="#CCCCCC"> the</font>
+
+448
+00:25:22,060 --> 00:25:24,360
+<font color="#E5E5E5">problem is the</font><font color="#CCCCCC"> following</font>
+
+449
+00:25:24,360 --> 00:25:29,170
+here at every<font color="#CCCCCC"> Direction K</font><font color="#E5E5E5"> I have to go</font>
+
+450
+00:25:29,170 --> 00:25:31,960
+back and calculate this expression<font color="#E5E5E5"> for</font>
+
+451
+00:25:31,960 --> 00:25:34,600
+<font color="#CCCCCC">all the previous samples</font><font color="#E5E5E5"> so there's a</font>
+
+452
+00:25:34,600 --> 00:25:37,230
+lot<font color="#E5E5E5"> of computation involved here an</font>
+
+453
+00:25:37,230 --> 00:25:41,530
+increasing amount of averaging as the
+
+454
+00:25:41,530 --> 00:25:44,890
+time<font color="#E5E5E5"> progresses so we need to compute</font>
+
+455
+00:25:44,890 --> 00:25:46,690
+<font color="#E5E5E5">all these values here</font><font color="#CCCCCC"> for all the</font>
+
+456
+00:25:46,690 --> 00:25:50,110
+previous WT so a more convenient
+
+457
+00:25:50,110 --> 00:25:57,520
+iteration is to replace this with the
+
+458
+00:25:57,520 --> 00:25:59,380
+expression<font color="#CCCCCC"> that you have</font><font color="#E5E5E5"> already</font>
+
+459
+00:25:59,380 --> 00:26:02,380
+computed at the duration<font color="#CCCCCC"> T that's a</font>
+
+460
+00:26:02,380 --> 00:26:04,900
+major simplification<font color="#E5E5E5"> because you don't</font>
+
+461
+00:26:04,900 --> 00:26:06,790
+have to recompute<font color="#E5E5E5"> all of these things</font>
+
+462
+00:26:06,790 --> 00:26:10,690
+again<font color="#E5E5E5"> from time 1 to K but rather you</font>
+
+463
+00:26:10,690 --> 00:26:14,520
+can use the previous values that you had
+
+464
+00:26:15,960 --> 00:26:18,790
+so this is similar<font color="#E5E5E5"> but requires much</font>
+
+465
+00:26:18,790 --> 00:26:20,650
+less computation<font color="#E5E5E5"> because it leaves only</font>
+
+466
+00:26:20,650 --> 00:26:25,180
+one value<font color="#E5E5E5"> of</font><font color="#CCCCCC"> F per sample now it turns</font>
+
+467
+00:26:25,180 --> 00:26:27,010
+<font color="#E5E5E5">out that this algorithm is kind of slow</font>
+
+468
+00:26:27,010 --> 00:26:28,960
+because<font color="#E5E5E5"> it involves average</font>
+
+469
+00:26:28,960 --> 00:26:34,929
+and and then<font color="#E5E5E5"> then the</font><font color="#CCCCCC"> XS do not change</font>
+
+470
+00:26:34,929 --> 00:26:38,919
+<font color="#CCCCCC">very much over</font><font color="#E5E5E5"> time</font><font color="#CCCCCC"> so X of T at</font>
+
+471
+00:26:38,919 --> 00:26:41,679
+<font color="#E5E5E5">previous</font><font color="#CCCCCC"> Direction</font><font color="#E5E5E5"> is fairly close to</font>
+
+472
+00:26:41,679 --> 00:26:44,590
+<font color="#CCCCCC">the current</font><font color="#E5E5E5"> XK and this thing is close</font>
+
+473
+00:26:44,590 --> 00:26:46,779
+<font color="#E5E5E5">enough to this so that this replacement</font>
+
+474
+00:26:46,779 --> 00:26:50,230
+<font color="#E5E5E5">is valid but that's what the successive</font>
+
+475
+00:26:50,230 --> 00:26:52,960
+<font color="#CCCCCC">approximation algorithm does it replaces</font>
+
+476
+00:26:52,960 --> 00:26:56,649
+the<font color="#E5E5E5"> naive Monte Carlo approximation with</font>
+
+477
+00:26:56,649 --> 00:26:58,720
+a more convenient computationally
+
+478
+00:26:58,720 --> 00:27:02,769
+approximation now if you<font color="#E5E5E5"> take this</font>
+
+479
+00:27:02,769 --> 00:27:07,389
+expression<font color="#E5E5E5"> and you</font><font color="#CCCCCC"> can rewrite</font><font color="#E5E5E5"> it in a</font>
+
+480
+00:27:07,389 --> 00:27:09,669
+recursive form like this<font color="#E5E5E5"> with gamma K</font>
+
+481
+00:27:09,669 --> 00:27:13,960
+equals<font color="#E5E5E5"> 1 over K so that you only need</font>
+
+482
+00:27:13,960 --> 00:27:16,690
+one sample represented at each direction
+
+483
+00:27:16,690 --> 00:27:19,419
+<font color="#E5E5E5">and now you can see that this</font><font color="#CCCCCC"> iteration</font>
+
+484
+00:27:19,419 --> 00:27:22,179
+<font color="#E5E5E5">is sort of the same thing</font><font color="#CCCCCC"> as the Q</font>
+
+485
+00:27:22,179 --> 00:27:25,450
+learning<font color="#E5E5E5"> direction</font><font color="#CCCCCC"> it involves moving</font><font color="#E5E5E5"> at</font>
+
+486
+00:27:25,450 --> 00:27:27,450
+the<font color="#E5E5E5"> edge in the direction of a sample</font>
+
+487
+00:27:27,450 --> 00:27:29,980
+doing interpolation between the current
+
+488
+00:27:29,980 --> 00:27:36,809
+<font color="#CCCCCC">point a and B and</font><font color="#E5E5E5"> the the</font><font color="#CCCCCC"> other sample</font>
+
+489
+00:27:37,559 --> 00:27:40,600
+so<font color="#CCCCCC"> to learning is stochastic</font>
+
+490
+00:27:40,600 --> 00:27:43,600
+approximation<font color="#CCCCCC"> if it were done</font><font color="#E5E5E5"> for all</font>
+
+491
+00:27:43,600 --> 00:27:46,570
+two factors simultaneously<font color="#E5E5E5"> it is</font><font color="#CCCCCC"> to cast</font>
+
+492
+00:27:46,570 --> 00:27:50,049
+<font color="#E5E5E5">approximation with just this F mapping</font>
+
+493
+00:27:50,049 --> 00:27:54,399
+being this mapping here<font color="#CCCCCC"> and using a</font>
+
+494
+00:27:54,399 --> 00:27:57,909
+single sample<font color="#E5E5E5"> in here instead of</font><font color="#CCCCCC"> the</font>
+
+495
+00:27:57,909 --> 00:28:02,440
+expected<font color="#E5E5E5"> value so this provides the</font>
+
+496
+00:28:02,440 --> 00:28:04,419
+<font color="#E5E5E5">connection between Q</font><font color="#CCCCCC"> learning and</font>
+
+497
+00:28:04,419 --> 00:28:08,919
+stochastic approximation to learning now
+
+498
+00:28:08,919 --> 00:28:11,980
+has a little<font color="#CCCCCC"> bit more into it because</font>
+
+499
+00:28:11,980 --> 00:28:14,889
+<font color="#E5E5E5">the durations are done</font><font color="#CCCCCC"> 1q factor at that</font>
+
+500
+00:28:14,889 --> 00:28:17,620
+<font color="#CCCCCC">time but then again</font><font color="#E5E5E5"> this will involve</font>
+
+501
+00:28:17,620 --> 00:28:19,600
+<font color="#E5E5E5">the theory of a synchronous computation</font>
+
+502
+00:28:19,600 --> 00:28:22,600
+<font color="#E5E5E5">and that's also what will come into</font><font color="#CCCCCC"> the</font>
+
+503
+00:28:22,600 --> 00:28:25,840
+proof of convergence<font color="#E5E5E5"> so this is not a</font>
+
+504
+00:28:25,840 --> 00:28:28,659
+proof<font color="#E5E5E5"> of convergence by any means this</font>
+
+505
+00:28:28,659 --> 00:28:31,179
+step has to<font color="#CCCCCC"> be justified</font><font color="#E5E5E5"> and also there</font>
+
+506
+00:28:31,179 --> 00:28:32,350
+are<font color="#CCCCCC"> other things that</font><font color="#E5E5E5"> we</font><font color="#CCCCCC"> have omitted</font>
+
+507
+00:28:32,350 --> 00:28:34,480
+but gives<font color="#E5E5E5"> you an idea about the</font>
+
+508
+00:28:34,480 --> 00:28:36,600
+<font color="#E5E5E5">mathematical connections with other</font>
+
+509
+00:28:36,600 --> 00:28:45,650
+skill methodologies<font color="#E5E5E5"> okay</font>
+
+510
+00:28:49,669 --> 00:28:52,279
+let me mention a variation of<font color="#CCCCCC"> Q learning</font>
+
+511
+00:28:52,279 --> 00:28:55,119
+that's computationally more efficient
+
+512
+00:28:55,119 --> 00:28:57,999
+this<font color="#E5E5E5"> is the Q learning direction right</font>
+
+513
+00:28:57,999 --> 00:29:03,859
+<font color="#E5E5E5">we pick a pair</font><font color="#CCCCCC"> i k UK and we calculate</font>
+
+514
+00:29:03,859 --> 00:29:05,749
+this expression<font color="#CCCCCC"> and we move in the</font>
+
+515
+00:29:05,749 --> 00:29:08,450
+direction of<font color="#CCCCCC"> that expression now this</font>
+
+516
+00:29:08,450 --> 00:29:11,479
+expression<font color="#E5E5E5"> involves minimization over</font>
+
+517
+00:29:11,479 --> 00:29:14,419
+all controls and if you have a lot<font color="#CCCCCC"> of</font>
+
+518
+00:29:14,419 --> 00:29:16,759
+controls<font color="#E5E5E5"> this may involve a substantial</font>
+
+519
+00:29:16,759 --> 00:29:21,200
+<font color="#CCCCCC">amount</font><font color="#E5E5E5"> of computation it would be more</font>
+
+520
+00:29:21,200 --> 00:29:24,379
+efficient<font color="#CCCCCC"> to remember the good controls</font>
+
+521
+00:29:24,379 --> 00:29:27,469
+<font color="#E5E5E5">instead of minimizing over</font><font color="#CCCCCC"> all the</font>
+
+522
+00:29:27,469 --> 00:29:29,629
+controls minimize<font color="#CCCCCC"> or over the good</font>
+
+523
+00:29:29,629 --> 00:29:32,239
+controls or perhaps<font color="#E5E5E5"> just</font><font color="#CCCCCC"> one control</font>
+
+524
+00:29:32,239 --> 00:29:35,239
+this leads<font color="#E5E5E5"> into the idea of maintaining</font>
+
+525
+00:29:35,239 --> 00:29:38,719
+<font color="#E5E5E5">a policy a sort of current policy which</font>
+
+526
+00:29:38,719 --> 00:29:41,059
+you use<font color="#CCCCCC"> in</font><font color="#E5E5E5"> here instead of do using a</font>
+
+527
+00:29:41,059 --> 00:29:43,879
+minimum and if you try to connect it
+
+528
+00:29:43,879 --> 00:29:46,849
+back to<font color="#CCCCCC"> two policy</font><font color="#E5E5E5"> direction and</font>
+
+529
+00:29:46,849 --> 00:29:50,690
+optimistic policy direction you may
+
+530
+00:29:50,690 --> 00:29:53,359
+consider a<font color="#E5E5E5"> sample version of an</font>
+
+531
+00:29:53,359 --> 00:29:55,690
+optimistic policy<font color="#E5E5E5"> Direction algorithm</font>
+
+532
+00:29:55,690 --> 00:30:00,259
+which evaluates the current<font color="#E5E5E5"> policy we</font>
+
+533
+00:30:00,259 --> 00:30:02,269
+evaluate the<font color="#CCCCCC"> Q factors</font><font color="#E5E5E5"> of the current</font>
+
+534
+00:30:02,269 --> 00:30:04,999
+<font color="#E5E5E5">policy</font><font color="#CCCCCC"> by using a finite number of</font>
+
+535
+00:30:04,999 --> 00:30:07,639
+<font color="#CCCCCC">values directions</font><font color="#E5E5E5"> which would not</font><font color="#CCCCCC"> be</font>
+
+536
+00:30:07,639 --> 00:30:10,369
+important in minimization here<font color="#E5E5E5"> and then</font>
+
+537
+00:30:10,369 --> 00:30:12,709
+<font color="#E5E5E5">improves the policy occasionally after</font>
+
+538
+00:30:12,709 --> 00:30:16,329
+<font color="#E5E5E5">new K steps by means of this iteration</font>
+
+539
+00:30:16,329 --> 00:30:18,799
+<font color="#E5E5E5">so this is a more efficient</font><font color="#CCCCCC"> version of</font>
+
+540
+00:30:18,799 --> 00:30:21,109
+this but it turns out not<font color="#CCCCCC"> to work</font>
+
+541
+00:30:21,109 --> 00:30:23,299
+<font color="#CCCCCC">there's an all the work</font>
+
+542
+00:30:23,299 --> 00:30:26,749
+dating<font color="#CCCCCC"> back</font><font color="#E5E5E5"> to 1993</font><font color="#CCCCCC"> which says that</font><font color="#E5E5E5"> if</font>
+
+543
+00:30:26,749 --> 00:30:28,879
+you implement<font color="#E5E5E5"> Q learning</font><font color="#CCCCCC"> are</font>
+
+544
+00:30:28,879 --> 00:30:33,379
+synchronously with with maintaining both
+
+545
+00:30:33,379 --> 00:30:35,929
+a policy<font color="#CCCCCC"> and few factors then you may</font>
+
+546
+00:30:35,929 --> 00:30:37,089
+<font color="#E5E5E5">get oscillation</font>
+
+547
+00:30:37,089 --> 00:30:39,589
+however it turns out that this<font color="#CCCCCC"> can be</font>
+
+548
+00:30:39,589 --> 00:30:42,440
+rectified by<font color="#E5E5E5"> there's a simple</font>
+
+549
+00:30:42,440 --> 00:30:44,570
+modification of<font color="#E5E5E5"> this algorithm which is</font>
+
+550
+00:30:44,570 --> 00:30:46,940
+does not<font color="#E5E5E5"> involve much</font><font color="#CCCCCC"> overhead that</font>
+
+551
+00:30:46,940 --> 00:30:49,489
+overcomes this convergence problem and
+
+552
+00:30:49,489 --> 00:30:52,519
+this<font color="#E5E5E5"> is recent research and I refer you</font>
+
+553
+00:30:52,519 --> 00:30:56,179
+<font color="#CCCCCC">to a series of papers and</font><font color="#E5E5E5"> I'll leave it</font>
+
+554
+00:30:56,179 --> 00:30:58,419
+<font color="#E5E5E5">at that</font>
+
+555
+00:31:02,239 --> 00:31:05,519
+<font color="#E5E5E5">okay so we have to learning for exactly</font>
+
+556
+00:31:05,519 --> 00:31:08,460
+factors we have optimistic versions of<font color="#CCCCCC"> Q</font>
+
+557
+00:31:08,460 --> 00:31:09,989
+<font color="#CCCCCC">learning combinations with Polish</font>
+
+558
+00:31:09,989 --> 00:31:12,809
+<font color="#CCCCCC">narration all of those for exact few</font>
+
+559
+00:31:12,809 --> 00:31:20,700
+factors however we mentioned<font color="#E5E5E5"> that for</font>
+
+560
+00:31:20,700 --> 00:31:23,070
+<font color="#CCCCCC">large-scale</font><font color="#E5E5E5"> problems the exact form of Q</font>
+
+561
+00:31:23,070 --> 00:31:26,669
+learning<font color="#E5E5E5"> is not</font><font color="#CCCCCC"> is not it cannot be</font>
+
+562
+00:31:26,669 --> 00:31:28,379
+applied<font color="#CCCCCC"> because of the storage</font><font color="#E5E5E5"> and</font>
+
+563
+00:31:28,379 --> 00:31:30,690
+dimension<font color="#CCCCCC"> problem</font><font color="#E5E5E5"> so let's try to</font>
+
+564
+00:31:30,690 --> 00:31:33,330
+consider basis function approximations
+
+565
+00:31:33,330 --> 00:31:40,759
+<font color="#CCCCCC">so we introduce a</font><font color="#E5E5E5"> Q factor approximation</font>
+
+566
+00:31:40,759 --> 00:31:44,669
+which is<font color="#E5E5E5"> linear and</font><font color="#CCCCCC"> involved this basis</font>
+
+567
+00:31:44,669 --> 00:31:46,639
+functions<font color="#E5E5E5"> visa is a feature vector</font>
+
+568
+00:31:46,639 --> 00:31:50,729
+associated with<font color="#E5E5E5"> I</font><font color="#CCCCCC"> nu</font><font color="#E5E5E5"> and R is a vector</font>
+
+569
+00:31:50,729 --> 00:31:56,359
+<font color="#CCCCCC">of weights and we can try to train our</font>
+
+570
+00:31:56,359 --> 00:31:59,279
+by for<font color="#E5E5E5"> example approximate policy</font>
+
+571
+00:31:59,279 --> 00:32:02,039
+<font color="#E5E5E5">direction pick a policy calculate the</font>
+
+572
+00:32:02,039 --> 00:32:04,109
+corresponding our policy improve and so
+
+573
+00:32:04,109 --> 00:32:06,389
+on and<font color="#E5E5E5"> you</font><font color="#CCCCCC"> can use several language for</font>
+
+574
+00:32:06,389 --> 00:32:09,450
+policy evaluation like<font color="#CCCCCC"> l</font><font color="#E5E5E5"> STD LSP and</font>
+
+575
+00:32:09,450 --> 00:32:14,940
+others that<font color="#E5E5E5"> we have discussed very often</font>
+
+576
+00:32:14,940 --> 00:32:19,129
+in practice<font color="#CCCCCC"> people</font><font color="#E5E5E5"> use optimistic</font>
+
+577
+00:32:19,129 --> 00:32:21,749
+<font color="#E5E5E5">versions of the policy duration method</font>
+
+578
+00:32:21,749 --> 00:32:28,589
+whereby they<font color="#CCCCCC"> have a policy they collect</font>
+
+579
+00:32:28,589 --> 00:32:31,229
+a few samples<font color="#E5E5E5"> maybe one maybe ten maybe</font>
+
+580
+00:32:31,229 --> 00:32:32,999
+<font color="#E5E5E5">a hundred</font><font color="#CCCCCC"> but not a</font><font color="#E5E5E5"> very large number</font>
+
+581
+00:32:32,999 --> 00:32:36,479
+<font color="#CCCCCC">and then do an approximate evaluation</font>
+
+582
+00:32:36,479 --> 00:32:38,999
+based on<font color="#E5E5E5"> the current weight the current</font>
+
+583
+00:32:38,999 --> 00:32:42,239
+policy then do a policy improvement or a
+
+584
+00:32:42,239 --> 00:32:45,149
+step towards policy improvement collect
+
+585
+00:32:45,149 --> 00:32:48,629
+more samples and so on so policy
+
+586
+00:32:48,629 --> 00:32:51,179
+evaluation with a few samples policy
+
+587
+00:32:51,179 --> 00:32:53,279
+improvement<font color="#E5E5E5"> by adjusting the weight</font>
+
+588
+00:32:53,279 --> 00:32:56,489
+vector<font color="#E5E5E5"> again more policy evaluation and</font>
+
+589
+00:32:56,489 --> 00:32:59,519
+with samples<font color="#E5E5E5"> and so on the most extreme</font>
+
+590
+00:32:59,519 --> 00:33:01,529
+<font color="#CCCCCC">type of algorithm of this type uses just</font>
+
+591
+00:33:01,529 --> 00:33:04,169
+<font color="#E5E5E5">a single sample</font><font color="#CCCCCC"> a single sample in</font>
+
+592
+00:33:04,169 --> 00:33:07,850
+between policy updates
+
+593
+00:33:07,850 --> 00:33:11,790
+<font color="#E5E5E5">okay so here this algorithm generates a</font>
+
+594
+00:33:11,790 --> 00:33:14,490
+trajectory<font color="#E5E5E5"> of state control pairs as</font>
+
+595
+00:33:14,490 --> 00:33:18,660
+follows<font color="#E5E5E5"> given the current weight vector</font>
+
+596
+00:33:18,660 --> 00:33:22,470
+that represents an estimate of the okay
+
+597
+00:33:22,470 --> 00:33:24,470
+together<font color="#CCCCCC"> with five gives you an</font>
+
+598
+00:33:24,470 --> 00:33:27,299
+approximate cost function of a current
+
+599
+00:33:27,299 --> 00:33:31,650
+policy<font color="#CCCCCC"> you simulate the transition using</font>
+
+600
+00:33:31,650 --> 00:33:35,640
+this this the transition probabilities
+
+601
+00:33:35,640 --> 00:33:39,030
+of<font color="#E5E5E5"> P of</font><font color="#CCCCCC"> the system then generate a</font>
+
+602
+00:33:39,030 --> 00:33:43,740
+control by minimizing<font color="#CCCCCC"> the two factors at</font>
+
+603
+00:33:43,740 --> 00:33:48,990
+the<font color="#CCCCCC"> new point and using that control you</font>
+
+604
+00:33:48,990 --> 00:33:51,960
+update the corresponding policy by
+
+605
+00:33:51,960 --> 00:33:56,120
+changing the<font color="#E5E5E5"> the weight vector R and</font>
+
+606
+00:33:56,120 --> 00:33:59,880
+this<font color="#E5E5E5"> is this</font><font color="#CCCCCC"> is done</font><font color="#E5E5E5"> in the direction of</font>
+
+607
+00:33:59,880 --> 00:34:04,410
+a TD<font color="#E5E5E5"> lambda type of iteration correction</font>
+
+608
+00:34:04,410 --> 00:34:07,110
+or<font color="#CCCCCC"> lsbe</font><font color="#E5E5E5"> direction some kind of</font><font color="#CCCCCC"> iterative</font>
+
+609
+00:34:07,110 --> 00:34:10,050
+algorithm that<font color="#CCCCCC"> makes a correction after</font>
+
+610
+00:34:10,050 --> 00:34:14,219
+<font color="#CCCCCC">a single sample so I have a state</font>
+
+611
+00:34:14,219 --> 00:34:19,859
+control pair<font color="#E5E5E5"> I use that to generate</font><font color="#CCCCCC"> a</font>
+
+612
+00:34:19,859 --> 00:34:25,500
+new new state then reevaluate the
+
+613
+00:34:25,500 --> 00:34:29,850
+control at that state by minimizing<font color="#CCCCCC"> over</font>
+
+614
+00:34:29,850 --> 00:34:33,239
+the<font color="#CCCCCC"> Q factors then move again</font><font color="#E5E5E5"> and so</font><font color="#CCCCCC"> on</font>
+
+615
+00:34:33,239 --> 00:34:37,199
+a very chaotic<font color="#CCCCCC"> type of algorithm with</font>
+
+616
+00:34:37,199 --> 00:34:39,418
+some connection to<font color="#E5E5E5"> theory some</font>
+
+617
+00:34:39,418 --> 00:34:43,109
+connection to<font color="#E5E5E5"> validity but very unclear</font>
+
+618
+00:34:43,109 --> 00:34:46,379
+properties<font color="#E5E5E5"> very complex behavior and</font>
+
+619
+00:34:46,379 --> 00:34:48,929
+clear validity oscillations all over the
+
+620
+00:34:48,929 --> 00:34:55,230
+place<font color="#E5E5E5"> but people have used it a lot they</font>
+
+621
+00:34:55,230 --> 00:34:59,490
+claim claim success<font color="#CCCCCC"> with it</font><font color="#E5E5E5"> you have to</font>
+
+622
+00:34:59,490 --> 00:35:01,050
+judge for yourself what<font color="#E5E5E5"> kind of success</font>
+
+623
+00:35:01,050 --> 00:35:06,450
+<font color="#E5E5E5">this is or you know what it means</font><font color="#CCCCCC"> there</font>
+
+624
+00:35:06,450 --> 00:35:09,359
+is<font color="#CCCCCC"> however solid basis for a version of</font>
+
+625
+00:35:09,359 --> 00:35:13,619
+<font color="#E5E5E5">this algorithm</font><font color="#CCCCCC"> for one for one type of</font>
+
+626
+00:35:13,619 --> 00:35:16,790
+problem<font color="#E5E5E5"> problems of optimal stopping</font>
+
+627
+00:35:16,790 --> 00:35:19,030
+<font color="#E5E5E5">optimal stopping problems we have</font>
+
+628
+00:35:19,030 --> 00:35:20,980
+very much<font color="#E5E5E5"> optimal stopping problems</font>
+
+629
+00:35:20,980 --> 00:35:22,570
+involved just<font color="#E5E5E5"> two controls for each</font>
+
+630
+00:35:22,570 --> 00:35:25,930
+<font color="#CCCCCC">stage</font><font color="#E5E5E5"> either stop or continue okay</font>
+
+631
+00:35:25,930 --> 00:35:29,320
+an example<font color="#E5E5E5"> is when you're trying</font><font color="#CCCCCC"> to</font>
+
+632
+00:35:29,320 --> 00:35:36,250
+<font color="#E5E5E5">optimize</font><font color="#CCCCCC"> optimize the time that you</font>
+
+633
+00:35:36,250 --> 00:35:38,140
+exercise<font color="#E5E5E5"> an</font><font color="#CCCCCC"> option</font><font color="#E5E5E5"> like</font><font color="#CCCCCC"> a</font><font color="#E5E5E5"> financial</font>
+
+634
+00:35:38,140 --> 00:35:40,660
+option<font color="#CCCCCC"> what you exercise the option you</font>
+
+635
+00:35:40,660 --> 00:35:42,490
+sell the option<font color="#E5E5E5"> or</font><font color="#CCCCCC"> you keep it</font><font color="#E5E5E5"> for one</font>
+
+636
+00:35:42,490 --> 00:35:44,850
+more step<font color="#CCCCCC"> you either stop or continue</font>
+
+637
+00:35:44,850 --> 00:35:46,060
+okay
+
+638
+00:35:46,060 --> 00:35:48,070
+turns<font color="#E5E5E5"> out that you learning is used very</font>
+
+639
+00:35:48,070 --> 00:35:49,890
+<font color="#CCCCCC">widely in practice in financial</font>
+
+640
+00:35:49,890 --> 00:35:53,500
+<font color="#E5E5E5">engineering financial programs that that</font>
+
+641
+00:35:53,500 --> 00:35:58,060
+<font color="#E5E5E5">value options and and the optimal</font>
+
+642
+00:35:58,060 --> 00:36:00,960
+stopping<font color="#E5E5E5"> formulation is the one that</font>
+
+643
+00:36:00,960 --> 00:36:04,480
+comes<font color="#E5E5E5"> in there and there are and in this</font>
+
+644
+00:36:04,480 --> 00:36:06,730
+particular<font color="#CCCCCC"> algorithm is valid for this</font>
+
+645
+00:36:06,730 --> 00:36:12,210
+for this for this<font color="#E5E5E5"> problem</font>
+
+646
+00:36:17,370 --> 00:36:21,100
+<font color="#E5E5E5">okay now let's talk about another</font><font color="#CCCCCC"> type</font>
+
+647
+00:36:21,100 --> 00:36:23,710
+<font color="#CCCCCC">of algorithm that involves</font><font color="#E5E5E5"> Q factor</font>
+
+648
+00:36:23,710 --> 00:36:25,740
+approximation
+
+649
+00:36:25,740 --> 00:36:31,830
+instead of using projected equations and
+
+650
+00:36:31,830 --> 00:36:34,180
+the algorithmic we have discussed<font color="#CCCCCC"> this</font>
+
+651
+00:36:34,180 --> 00:36:35,680
+another<font color="#E5E5E5"> approach</font><font color="#CCCCCC"> that we mentioned</font><font color="#E5E5E5"> but</font>
+
+652
+00:36:35,680 --> 00:36:37,750
+it did not discuss very much the<font color="#E5E5E5"> so</font>
+
+653
+00:36:37,750 --> 00:36:40,530
+<font color="#E5E5E5">called bellman equation error approach</font>
+
+654
+00:36:40,530 --> 00:36:43,360
+okay<font color="#E5E5E5"> so we'll describe this approach for</font>
+
+655
+00:36:43,360 --> 00:36:47,950
+<font color="#E5E5E5">two factors given</font><font color="#CCCCCC"> a policy</font><font color="#E5E5E5"> new we</font>
+
+656
+00:36:47,950 --> 00:36:51,150
+approximate the Q factors of that policy
+
+657
+00:36:51,150 --> 00:36:53,880
+<font color="#E5E5E5">using a linear approximation</font>
+
+658
+00:36:53,880 --> 00:36:57,100
+<font color="#E5E5E5">architecture that is obtained by</font>
+
+659
+00:36:57,100 --> 00:36:59,980
+<font color="#CCCCCC">minimizing the</font><font color="#E5E5E5"> error in satisfying</font>
+
+660
+00:36:59,980 --> 00:37:05,430
+<font color="#CCCCCC">Bellman's equation okay so this is Phi R</font>
+
+661
+00:37:05,430 --> 00:37:13,120
+Phi R is<font color="#E5E5E5"> the approximation to Q mu and</font><font color="#CCCCCC"> F</font>
+
+662
+00:37:13,120 --> 00:37:17,380
+nu is<font color="#E5E5E5"> the mapping associated with with</font>
+
+663
+00:37:17,380 --> 00:37:20,770
+the<font color="#CCCCCC"> the policy mu involves expected</font>
+
+664
+00:37:20,770 --> 00:37:24,280
+value and so on<font color="#E5E5E5"> so this</font><font color="#CCCCCC"> is a least</font>
+
+665
+00:37:24,280 --> 00:37:28,890
+squares problem<font color="#CCCCCC"> and the norm here is</font>
+
+666
+00:37:28,890 --> 00:37:32,470
+Euclidean work<font color="#E5E5E5"> with respect to some</font>
+
+667
+00:37:32,470 --> 00:37:35,950
+<font color="#CCCCCC">distribution side this approach is</font>
+
+668
+00:37:35,950 --> 00:37:38,200
+related to<font color="#E5E5E5"> somewhere to projected</font>
+
+669
+00:37:38,200 --> 00:37:43,540
+equation approach and and you can and it
+
+670
+00:37:43,540 --> 00:37:45,700
+works as follows<font color="#E5E5E5"> given a policy</font><font color="#CCCCCC"> you</font>
+
+671
+00:37:45,700 --> 00:37:48,910
+solve this problem<font color="#CCCCCC"> to find</font><font color="#E5E5E5"> our new then</font>
+
+672
+00:37:48,910 --> 00:37:52,600
+<font color="#E5E5E5">you improve the</font><font color="#CCCCCC"> policy and that allows</font>
+
+673
+00:37:52,600 --> 00:37:53,980
+you<font color="#E5E5E5"> to solve this problem</font><font color="#CCCCCC"> for the new</font>
+
+674
+00:37:53,980 --> 00:37:59,410
+policy and so<font color="#CCCCCC"> on now let's look</font><font color="#E5E5E5"> at this</font>
+
+675
+00:37:59,410 --> 00:38:02,680
+for deterministic problems<font color="#E5E5E5"> okay</font>
+
+676
+00:38:02,680 --> 00:38:04,840
+this approach<font color="#CCCCCC"> has found more application</font>
+
+677
+00:38:04,840 --> 00:38:06,160
+for deterministic problems<font color="#E5E5E5"> rather than</font>
+
+678
+00:38:06,160 --> 00:38:07,600
+for stochastic problems and there are
+
+679
+00:38:07,600 --> 00:38:09,430
+<font color="#E5E5E5">reasons</font><font color="#CCCCCC"> for that let's look</font><font color="#E5E5E5"> at the</font>
+
+680
+00:38:09,430 --> 00:38:11,140
+special<font color="#CCCCCC"> case of</font><font color="#E5E5E5"> deterministic problem</font>
+
+681
+00:38:11,140 --> 00:38:13,960
+now in the deterministic problem given a
+
+682
+00:38:13,960 --> 00:38:16,960
+state<font color="#E5E5E5"> in the control pair the next state</font>
+
+683
+00:38:16,960 --> 00:38:19,900
+is<font color="#CCCCCC"> completely determined</font><font color="#E5E5E5"> okay there are</font>
+
+684
+00:38:19,900 --> 00:38:21,460
+<font color="#CCCCCC">no</font><font color="#E5E5E5"> transition probabilities there is a</font>
+
+685
+00:38:21,460 --> 00:38:25,450
+unique state which you go<font color="#E5E5E5"> so here's how</font>
+
+686
+00:38:25,450 --> 00:38:27,440
+this<font color="#E5E5E5"> approach would be implemented</font>
+
+687
+00:38:27,440 --> 00:38:31,500
+given a policy<font color="#CCCCCC"> will generate</font><font color="#E5E5E5"> a large set</font>
+
+688
+00:38:31,500 --> 00:38:34,790
+of sample pairs<font color="#CCCCCC"> high K and UK</font>
+
+689
+00:38:34,790 --> 00:38:38,120
+corresponding deterministic<font color="#CCCCCC"> covers and</font>
+
+690
+00:38:38,120 --> 00:38:40,350
+corresponding transitions which are also
+
+691
+00:38:40,350 --> 00:38:46,290
+deterministic to the state<font color="#CCCCCC"> determines</font>
+
+692
+00:38:46,290 --> 00:38:50,070
+the state<font color="#E5E5E5"> jk jk</font><font color="#CCCCCC"> is the next state</font><font color="#E5E5E5"> in</font>
+
+693
+00:38:50,070 --> 00:38:53,540
+news of JK is determined from the<font color="#CCCCCC"> polls</font>
+
+694
+00:38:53,540 --> 00:38:55,980
+now you can use a simulator of<font color="#E5E5E5"> the</font>
+
+695
+00:38:55,980 --> 00:38:59,310
+<font color="#E5E5E5">deterministic system to generate</font><font color="#CCCCCC"> such</font>
+
+696
+00:38:59,310 --> 00:39:03,210
+sample pairs give an eye and you the
+
+697
+00:39:03,210 --> 00:39:05,940
+<font color="#E5E5E5">next you tell the simulator to generate</font>
+
+698
+00:39:05,940 --> 00:39:08,610
+JK for you and you<font color="#E5E5E5"> have a policy that</font>
+
+699
+00:39:08,610 --> 00:39:12,720
+<font color="#E5E5E5">gives you the control at the next state</font>
+
+700
+00:39:12,720 --> 00:39:16,290
+which you<font color="#CCCCCC"> need for me you need to plug</font>
+
+701
+00:39:16,290 --> 00:39:21,660
+in<font color="#E5E5E5"> here so given all these samples you</font>
+
+702
+00:39:21,660 --> 00:39:24,030
+put them together into<font color="#CCCCCC"> a least squares</font>
+
+703
+00:39:24,030 --> 00:39:29,010
+problem that emulates this so it's the
+
+704
+00:39:29,010 --> 00:39:33,030
+sum<font color="#E5E5E5"> of the errors in satisfying balance</font>
+
+705
+00:39:33,030 --> 00:39:34,350
+<font color="#E5E5E5">equation right</font>
+
+706
+00:39:34,350 --> 00:39:37,650
+<font color="#E5E5E5">it's a deterministic</font><font color="#CCCCCC"> Dalton equation so</font>
+
+707
+00:39:37,650 --> 00:39:40,020
+this<font color="#E5E5E5"> is the error corresponding this</font>
+
+708
+00:39:40,020 --> 00:39:43,140
+error here but instead<font color="#CCCCCC"> of</font><font color="#E5E5E5"> taking</font><font color="#CCCCCC"> over</font>
+
+709
+00:39:43,140 --> 00:39:45,450
+all states<font color="#E5E5E5"> you take it only over those</font>
+
+710
+00:39:45,450 --> 00:39:48,900
+samples<font color="#E5E5E5"> if this summation includes all</font>
+
+711
+00:39:48,900 --> 00:39:50,310
+states these two would be<font color="#E5E5E5"> a</font><font color="#CCCCCC"> dime</font>
+
+712
+00:39:50,310 --> 00:39:54,450
+equivalent so instead<font color="#CCCCCC"> of sampling</font><font color="#E5E5E5"> all</font>
+
+713
+00:39:54,450 --> 00:39:56,370
+the<font color="#E5E5E5"> states</font><font color="#CCCCCC"> I sample some representative</font>
+
+714
+00:39:56,370 --> 00:39:59,340
+<font color="#E5E5E5">states i form</font><font color="#CCCCCC"> the error to</font><font color="#E5E5E5"> satisfy</font>
+
+715
+00:39:59,340 --> 00:40:00,420
+<font color="#E5E5E5">balanced equation</font>
+
+716
+00:40:00,420 --> 00:40:04,590
+minimize that<font color="#E5E5E5"> to obtain the weight</font>
+
+717
+00:40:04,590 --> 00:40:08,180
+vector<font color="#E5E5E5"> that corresponds to the policy</font>
+
+718
+00:40:08,180 --> 00:40:10,920
+<font color="#E5E5E5">it's a linear least squares problem it</font>
+
+719
+00:40:10,920 --> 00:40:13,590
+can<font color="#CCCCCC"> be solved the</font><font color="#E5E5E5"> solution of this can</font>
+
+720
+00:40:13,590 --> 00:40:17,130
+be<font color="#E5E5E5"> done in many different ways you need</font>
+
+721
+00:40:17,130 --> 00:40:20,190
+to have enough samples<font color="#CCCCCC"> in</font><font color="#E5E5E5"> order for the</font>
+
+722
+00:40:20,190 --> 00:40:22,980
+matrix involved here to be invertible<font color="#CCCCCC"> to</font>
+
+723
+00:40:22,980 --> 00:40:25,140
+have a unique solution but this can<font color="#E5E5E5"> be</font>
+
+724
+00:40:25,140 --> 00:40:26,190
+easily arranged
+
+725
+00:40:26,190 --> 00:40:31,910
+<font color="#CCCCCC">it's</font><font color="#E5E5E5"> not not a problem</font><font color="#CCCCCC"> okay</font>
+
+726
+00:40:31,910 --> 00:40:35,520
+let me mention also<font color="#CCCCCC"> that for stochastic</font>
+
+727
+00:40:35,520 --> 00:40:37,500
+problems is a similar approach but it's
+
+728
+00:40:37,500 --> 00:40:39,750
+more<font color="#E5E5E5"> complicated</font><font color="#CCCCCC"> it involves taking</font><font color="#E5E5E5"> two</font>
+
+729
+00:40:39,750 --> 00:40:42,090
+samples<font color="#CCCCCC"> per iteration it's it's more</font><font color="#E5E5E5"> and</font>
+
+730
+00:40:42,090 --> 00:40:46,440
+it's it's it's more<font color="#CCCCCC"> complicated and and</font>
+
+731
+00:40:46,440 --> 00:40:48,330
+there are<font color="#E5E5E5"> reasons</font><font color="#CCCCCC"> for</font><font color="#E5E5E5"> that</font>
+
+732
+00:40:48,330 --> 00:40:53,580
+<font color="#E5E5E5">refer you to the text however the</font>
+
+733
+00:40:53,580 --> 00:40:57,090
+approach<font color="#E5E5E5"> is model free and for the</font>
+
+734
+00:40:57,090 --> 00:40:58,650
+<font color="#CCCCCC">termina stick problems it is very</font>
+
+735
+00:40:58,650 --> 00:41:01,260
+<font color="#CCCCCC">attacked</font><font color="#E5E5E5"> attractive for adaptive control</font>
+
+736
+00:41:01,260 --> 00:41:05,070
+of<font color="#E5E5E5"> systems with unknown dynamics for</font>
+
+737
+00:41:05,070 --> 00:41:06,920
+example you may<font color="#CCCCCC"> have a linear system</font>
+
+738
+00:41:06,920 --> 00:41:10,430
+like a process<font color="#E5E5E5"> or some kind of a robot</font>
+
+739
+00:41:10,430 --> 00:41:13,260
+<font color="#CCCCCC">that does things but because of the</font>
+
+740
+00:41:13,260 --> 00:41:16,290
+<font color="#E5E5E5">circumstances which operates you don't</font>
+
+741
+00:41:16,290 --> 00:41:18,150
+know the<font color="#CCCCCC"> dynamics of the system</font><font color="#E5E5E5"> may be</font>
+
+742
+00:41:18,150 --> 00:41:20,370
+linear<font color="#CCCCCC"> but</font><font color="#E5E5E5"> you don't know them the</font>
+
+743
+00:41:20,370 --> 00:41:22,350
+coefficients the<font color="#CCCCCC"> coefficients that</font>
+
+744
+00:41:22,350 --> 00:41:25,110
+multiply the state<font color="#E5E5E5"> coefficient that</font>
+
+745
+00:41:25,110 --> 00:41:29,760
+multiplies the control and so on<font color="#E5E5E5"> this</font>
+
+746
+00:41:29,760 --> 00:41:33,360
+approach provides<font color="#E5E5E5"> an avenue for</font><font color="#CCCCCC"> dealing</font>
+
+747
+00:41:33,360 --> 00:41:35,970
+<font color="#E5E5E5">with such problems without knowing the</font>
+
+748
+00:41:35,970 --> 00:41:38,970
+<font color="#CCCCCC">dynamics you go directly towards</font><font color="#E5E5E5"> finding</font>
+
+749
+00:41:38,970 --> 00:41:41,550
+an optimal<font color="#E5E5E5"> policy what more</font><font color="#CCCCCC"> Q factors</font>
+
+750
+00:41:41,550 --> 00:41:47,010
+<font color="#CCCCCC">lock no policy so that's the next topic</font>
+
+751
+00:41:47,010 --> 00:41:48,690
+<font color="#E5E5E5">I want to talk</font><font color="#CCCCCC"> about but we'll take a</font>
+
+752
+00:41:48,690 --> 00:41:52,680
+break<font color="#CCCCCC"> this</font><font color="#E5E5E5"> relates to something called</font>
+
+753
+00:41:52,680 --> 00:41:55,500
+adaptive dynamic programming which<font color="#CCCCCC"> is</font>
+
+754
+00:41:55,500 --> 00:41:57,420
+really adaptive control based on
+
+755
+00:41:57,420 --> 00:42:00,090
+approximate dynamic programming<font color="#E5E5E5"> adaptive</font>
+
+756
+00:42:00,090 --> 00:42:02,670
+dynamic programming<font color="#CCCCCC"> a DP has</font><font color="#E5E5E5"> the same</font>
+
+757
+00:42:02,670 --> 00:42:03,930
+acronym<font color="#E5E5E5"> as approximate dynamic</font>
+
+758
+00:42:03,930 --> 00:42:08,790
+programming which is<font color="#CCCCCC"> a DP also but</font>
+
+759
+00:42:08,790 --> 00:42:10,890
+adaptive dynamic programming is really<font color="#CCCCCC"> a</font>
+
+760
+00:42:10,890 --> 00:42:14,070
+subset<font color="#E5E5E5"> of approximate dynamic</font><font color="#CCCCCC"> program</font><font color="#E5E5E5"> so</font>
+
+761
+00:42:14,070 --> 00:42:15,900
+we'll talk<font color="#CCCCCC"> about</font><font color="#E5E5E5"> that after</font><font color="#CCCCCC"> we take a</font>
+
+762
+00:42:15,900 --> 00:42:20,330
+break<font color="#E5E5E5"> any questions</font>
+
+763
+00:42:31,240 --> 00:42:34,320
+[Music]
+
+764
+00:42:35,020 --> 00:42:38,440
+<font color="#E5E5E5">okay but that's a good question</font>
+
+765
+00:42:38,440 --> 00:42:41,260
+we have been talking<font color="#E5E5E5"> so</font><font color="#CCCCCC"> far about</font>
+
+766
+00:42:41,260 --> 00:42:44,780
+discrete space systems<font color="#E5E5E5"> finite state</font>
+
+767
+00:42:44,780 --> 00:42:48,320
+systems<font color="#E5E5E5"> however</font><font color="#CCCCCC"> this approach</font><font color="#E5E5E5"> also has</font>
+
+768
+00:42:48,320 --> 00:42:50,570
+an<font color="#CCCCCC"> analogue for continuous space systems</font>
+
+769
+00:42:50,570 --> 00:42:52,700
+and in fact it is continuous space
+
+770
+00:42:52,700 --> 00:42:55,520
+systems that involve<font color="#E5E5E5"> for which adaptive</font>
+
+771
+00:42:55,520 --> 00:42:58,820
+control is most applicable<font color="#CCCCCC"> basically you</font>
+
+772
+00:42:58,820 --> 00:43:00,920
+do the same thing<font color="#E5E5E5"> for continuous space</font>
+
+773
+00:43:00,920 --> 00:43:16,850
+systems you just sample<font color="#E5E5E5"> States okay we</font>
+
+774
+00:43:16,850 --> 00:43:19,880
+have to distinguish between<font color="#E5E5E5"> okay your</font>
+
+775
+00:43:19,880 --> 00:43:21,740
+question<font color="#CCCCCC"> is the following suppose I have</font>
+
+776
+00:43:21,740 --> 00:43:23,690
+a continuous space problem to begin<font color="#E5E5E5"> with</font>
+
+777
+00:43:23,690 --> 00:43:26,240
+<font color="#CCCCCC">does there exist an exact</font><font color="#E5E5E5"> Q learning</font>
+
+778
+00:43:26,240 --> 00:43:28,160
+<font color="#E5E5E5">algorithm</font><font color="#CCCCCC"> that operates on the</font>
+
+779
+00:43:28,160 --> 00:43:30,710
+continuous space of<font color="#E5E5E5"> states the answer is</font>
+
+780
+00:43:30,710 --> 00:43:34,880
+no we don't<font color="#CCCCCC"> I don't</font><font color="#E5E5E5"> play the literature</font>
+
+781
+00:43:34,880 --> 00:43:38,270
+<font color="#CCCCCC">has there's no</font><font color="#E5E5E5"> non version of the</font>
+
+782
+00:43:38,270 --> 00:43:39,800
+algorithm<font color="#CCCCCC"> probably it's much more</font>
+
+783
+00:43:39,800 --> 00:43:43,040
+complicated<font color="#E5E5E5"> perhaps you can you can</font>
+
+784
+00:43:43,040 --> 00:43:44,960
+<font color="#E5E5E5">figure</font><font color="#CCCCCC"> out how it might be</font><font color="#E5E5E5"> but there's</font>
+
+785
+00:43:44,960 --> 00:43:47,570
+no analysis of such an algorithm now
+
+786
+00:43:47,570 --> 00:43:49,790
+that's one thing<font color="#E5E5E5"> Q learning</font><font color="#CCCCCC"> per</font>
+
+787
+00:43:49,790 --> 00:43:51,950
+continuous space system in exact form
+
+788
+00:43:51,950 --> 00:43:54,440
+that we don't know<font color="#E5E5E5"> how it how</font><font color="#CCCCCC"> it</font>
+
+789
+00:43:54,440 --> 00:43:57,190
+operates<font color="#E5E5E5"> but it is possible</font><font color="#CCCCCC"> to apply</font>
+
+790
+00:43:57,190 --> 00:44:00,770
+<font color="#CCCCCC">your learning for a continuous space</font>
+
+791
+00:44:00,770 --> 00:44:03,140
+system with cost function approximation
+
+792
+00:44:03,140 --> 00:44:06,470
+and the<font color="#E5E5E5"> R vector</font><font color="#CCCCCC"> then the vector of</font>
+
+793
+00:44:06,470 --> 00:44:08,360
+weights the basis functions is only<font color="#E5E5E5"> a</font>
+
+794
+00:44:08,360 --> 00:44:11,300
+finite number<font color="#CCCCCC"> and for that</font><font color="#E5E5E5"> theory so</font>
+
+795
+00:44:11,300 --> 00:44:14,500
+there<font color="#E5E5E5"> has been</font><font color="#CCCCCC"> a lot of</font><font color="#E5E5E5"> work</font>
+
+796
+00:44:21,630 --> 00:44:24,519
+<font color="#E5E5E5">okay so the</font><font color="#CCCCCC"> question is how fast</font>
+
+797
+00:44:24,519 --> 00:44:26,079
+what's the<font color="#CCCCCC"> put</font><font color="#E5E5E5"> what are the performance</font>
+
+798
+00:44:26,079 --> 00:44:34,950
+<font color="#E5E5E5">guarantees for good for disabilities</font><font color="#CCCCCC"> III</font>
+
+799
+00:44:34,950 --> 00:44:36,190
+okay
+
+800
+00:44:36,190 --> 00:44:37,539
+the Q<font color="#CCCCCC"> learning algorithm involves</font>
+
+801
+00:44:37,539 --> 00:44:41,740
+<font color="#E5E5E5">several complicating factors one is the</font>
+
+802
+00:44:41,740 --> 00:44:43,630
+resemblance<font color="#CCCCCC"> to stochastic approximation</font>
+
+803
+00:44:43,630 --> 00:44:46,569
+<font color="#E5E5E5">in the use of</font><font color="#CCCCCC"> samples</font><font color="#E5E5E5"> and the other is</font>
+
+804
+00:44:46,569 --> 00:44:50,380
+one<font color="#E5E5E5"> Q factor at a</font><font color="#CCCCCC"> time</font><font color="#E5E5E5"> if we were to do</font>
+
+805
+00:44:50,380 --> 00:44:52,869
+all two factors simultaneously<font color="#E5E5E5"> and</font>
+
+806
+00:44:52,869 --> 00:44:54,579
+obtain basically a stochastic
+
+807
+00:44:54,579 --> 00:44:58,200
+approximation algorithm<font color="#E5E5E5"> then there are</font>
+
+808
+00:44:58,200 --> 00:45:00,519
+convergence rate results<font color="#E5E5E5"> about</font>
+
+809
+00:45:00,519 --> 00:45:02,529
+stochastic approximation algorithms
+
+810
+00:45:02,529 --> 00:45:04,630
+however the Q learning<font color="#CCCCCC"> algorithm more</font>
+
+811
+00:45:04,630 --> 00:45:07,089
+complicated because it involves<font color="#CCCCCC"> a</font>
+
+812
+00:45:07,089 --> 00:45:14,230
+chaotic<font color="#E5E5E5"> kind of chaotic trajectories</font>
+
+813
+00:45:14,230 --> 00:45:16,390
+over<font color="#E5E5E5"> state control pairs and you</font><font color="#CCCCCC"> update</font>
+
+814
+00:45:16,390 --> 00:45:18,640
+only<font color="#E5E5E5"> one at a time and I don't believe</font>
+
+815
+00:45:18,640 --> 00:45:21,910
+<font color="#CCCCCC">that</font><font color="#E5E5E5"> there are</font><font color="#CCCCCC"> interesting convergence</font>
+
+816
+00:45:21,910 --> 00:45:25,829
+<font color="#E5E5E5">rate results for this type of algorithm</font>
+
+817
+00:45:25,829 --> 00:45:29,079
+if you want a qualitative answer<font color="#E5E5E5"> the</font>
+
+818
+00:45:29,079 --> 00:45:31,930
+algorithm is<font color="#CCCCCC"> very slow very slow very</font>
+
+819
+00:45:31,930 --> 00:45:36,190
+<font color="#E5E5E5">often and that's typical of stochastic</font>
+
+820
+00:45:36,190 --> 00:45:38,829
+approximation algorithms so if you are
+
+821
+00:45:38,829 --> 00:45:43,359
+interested<font color="#CCCCCC"> in high accuracy then that's</font>
+
+822
+00:45:43,359 --> 00:45:44,890
+<font color="#E5E5E5">probably something that you cannot yet</font>
+
+823
+00:45:44,890 --> 00:45:46,809
+<font color="#CCCCCC">but sometimes you get convergence</font>
+
+824
+00:45:46,809 --> 00:45:49,240
+reasonably fast particularly<font color="#CCCCCC"> if you've</font>
+
+825
+00:45:49,240 --> 00:45:51,339
+got no<font color="#E5E5E5"> good starting points if you have</font>
+
+826
+00:45:51,339 --> 00:45:54,430
+if<font color="#E5E5E5"> you</font><font color="#CCCCCC"> have if you do the sampling in an</font>
+
+827
+00:45:54,430 --> 00:46:01,119
+intelligent<font color="#CCCCCC"> way if you've</font><font color="#E5E5E5"> your first</font>
+
+828
+00:46:01,119 --> 00:46:03,190
+experiences with<font color="#E5E5E5"> Q learning</font><font color="#CCCCCC"> are</font><font color="#E5E5E5"> likely</font>
+
+829
+00:46:03,190 --> 00:46:07,470
+to be frustrating frustratingly slow
+
+830
+00:46:07,870 --> 00:46:24,110
+form of it it<font color="#E5E5E5"> if G were continued okay</font>
+
+831
+00:46:24,110 --> 00:46:27,080
+so so<font color="#E5E5E5"> what kind of G function here would</font>
+
+832
+00:46:27,080 --> 00:47:16,790
+help<font color="#CCCCCC"> perhaps</font><font color="#E5E5E5"> yeah</font><font color="#CCCCCC"> would be also if you</font>
+
+833
+00:47:16,790 --> 00:47:19,190
+use cost<font color="#E5E5E5"> function approximation</font><font color="#CCCCCC"> if you</font>
+
+834
+00:47:19,190 --> 00:47:21,020
+know the form of G you may be able<font color="#E5E5E5"> to</font>
+
+835
+00:47:21,020 --> 00:47:23,360
+exploit it<font color="#E5E5E5"> in order to pick your basis</font>
+
+836
+00:47:23,360 --> 00:47:25,850
+functions appropriately and<font color="#E5E5E5"> that</font><font color="#CCCCCC"> problem</font>
+
+837
+00:47:25,850 --> 00:47:28,540
+is<font color="#CCCCCC"> going</font><font color="#E5E5E5"> to be helpful</font>
+
+838
+00:47:30,670 --> 00:47:34,360
+any other questions
+
+839
+00:47:36,400 --> 00:47:38,319
+<font color="#E5E5E5">okay so let's take a break for</font><font color="#CCCCCC"> ten</font>
+
+840
+00:47:38,319 --> 00:00:00,000
+minutes<font color="#CCCCCC"> come</font><font color="#E5E5E5"> back</font>
+
