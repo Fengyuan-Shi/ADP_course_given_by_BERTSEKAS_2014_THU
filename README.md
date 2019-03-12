@@ -10,5 +10,5 @@ Video and other material of ADP course given by BERTSEKAS at THU, 2014
   * subtitle_files: subtitles files which could show subtitle in the videos  
   * translate_files: files which tranlate subtitles to chinese  
 
-video link: https://www.bilibili.com/video/av46076510/
+video link: https://www.bilibili.com/video/av46076510/  
 ZhiHu link: https://zhuanlan.zhihu.com/p/58837258
